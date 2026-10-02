@@ -2,6 +2,8 @@
 
 Personal notes and working drafts.
 
+备考总计划：[PLAN.md](PLAN.md)（轮次地图 + 四个阶段 + 10 天节奏）
+
 ## pytorch/research — Research PyTorch 系列（2026-10-02，4/4 完）
 
 训练代码手感线：手写 + debug。每篇含 MD 笔记（公式与考点）+ Colab 可跑的 notebook（全部代码已实测）。
@@ -13,4 +15,10 @@ Personal notes and working drafts.
 
 ## pytorch — 分布式 / 并行线
 
-- [Day 01 — 集合通信与 DDP](pytorch/day-01-distributed-ddp.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Papa-Panda/field-notes/blob/main/pytorch/day-01-distributed-ddp.ipynb) — ring all-reduce 公式、gradient bucketing、2 进程 DDP 最小闭环、`day-01-ddp-minimal.py`（torchrun 版）
+- [Day 01 — 集合通信与 DDP](pytorch/day-01-distributed-ddp.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Papa-Panda/field-notes/blob/main/pytorch/day-01-distributed-ddp.ipynb) — 因果链版：两堵墙 → 数据并行 → 同步成本 → ring all-reduce → 分桶与重叠 → `day-01-ddp-minimal.py`（torchrun 版）
+- [05 — ZeRO / FSDP](pytorch/parallel/05-zero-fsdp.md) · [notebook](pytorch/parallel/05-zero-fsdp.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Papa-Panda/field-notes/blob/main/pytorch/parallel/05-zero-fsdp.ipynb) — 16B/参数的显存账、三级分片、FSDP 分片验证（85,002 → 每 rank 42,501）
+- [06 — TP 手写 linear](pytorch/parallel/06-tensor-parallel.md) · [notebook](pytorch/parallel/06-tensor-parallel.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Papa-Panda/field-notes/blob/main/pytorch/parallel/06-tensor-parallel.ipynb) — f/g 算子 + column/row-parallel，与单卡四项对拍到 1e-7
+
+## pytorch/rl-systems — RL 系统线
+
+- [07 — rollout→train 系统骨架](pytorch/rl-systems/07-rl-systems.md) · [notebook](pytorch/rl-systems/07-rl-systems.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Papa-Panda/field-notes/blob/main/pytorch/rl-systems/07-rl-systems.ipynb) — trajectory 契约、同步基线 vs 异步滞后过滤 + 重要性截断
