@@ -36,6 +36,9 @@
 - `scheduler.step()` 放在 `optimizer.step()` 前 → lr 曲线整体错位一格
 - accumulation 忘除 $ k $ → 等效 lr 爆炸
 - 用训练集的 running loss 报 test 指标（没切 eval 模式，BN 统计量被污染）
+- 验证忘 `model.eval()` → BN running stats 被验证集拉偏，验证后训练变差（指纹：验证完 loss 莫名跳水）
+- X 与 y 配对错位（shuffle 只打乱一边）→ loss 卡在随机水平，先用 8 样本 overfit 测试排查
+- 对 leaf 参数做 in-place 操作 → autograd 的 version counter 直接拒绝 backward
 
 ## 思考题
 
