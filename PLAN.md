@@ -31,6 +31,7 @@
 | Day 01 | 集合通信与 DDP（因果链版） | `pytorch/day-01-distributed-ddp` |
 | 05 | ZeRO / FSDP：分片的账 | `pytorch/parallel/05-zero-fsdp` |
 | 06 | TP 手写 linear（column/row-parallel） | `pytorch/parallel/06-tensor-parallel` |
+| 08 | PP 流水线并行：气泡公式与 1F1B | `pytorch/parallel/08-pipeline-parallel` |
 
 ## 阶段 3 — RL systems coding
 
@@ -47,7 +48,7 @@
 ## 10 天节奏建议
 
 - Day 1–4：Research 01–04（一篇/天，notebook 必须亲手跑通）
-- Day 5：DDP 因果链重读 + ZeRO/FSDP
+- Day 5：DDP 因果链重读 + ZeRO/FSDP + PP 气泡公式
 - Day 6：TP 手写 linear
 - Day 7：RL systems 骨架
 - Day 8：三方对照复盘（01–07 的 debug 清单默写）
