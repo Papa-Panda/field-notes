@@ -39,6 +39,8 @@ ZeRO 把 DDP 里每份副本重复存的东西（优化器状态 → 梯度 → 
 - wrap 粒度太粗（一整个大模型一个 FlatParameter）→ all-gather 一次拼太多、峰值显存爆炸；粒度太细 → 通信次数爆炸
 - 在 FSDP 模块外面对分片参数做手动 `.data` 操作 → 形状对不上，报错还难定位
 
+> 可跑现场版在同名 notebook 第 4 节「Debug 演练」：分片格式（SHARDED_STATE_DICT）存的 checkpoint 按全量方式 load 的存档事故，含修复版。
+
 ## 思考题
 
 1. $ N=8 $ 、70B 模型，ZeRO-2 每 rank 显存多少 GB？ZeRO-3 呢？（按表里的公式算）

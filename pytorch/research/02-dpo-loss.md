@@ -36,6 +36,8 @@ $$ \mathcal{L}_{DPO} = -\mathbb{E}\left[\log \sigma\left(\beta \log \frac{\pi_\t
 - **mask 漏掉 prompt 部分**：把 prompt 的 token 也算进 log-prob，等于在教模型背 prompt
 - **label 没 shift**：logits 与 labels 错位一位，log-prob 全错但 loss 数值看起来正常 —— 最阴险的一个
 
+> 可跑现场版在同名 notebook：BUG 1 符号写反 / BUG 2 mean 代替 sum / BUG 3 ref 没 detach，每个 bug 下面带修复版演示。
+
 ## 思考题
 
 1. 如果 chosen 和 rejected 共享长前缀，log-prob 求和时前缀部分会怎样？对梯度有什么影响？

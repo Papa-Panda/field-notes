@@ -42,6 +42,8 @@ $$ A_i = \frac{R_i - \mathrm{mean}(R_{1..G})}{\mathrm{std}(R_{1..G})} $$
 - GRPO 的 std 用全体 batch 的而不是组内的 —— advantage 失去"相对名次"含义
 - KL 符号反了：越训离 ref 越远还以为在正则
 
+> 可跑现场版在同名 notebook 第 5 节「Debug 演练」：BUG 1 log-ratio 忘 exp / BUG 2 clip 上下界写反 / BUG 3 advantage 没 detach / BUG 4 全同 reward 组 NaN / BUG 5 KL 符号反，每个 bug 下面带修复。
+
 ## 思考题
 
 1. $ \epsilon \to 0 $ 和 $ \epsilon \to \infty $ 时 PPO 分别退化成什么？

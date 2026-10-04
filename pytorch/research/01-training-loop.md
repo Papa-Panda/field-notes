@@ -40,6 +40,8 @@
 - X 与 y 配对错位（shuffle 只打乱一边）→ loss 卡在随机水平，先用 8 样本 overfit 测试排查
 - 对 leaf 参数做 in-place 操作 → autograd 的 version counter 直接拒绝 backward
 
+> 可跑现场版在同名 notebook：BUG A–C（每个 bug 下面紧跟修复 + 修复版代码），进阶 Case D–F 同格式。
+
 ## 思考题
 
 1. 如果把 zero_grad 放在 step 之后、backward 之前，和放在 backward 之前等价吗？什么情况下不等价？（提示：梯度累积多步时）

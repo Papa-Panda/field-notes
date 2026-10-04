@@ -38,6 +38,8 @@ $$ \mathrm{Attn}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\rig
 - 缩放因子用了 $ \sqrt{d_{model}} $ 而不是每个 head 的 $ \sqrt{d_k} $
 - RoPE 的位置在 Q、K 投影后、attention 前 —— 顺序写错很常见（进阶题）
 
+> 可跑现场版在同名 notebook 第 5 节「Debug 演练」：BUG 1 缩放分母用错 / BUG 2 mask 乘在 softmax 之后 / BUG 3 拆头转置错 / BUG 4 padding 行 -1e9 漏权重，每个 bug 下面带修复。
+
 ## 思考题
 
 1. batch 里不同长度序列做 padding 时，attention mask 和 causal mask 怎么合并？

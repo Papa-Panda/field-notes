@@ -33,6 +33,8 @@ $ m $ 拉大，气泡趋近于 0 —— 但每个 in-flight 的 micro-batch 都�
 - 权重初始化跨 stage 不一致没关系（各段本来就不同），但同一段在 DP 副本间必须一致 —— PP 与 DP 组合时最容易漏
 - 1F1B 的 warmup 步数算错：每段的 warmup 前向数 = $ p - \text{rank} - 1 $ ，写错一位整条流水线错位
 
+> 可跑现场版在同名 notebook 第 3 节「Debug 演练」：BUG 1 micro-batch 没除以 m / BUG 2 stage 切分不均，每个 bug 下面带修复。
+
 ## 思考题
 
 1. $ p=8, m=32 $ 时 bubble 占多少？$ m $ 翻倍到 64 省了多少，激活显存付了多少？

@@ -44,6 +44,8 @@ RL 训练的系统难点不在 loss，在负载错配：生成是访存瓶颈的
 - **权重推送竞态**：rollout 正在生成时权重被换一半 → 同一条 trajectory 前后半段来自不同策略，logp 全废
 - **截断样本当完整样本训**：超长被截断的 completion 没有 mask 标记，模型学到"戛然而止也算对"
 
+> 可跑现场版在同名 notebook 第 4 节「Debug 演练」：BUG 1 盲训旧样本 / BUG 2 old_logp 重算致 ratio 假通过 / BUG 3 ratio 不截断，每个事故下面带修复。
+
 ## 思考题
 
 1. 异步滞后 $ k $ 个版本时，重要性 ratio 的分布会怎么变？clip 区间要不要随 $ k $ 调整？
