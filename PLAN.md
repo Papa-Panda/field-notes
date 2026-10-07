@@ -28,7 +28,7 @@
 
 | # | 主题 | 文件 |
 |---|---|---|
-| Day 01 | 集合通信与 DDP（因果链版） | `pytorch/day-01-distributed-ddp` |
+| Day 01 | 集合通信与 DDP（因果链版） | `pytorch/parallel/day-01-distributed-ddp` |
 | 05 | ZeRO / FSDP：分片的账 | `pytorch/parallel/05-zero-fsdp` |
 | 06 | TP 手写 linear（column/row-parallel） | `pytorch/parallel/06-tensor-parallel` |
 | 08 | PP 流水线并行：气泡公式与 1F1B | `pytorch/parallel/08-pipeline-parallel` |
