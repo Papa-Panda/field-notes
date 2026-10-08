@@ -246,25 +246,25 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 238 | LoRA 超参调优：rank、alpha、target modules 与学习率怎么设 | BV1VY826wEd2 | 02:30 | 2026-08-28 | 已完成 | [G238-lora-hyperparams.md](episodes/G238-lora-hyperparams.md) |
 | 239 | LongRoPE 讲透：把 4K 上下文扩到 2048K，非均匀插值 vs 均匀插值 | BV13e826hE9X | 04:23 | 2026-08-28 | 已完成 | [G239-longrope.md](episodes/G239-longrope.md) |
 | 240 | Logit Lens 详解：把每一层的残差解码成词，看答案如何逐层结晶 | BV1Ye826hEBW | 02:17 | 2026-08-28 | 已完成 | [G240-logit-lens-layers.md](episodes/G240-logit-lens-layers.md) |
-| 241 | 大模型水印是怎么做的？绿名单方案详解：γ 切名单、δ 加分数、z 做检验 | BV1J7826GEU2 | 03:31 | 2026-08-28 | 待处理 | |
-| 242 | 大模型为什么算不对多位数乘法？三重根因与逆序输入解法 | BV1rE826rEF6 | 02:52 | 2026-08-27 | 待处理 | |
-| 243 | Linear Attention 讲透：核函数替代 softmax，O(n²) 降到 O(n) | BV1JE826rEVe | 04:57 | 2026-08-27 | 待处理 | |
-| 244 | 大规模训练容错：Flash Checkpoint、DLRover 与 checkpoint 频率权衡 | BV1H58265EA1 | 01:02 | 2026-08-27 | 待处理 | |
-| 245 | KV Cache 为什么只缓存 K 和 V，从不缓存 Q？注意力的根本不对称 | BV1JL826CEQK | 03:44 | 2026-08-27 | 待处理 | |
-| 246 | Stable LatentMoE：用三件套改进万亿 MoE 的训练崩溃 | BV1kL826CETq | 02:48 | 2026-08-27 | 待处理 | |
-| 247 | GSPO：通过序列级重要性比率改进 PPO/GRPO 的逐 token 方差问题 | BV1Bn826gEWs | 02:41 | 2026-08-26 | 待处理 | |
-| 248 | Grokking 延迟泛化：模型"背完答案"后突然"开窍"，挑战早停智慧 | BV1Jn826gEKr | 03:34 | 2026-08-26 | 待处理 | |
-| 249 | 梯度裁剪详解：静态全局范数裁剪与 AdaGC 自适应裁剪 | BV1EH826zEU7 | 00:58 | 2026-08-26 | 待处理 | |
-| 250 | 梯度累积 vs 真大 batch：三个不等价的地方与实操建议 | BV1w9826mEYd | 01:01 | 2026-08-26 | 待处理 | |
-| 251 | 检测到模型作弊，为什么不该丢弃整条 rollout？GLM-5.2 在线守卫详解 | BV1A9826mEDt | 02:51 | 2026-08-25 | 待处理 | |
-| 252 | Gated Attention：用 head 级 sigmoid 门改进注意力的线性聚合与 attention sink | BV1cd826jEGT | 02:56 | 2026-08-25 | 待处理 | |
-| 253 | 灾难性遗忘的五种缓解方法：从 LoRA rank 到任务向量加法 | BV1PD826SEFs | 01:05 | 2026-08-25 | 待处理 | |
-| 254 | 偏好数据怎么构造？三种生产方式、四个质量陷阱与完整流程 | BV1PD826SEAJ | 03:11 | 2026-08-25 | 待处理 | |
-| 255 | DPO 的 loss 一直降，模型为什么反而变差？隐式奖励的作弊通道 | BV1AX826EEgv | 02:52 | 2026-08-25 | 待处理 | |
-| 256 | 通信瓶颈详解：为什么多节点训练卡在网络而不是算力 | BV1FF8m6CEdp | 01:03 | 2026-08-25 | 待处理 | |
-| 257 | 扩散语言模型为什么能一次并行吐出一整句？离散扩散原理详解 | BV1fF8m6kEiA | 02:20 | 2026-08-24 | 待处理 | |
-| 258 | 温度、Top-P、Top-K 该按什么顺序调？为什么不能同时拉满 | BV1Ew8m6GEeG | 03:51 | 2026-08-24 | 待处理 | |
-| 259 | 温度、Top-K、Top-P 的区别在哪里？兼谈贪心与束搜索 | BV1co8261ERi | 03:08 | 2026-08-24 | 待处理 | |
+| 241 | 大模型水印是怎么做的？绿名单方案详解：γ 切名单、δ 加分数、z 做检验 | BV1J7826GEU2 | 03:31 | 2026-08-28 | 已完成 | [G241-llm-watermark.md](episodes/G241-llm-watermark.md) |
+| 242 | 大模型为什么算不对多位数乘法？三重根因与逆序输入解法 | BV1rE826rEF6 | 02:52 | 2026-08-27 | 已完成 | [G242-multidigit-multiplication.md](episodes/G242-multidigit-multiplication.md) |
+| 243 | Linear Attention 讲透：核函数替代 softmax，O(n²) 降到 O(n) | BV1JE826rEVe | 04:57 | 2026-08-27 | 已完成 | [G243-linear-attention.md](episodes/G243-linear-attention.md) |
+| 244 | 大规模训练容错：Flash Checkpoint、DLRover 与 checkpoint 频率权衡 | BV1H58265EA1 | 01:02 | 2026-08-27 | 已完成 | [G244-training-fault-tolerance.md](episodes/G244-training-fault-tolerance.md) |
+| 245 | KV Cache 为什么只缓存 K 和 V，从不缓存 Q？注意力的根本不对称 | BV1JL826CEQK | 03:44 | 2026-08-27 | 已完成 | [G245-kv-cache-asymmetry.md](episodes/G245-kv-cache-asymmetry.md) |
+| 246 | Stable LatentMoE：用三件套改进万亿 MoE 的训练崩溃 | BV1kL826CETq | 02:48 | 2026-08-27 | 已完成 | [G246-stable-latentmoe.md](episodes/G246-stable-latentmoe.md) |
+| 247 | GSPO：通过序列级重要性比率改进 PPO/GRPO 的逐 token 方差问题 | BV1Bn826gEWs | 02:41 | 2026-08-26 | 已完成 | [G247-gspo.md](episodes/G247-gspo.md) |
+| 248 | Grokking 延迟泛化：模型"背完答案"后突然"开窍"，挑战早停智慧 | BV1Jn826gEKr | 03:34 | 2026-08-26 | 已完成 | [G248-grokking.md](episodes/G248-grokking.md) |
+| 249 | 梯度裁剪详解：静态全局范数裁剪与 AdaGC 自适应裁剪 | BV1EH826zEU7 | 00:58 | 2026-08-26 | 已完成 | [G249-gradient-clipping.md](episodes/G249-gradient-clipping.md) |
+| 250 | 梯度累积 vs 真大 batch：三个不等价的地方与实操建议 | BV1w9826mEYd | 01:01 | 2026-08-26 | 已完成 | [G250-grad-accum-vs-large-batch.md](episodes/G250-grad-accum-vs-large-batch.md) |
+| 251 | 检测到模型作弊，为什么不该丢弃整条 rollout？GLM-5.2 在线守卫详解 | BV1A9826mEDt | 02:51 | 2026-08-25 | 已完成 | [G251-glm-cheat-guard.md](episodes/G251-glm-cheat-guard.md) |
+| 252 | Gated Attention：用 head 级 sigmoid 门改进注意力的线性聚合与 attention sink | BV1cd826jEGT | 02:56 | 2026-08-25 | 已完成 | [G252-gated-attention.md](episodes/G252-gated-attention.md) |
+| 253 | 灾难性遗忘的五种缓解方法：从 LoRA rank 到任务向量加法 | BV1PD826SEFs | 01:05 | 2026-08-25 | 已完成 | [G253-forgetting-mitigations.md](episodes/G253-forgetting-mitigations.md) |
+| 254 | 偏好数据怎么构造？三种生产方式、四个质量陷阱与完整流程 | BV1PD826SEAJ | 03:11 | 2026-08-25 | 已完成 | [G254-preference-data-construction.md](episodes/G254-preference-data-construction.md) |
+| 255 | DPO 的 loss 一直降，模型为什么反而变差？隐式奖励的作弊通道 | BV1AX826EEgv | 02:52 | 2026-08-25 | 已完成 | [G255-dpo-loss-cheating.md](episodes/G255-dpo-loss-cheating.md) |
+| 256 | 通信瓶颈详解：为什么多节点训练卡在网络而不是算力 | BV1FF8m6CEdp | 01:03 | 2026-08-25 | 已完成 | [G256-communication-bottleneck.md](episodes/G256-communication-bottleneck.md) |
+| 257 | 扩散语言模型为什么能一次并行吐出一整句？离散扩散原理详解 | BV1fF8m6kEiA | 02:20 | 2026-08-24 | 已完成 | [G257-diffusion-lm.md](episodes/G257-diffusion-lm.md) |
+| 258 | 温度、Top-P、Top-K 该按什么顺序调？为什么不能同时拉满 | BV1Ew8m6GEeG | 03:51 | 2026-08-24 | 已完成 | [G258-sampling-tuning-order.md](episodes/G258-sampling-tuning-order.md) |
+| 259 | 温度、Top-K、Top-P 的区别在哪里？兼谈贪心与束搜索 | BV1co8261ERi | 03:08 | 2026-08-24 | 已完成 | [G259-temperature-topk-topp.md](episodes/G259-temperature-topk-topp.md) |
 | 260 | DAPO：通过 token 级归一化改进 GRPO 长答案被稀释的问题 | BV1Ff8265E3j | 02:31 | 2026-08-24 | 待处理 | |
 | 261 | DAPO 动态采样：通过过滤全对全错组改进 GRPO 的零梯度浪费 | BV1rf8265Eg4 | 02:47 | 2026-08-24 | 待处理 | |
 | 262 | 余弦相似度的维度灾难：为什么检索结果全挤在 0.9 附近 | BV1Sr826dExM | 03:22 | 2026-08-24 | 待处理 | |
