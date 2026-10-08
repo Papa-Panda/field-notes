@@ -106,26 +106,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 98 | OTC-PO：把工具生产率写进奖励，为什么能让工具调用减 68.3% 而正确率不变 | BV1bUea6bE1M | 03:03 | 2026-09-23 | 已完成 | [G098-otc-po.md](episodes/G098-otc-po.md) |
 | 99 | OraRL：通过解耦策略基线与标准答案增益，改进 GRPO 塞入标准答案时的优势反转问题 | BV1hyea6wEyV | 04:21 | 2026-09-22 | 已完成 | [G099-orarl.md](episodes/G099-orarl.md) |
 | 100 | MOPD：用多教师在线蒸馏改进多域 RL 能力融合的跷跷板问题，Open-MOPD 从 35.6% 修到 83.4% | BV1hyea6wELy | 03:29 | 2026-09-22 | 已完成 | [G100-mopd.md](episodes/G100-mopd.md) |
-| 101 | 训推不一致为什么是优化问题而不是精度问题？按回答长度激增触发学习率减半 | BV1h1ea6hEhW | 03:51 | 2026-09-22 | 待处理 | |
-| 102 | RLVR 该不该给格式奖励？FrameThinker 消融与 Open-Reasoner-Zero 无格式分实践 | BV1V7eY6zEeZ | 04:04 | 2026-09-22 | 待处理 | |
-| 103 | BCIT：通过绑定来源上下文与小预算试跑，改进后训练配方跨基座复用的有害迁移问题 | BV1ijeY6gELo | 03:48 | 2026-09-22 | 待处理 | |
-| 104 | μ-GRPO：放宽 clip 加负优势否决，GRPO 用 250 倍陈旧的数据为什么不崩 | BV1aWeY6vEpH | 03:51 | 2026-09-22 | 待处理 | |
-| 105 | k3 估计器是无偏的，为什么 KL 项的梯度却是有偏的？放奖励与放 loss 的区别 | BV1GxeY6PEVi | 03:27 | 2026-09-22 | 待处理 | |
-| 106 | R3：通过重放推理时的专家路由，改进 MoE 做 RL 时训推路由不一致导致的崩溃 | BV1UTea64E41 | 04:32 | 2026-09-21 | 待处理 | |
-| 107 | GRAPE：用目标模型概率挑回答，三分之一数据为什么能超过 Tulu3-SFT | BV1VneY6qEhN | 02:54 | 2026-09-21 | 待处理 | |
-| 108 | GPT-OSS 做 RL 为什么 KL 一开训就爆炸？MoE 路由、attention sink 与显存三个坑 | BV1VpeY6KEtn | 03:37 | 2026-09-21 | 待处理 | |
-| 109 | River：通过过滤劣质合成环境改进终端 Agent RL 的奖励质量，不到 30% 的环境增益翻倍 | BV1rNeY6mE54 | 02:59 | 2026-09-21 | 待处理 | |
-| 110 | SIGNBALANCE：通过保号与全局尺度改进 GRPO 给蒙对答案发高奖励的问题，附 DA3PO 难题错误放大 | BV1nNeY6mEGC | 04:26 | 2026-09-21 | 待处理 | |
-| 111 | Distilled RL：通过让老师重分配学生梯度，改进 OPD 的师生差距两难 | BV1CweY6SENu | 03:57 | 2026-09-21 | 待处理 | |
-| 112 | Cliff：通过标注第一处出错改进 GRPO 结果奖励过粗的问题，λ 为什么必须设 0 | BV1nPeY6EEQq | 03:24 | 2026-09-21 | 待处理 | |
-| 113 | Batch 不变内核：通过固定归约顺序消除大模型推理的不确定性，RL 训推 KL 归零 | BV173eY6CESH | 03:27 | 2026-09-20 | 待处理 | |
-| 114 | PPO-EWMA：通过参数滑动平均改进 old logits 缺失问题，重要性比为什么要拆成两项 | BV1BVeY6GEwD | 03:39 | 2026-09-20 | 待处理 | |
-| 115 | Agent-Omit：通过省略思考与观察改进多轮 Agent 的上下文膨胀问题 | BV1JMeY61EcG | 03:01 | 2026-09-20 | 待处理 | |
-| 116 | WandB 与 TensorBoard 选型 + 必须记录的六大指标 | BV1gobj6gE67 | 02:45 | 2026-09-17 | 待处理 | |
-| 117 | varlen attention 配置详解：cu_seqlens、position_ids 与 packing 的配套关系 | BV1MZbj6zEeK | 01:55 | 2026-09-17 | 待处理 | |
-| 118 | 预训练数据配比：主流模型参考、DoReMi 与消融实验 | BV1TKb76PEcu | 01:53 | 2026-09-17 | 待处理 | |
-| 119 | credit assignment 与 GRPO 的 advantage 分配机制 | BV1PTb76YEVw | 01:42 | 2026-09-17 | 待处理 | |
-| 120 | 用投机解码给 rollout 提速：draft 模型选择与命中率优化 | BV1KTb76YELi | 01:47 | 2026-09-17 | 待处理 | |
+| 101 | 训推不一致为什么是优化问题而不是精度问题？按回答长度激增触发学习率减半 | BV1h1ea6hEhW | 03:51 | 2026-09-22 | 已完成 | [G101-train-infer-mismatch-optim.md](episodes/G101-train-infer-mismatch-optim.md) |
+| 102 | RLVR 该不该给格式奖励？FrameThinker 消融与 Open-Reasoner-Zero 无格式分实践 | BV1V7eY6zEeZ | 04:04 | 2026-09-22 | 已完成 | [G102-format-reward.md](episodes/G102-format-reward.md) |
+| 103 | BCIT：通过绑定来源上下文与小预算试跑，改进后训练配方跨基座复用的有害迁移问题 | BV1ijeY6gELo | 03:48 | 2026-09-22 | 已完成 | [G103-bcit.md](episodes/G103-bcit.md) |
+| 104 | μ-GRPO：放宽 clip 加负优势否决，GRPO 用 250 倍陈旧的数据为什么不崩 | BV1aWeY6vEpH | 03:51 | 2026-09-22 | 已完成 | [G104-mu-grpo.md](episodes/G104-mu-grpo.md) |
+| 105 | k3 估计器是无偏的，为什么 KL 项的梯度却是有偏的？放奖励与放 loss 的区别 | BV1GxeY6PEVi | 03:27 | 2026-09-22 | 已完成 | [G105-k3-kl-gradient-bias.md](episodes/G105-k3-kl-gradient-bias.md) |
+| 106 | R3：通过重放推理时的专家路由，改进 MoE 做 RL 时训推路由不一致导致的崩溃 | BV1UTea64E41 | 04:32 | 2026-09-21 | 已完成 | [G106-r3-routing-replay.md](episodes/G106-r3-routing-replay.md) |
+| 107 | GRAPE：用目标模型概率挑回答，三分之一数据为什么能超过 Tulu3-SFT | BV1VneY6qEhN | 02:54 | 2026-09-21 | 已完成 | [G107-grape.md](episodes/G107-grape.md) |
+| 108 | GPT-OSS 做 RL 为什么 KL 一开训就爆炸？MoE 路由、attention sink 与显存三个坑 | BV1VpeY6KEtn | 03:37 | 2026-09-21 | 已完成 | [G108-gpt-oss-rl-pitfalls.md](episodes/G108-gpt-oss-rl-pitfalls.md) |
+| 109 | River：通过过滤劣质合成环境改进终端 Agent RL 的奖励质量，不到 30% 的环境增益翻倍 | BV1rNeY6mE54 | 02:59 | 2026-09-21 | 已完成 | [G109-river-env-filter.md](episodes/G109-river-env-filter.md) |
+| 110 | SIGNBALANCE：通过保号与全局尺度改进 GRPO 给蒙对答案发高奖励的问题，附 DA3PO 难题错误放大 | BV1nNeY6mEGC | 04:26 | 2026-09-21 | 已完成 | [G110-signbalance.md](episodes/G110-signbalance.md) |
+| 111 | Distilled RL：通过让老师重分配学生梯度，改进 OPD 的师生差距两难 | BV1CweY6SENu | 03:57 | 2026-09-21 | 已完成 | [G111-distilled-rl.md](episodes/G111-distilled-rl.md) |
+| 112 | Cliff：通过标注第一处出错改进 GRPO 结果奖励过粗的问题，λ 为什么必须设 0 | BV1nPeY6EEQq | 03:24 | 2026-09-21 | 已完成 | [G112-cliff.md](episodes/G112-cliff.md) |
+| 113 | Batch 不变内核：通过固定归约顺序消除大模型推理的不确定性，RL 训推 KL 归零 | BV173eY6CESH | 03:27 | 2026-09-20 | 已完成 | [G113-batch-invariant-kernel.md](episodes/G113-batch-invariant-kernel.md) |
+| 114 | PPO-EWMA：通过参数滑动平均改进 old logits 缺失问题，重要性比为什么要拆成两项 | BV1BVeY6GEwD | 03:39 | 2026-09-20 | 已完成 | [G114-ppo-ewma.md](episodes/G114-ppo-ewma.md) |
+| 115 | Agent-Omit：通过省略思考与观察改进多轮 Agent 的上下文膨胀问题 | BV1JMeY61EcG | 03:01 | 2026-09-20 | 已完成 | [G115-agent-omit.md](episodes/G115-agent-omit.md) |
+| 116 | WandB 与 TensorBoard 选型 + 必须记录的六大指标 | BV1gobj6gE67 | 02:45 | 2026-09-17 | 已完成 | [G116-wandb-tensorboard.md](episodes/G116-wandb-tensorboard.md) |
+| 117 | varlen attention 配置详解：cu_seqlens、position_ids 与 packing 的配套关系 | BV1MZbj6zEeK | 01:55 | 2026-09-17 | 已完成 | [G117-varlen-attention.md](episodes/G117-varlen-attention.md) |
+| 118 | 预训练数据配比：主流模型参考、DoReMi 与消融实验 | BV1TKb76PEcu | 01:53 | 2026-09-17 | 已完成 | [G118-pretrain-data-mix.md](episodes/G118-pretrain-data-mix.md) |
+| 119 | credit assignment 与 GRPO 的 advantage 分配机制 | BV1PTb76YEVw | 01:42 | 2026-09-17 | 已完成 | [G119-credit-assignment-grpo.md](episodes/G119-credit-assignment-grpo.md) |
+| 120 | 用投机解码给 rollout 提速：draft 模型选择与命中率优化 | BV1KTb76YELi | 01:47 | 2026-09-17 | 已完成 | [G120-speculative-rollout.md](episodes/G120-speculative-rollout.md) |
 | 121 | 学习率实操指南：十分之一法则、经验值与两侧症状 | BV1TAb76KEap | 02:24 | 2026-09-16 | 待处理 | |
 | 122 | SFT 数据自动筛选：GPT-4 打分、PPL 检测与 embedding 聚类 | BV1xPb76vEzd | 01:47 | 2026-09-16 | 待处理 | |
 | 123 | 序列 Packing 实现详解：装箱算法、cu_seqlens 与 block diagonal mask | BV1KPb76vEWq | 02:10 | 2026-09-16 | 待处理 | |
