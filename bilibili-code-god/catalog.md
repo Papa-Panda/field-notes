@@ -406,14 +406,14 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 398 | SparseGPT / Wanda：一次性剪枝不重训，按权重×激活选，公式讲透 | BV1qgKW6LEDW | 03:39 | 2026-07-20 | 已完成 | [G398-sparsegpt-wanda.md](episodes/G398-sparsegpt-wanda.md) |
 | 399 | 张量并行为什么先列切再行切？MLP 的切分秘密全在 GELU | BV1nCKW6XEji | 03:22 | 2026-07-20 | 已完成 | [G399-tp-column-row-gelu.md](episodes/G399-tp-column-row-gelu.md) |
 | 400 | 彩票假设：稀疏子网、重置回初始化，为什么小子网能单独达标 | BV1w6KW6RENb | 03:37 | 2026-07-20 | 已完成 | [G400-lottery-ticket.md](episodes/G400-lottery-ticket.md) |
-| 401 | 向量数据库索引 HNSW / IVF-PQ：多层图导航、聚类分桶、乘积量化 | BV1EQKW67EgT | 04:05 | 2026-07-20 | 待处理 | |
+| 401 | 向量数据库索引 HNSW / IVF-PQ：多层图导航、聚类分桶、乘积量化 | BV1EQKW67EgT | 04:05 | 2026-07-20 | 已完成 | [G401-hnsw-ivfpq.md](episodes/G401-hnsw-ivfpq.md) |
 | 402 | Q-Learning 到 DQN：TD 更新、经验回放、target 网络，为什么能玩 Atari | BV1FUKW6JE3P | 03:02 | 2026-07-20 | 已完成 | [G402-dqn.md](episodes/G402-dqn.md) |
 | 403 | Flow Matching / Rectified Flow：向量场、拉直路径，SD3/FLUX 同款 | BV1mYKW68Esk | 03:40 | 2026-07-20 | 已完成 | [G403-flow-matching.md](episodes/G403-flow-matching.md) |
-| 404 | Plan-and-Execute vs ReAct：先规划再执行，长任务为什么要先拆 | BV1NqKW6oEEQ | 03:25 | 2026-07-20 | 待处理 | |
+| 404 | Plan-and-Execute vs ReAct：先规划再执行，长任务为什么要先拆 | BV1NqKW6oEEQ | 03:25 | 2026-07-20 | 已完成 | [G404-plan-and-execute.md](episodes/G404-plan-and-execute.md) |
 | 405 | 模型剪枝原理：结构化 vs 非结构化、按幅度剪、剪枝+微调 | BV14eKW6fENJ | 03:37 | 2026-07-20 | 已完成 | [G405-pruning.md](episodes/G405-pruning.md) |
 | 406 | Reflexion：语言化反思+记忆，不改参数从失败中迭代改进 | BV1SMKs6vEwe | 03:22 | 2026-07-20 | 已完成 | [G406-reflexion.md](episodes/G406-reflexion.md) |
 | 407 | 集成、蒸馏、自蒸馏三个秘密：多视角假设，为什么自蒸馏也能涨点 | BV1UgKs6PE4p | 03:28 | 2026-07-20 | 已完成 | [G407-ensemble-self-distill.md](episodes/G407-ensemble-self-distill.md) |
-| 408 | DiT 原理：patchify、adaLN-Zero，Transformer 取代 U-Net | BV1uTKs6TE4B | 03:09 | 2026-07-20 | 待处理 | |
+| 408 | DiT 原理：patchify、adaLN-Zero，Transformer 取代 U-Net | BV1uTKs6TE4B | 03:09 | 2026-07-20 | 已完成 | [G408-dit.md](episodes/G408-dit.md) |
 | 409 | Stable Diffusion 原理：潜空间扩散、CLIP、U-Net、cross-attention | BV123Ks6YEfb | 03:35 | 2026-07-20 | 已完成 | [G409-stable-diffusion.md](episodes/G409-stable-diffusion.md) |
 | 410 | 音频 Tokenizer：VQ-VAE、RVQ 残差量化，语音怎么离散化成 token | BV1jdKW6yEgH | 03:50 | 2026-07-20 | 已完成 | [G410-audio-tokenizer.md](episodes/G410-audio-tokenizer.md) |
 | 411 | 温度系数讲人话：T 在软化什么、为什么蒸馏 loss 要乘 T² 补偿 | BV1dXKW61EpT | 02:58 | 2026-07-20 | 已完成 | [G411-distill-temperature.md](episodes/G411-distill-temperature.md) |
@@ -424,7 +424,7 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 416 | 视觉编码器盘点：Patch、ViT、Projector，各家 VLM 视觉塔对比 | BV1MzKT6HESr | 03:39 | 2026-07-19 | 已完成 | [G416-vision-encoders.md](episodes/G416-vision-encoders.md) |
 | 417 | 解码策略详解：贪心 / Beam Search / 采样怎么选？束宽、Top-K、Top-P 核采样全讲透 | BV1FdKT66EAS | 03:15 | 2026-07-19 | 已完成 | [G417-decoding-strategies.md](episodes/G417-decoding-strategies.md) |
 | 418 | LLaVA 视觉对齐：CLIP ViT、Projector 投影层、两阶段训练 | BV1SzKT6nEPj | 03:32 | 2026-07-18 | 已完成 | [G418-llava.md](episodes/G418-llava.md) |
-| 419 | weight tying 详解：输入输出 Embedding 为什么共享？转置关系 / 省参数 / GPT-2 与 LLaMA 的取舍 | BV1BZKT6MEmC | 03:44 | 2026-07-18 | 待处理 | |
+| 419 | weight tying 详解：输入输出 Embedding 为什么共享？转置关系 / 省参数 / GPT-2 与 LLaMA 的取舍 | BV1BZKT6MEmC | 03:44 | 2026-07-18 | 已完成 | [G419-weight-tying.md](episodes/G419-weight-tying.md) |
 | 420 | BLIP-2 的 Q-Former：可学习 query、cross-attention，桥接冻结视觉与 LLM | BV1Y3KM6bEjj | 03:24 | 2026-07-18 | 待处理 | |
 | 421 | 训练算力 6ND 公式详解：前向 2N / 反向 4N 怎么来的？MoE 激活参数与 Chinchilla 一并讲透 | BV1eTKM6wEx6 | 03:28 | 2026-07-18 | 待处理 | |
 | 422 | CLIP 原理：图文对比预训练、InfoNCE、zero-shot 分类 | BV1YGKM6ZEuh | 03:29 | 2026-07-18 | 待处理 | |
