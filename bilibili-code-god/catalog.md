@@ -465,26 +465,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 457 | YaRN 长度外推：RoPE 高频外推低频内插 + 注意力温度，4k→128k 几乎零成本 | BV1RNN36TEva | 03:42 | 2026-07-13 | 已完成 | [G457-yarn.md](episodes/G457-yarn.md) |
 | 458 | DeepSeek NSA 原生稀疏注意力：压缩+选择+滑窗，长文本解码快 11 倍还反超全注意力 | BV1YKN36iEBs | 03:58 | 2026-07-12 | 已完成 | [G458-deepseek-nsa.md](episodes/G458-deepseek-nsa.md) |
 | 459 | Encoder 和 Decoder 中的 Mask 有什么不同？两层掩码一次讲透 | BV1cENA6xEtb | 02:57 | 2026-07-12 | 已完成 | [G459-encoder-decoder-mask.md](episodes/G459-encoder-decoder-mask.md) |
-| 460 | 什么是重要性采样？为什么 token 级的损失难以收敛？「猫喜欢鱼」讲透 | BV1HENA6xEpB | 03:30 | 2026-07-12 | 待处理 | |
-| 461 | GRPO 用旧策略数据，为什么还叫 on-policy？一个打篮球的例子讲透 | BV1fJNA69EFy | 03:09 | 2026-07-12 | 待处理 | |
-| 462 | Softmax 前为什么要除以根号 d？含完整数学推导 | BV1cJNA6REKc | 02:39 | 2026-07-12 | 待处理 | |
+| 460 | 什么是重要性采样？为什么 token 级的损失难以收敛？「猫喜欢鱼」讲透 | BV1HENA6xEpB | 03:30 | 2026-07-12 | 已完成 | [G460-importance-sampling.md](episodes/G460-importance-sampling.md) |
+| 461 | GRPO 用旧策略数据，为什么还叫 on-policy？一个打篮球的例子讲透 | BV1fJNA69EFy | 03:09 | 2026-07-12 | 已完成 | [G461-grpo-on-policy.md](episodes/G461-grpo-on-policy.md) |
+| 462 | Softmax 前为什么要除以根号 d？含完整数学推导 | BV1cJNA6REKc | 02:39 | 2026-07-12 | 已完成 | [G462-softmax-sqrt-d.md](episodes/G462-softmax-sqrt-d.md) |
 | 463 | Encoder-Only 和 Decoder-Only 建模有何区别？BERT 与 GPT 的分水岭 | BV1HLNA6tEX9 | 02:41 | 2026-07-11 | 待处理 | |
-| 464 | 现在大模型为什么都用 left padding？一句话讲透 | BV1CyNH6nEXF | 02:33 | 2026-07-11 | 待处理 | |
-| 465 | SFT 为什么要 Mask 掉 User 的部分？只学 Assistant，label 设 -100 | BV1KyNH6nEPk | 03:43 | 2026-07-11 | 待处理 | |
-| 466 | MCP 与 Skills 有什么区别？连接协议 vs 行为规范，附协同关系与省 token 原理 | BV14zNH69EYY | 03:16 | 2026-07-11 | 待处理 | |
-| 467 | 什么是 Rollout？RL 训练的经验采样，四步流程 + 为什么是头号瓶颈 | BV14rNH6pEvw | 03:11 | 2026-07-11 | 待处理 | |
-| 468 | 大模型推理占用的显存怎么计算？一个公式秒算 | BV1VsNH6PECF | 02:44 | 2026-07-10 | 待处理 | |
-| 469 | MoE 架构相比 Dense 有什么好处？一个最小例子把计算量算清楚 | BV1TTMW6NEqk | 03:35 | 2026-07-10 | 待处理 | |
-| 470 | 推理过程中的 KV Cache 怎么估算？从原理到 Qwen/DeepSeek 实算 | BV1KTMW6NE9t | 04:55 | 2026-07-10 | 待处理 | |
-| 471 | BERT 与 LSTM 有什么不同？结构 / 并行 / 双向 / 预训练四维度对比 | BV1KMMW6eEnp | 03:11 | 2026-07-10 | 待处理 | |
-| 472 | InfoNCE Loss 和 Cross Entropy Loss 有什么区别？对比学习核心损失全解析 | BV1VQMp6LEvg | 03:35 | 2026-07-10 | 待处理 | |
-| 473 | 如何理解 MoE 网络？Router 怎么实现？ | BV15XMp6yEzV | 02:38 | 2026-07-09 | 待处理 | |
-| 474 | 什么是熵坍塌和 Reward Hacking？它们的关系与解决办法 | BV1j1M36UEP1 | 03:13 | 2026-07-09 | 待处理 | |
-| 475 | GRPO 的损失为什么开始时是 0？两部分同时归零 | BV1imM36EEqD | 02:45 | 2026-07-09 | 待处理 | |
-| 476 | 交叉熵到底在惩罚什么？BCE 与多分类 CE 一次讲透 | BV1vmM36EEmH | 03:19 | 2026-07-09 | 待处理 | |
-| 477 | Multi-Head Attention 多头注意力怎么写（接上期自注意力） | BV1imM36EETx | 03:46 | 2026-07-09 | 待处理 | |
-| 478 | 什么是 Checkpoint？梯度/激活检查点：大模型省显存的救命技巧 | BV1dmM36EESX | 04:23 | 2026-07-08 | 待处理 | |
-| 479 | GRPO 比 PPO 做了什么改进？一刀砍掉 Critic 省显存 | BV1iJMh6uERR | 02:46 | 2026-07-08 | 待处理 | |
+| 464 | 现在大模型为什么都用 left padding？一句话讲透 | BV1CyNH6nEXF | 02:33 | 2026-07-11 | 已完成 | [G464-left-padding.md](episodes/G464-left-padding.md) |
+| 465 | SFT 为什么要 Mask 掉 User 的部分？只学 Assistant，label 设 -100 | BV1KyNH6nEPk | 03:43 | 2026-07-11 | 已完成 | [G465-sft-mask-user.md](episodes/G465-sft-mask-user.md) |
+| 466 | MCP 与 Skills 有什么区别？连接协议 vs 行为规范，附协同关系与省 token 原理 | BV14zNH69EYY | 03:16 | 2026-07-11 | 已完成 | [G466-mcp-vs-skills.md](episodes/G466-mcp-vs-skills.md) |
+| 467 | 什么是 Rollout？RL 训练的经验采样，四步流程 + 为什么是头号瓶颈 | BV14rNH6pEvw | 03:11 | 2026-07-11 | 已完成 | [G467-rollout.md](episodes/G467-rollout.md) |
+| 468 | 大模型推理占用的显存怎么计算？一个公式秒算 | BV1VsNH6PECF | 02:44 | 2026-07-10 | 已完成 | [G468-inference-memory.md](episodes/G468-inference-memory.md) |
+| 469 | MoE 架构相比 Dense 有什么好处？一个最小例子把计算量算清楚 | BV1TTMW6NEqk | 03:35 | 2026-07-10 | 已完成 | [G469-moe-vs-dense.md](episodes/G469-moe-vs-dense.md) |
+| 470 | 推理过程中的 KV Cache 怎么估算？从原理到 Qwen/DeepSeek 实算 | BV1KTMW6NE9t | 04:55 | 2026-07-10 | 已完成 | [G470-kv-cache-estimate.md](episodes/G470-kv-cache-estimate.md) |
+| 471 | BERT 与 LSTM 有什么不同？结构 / 并行 / 双向 / 预训练四维度对比 | BV1KMMW6eEnp | 03:11 | 2026-07-10 | 已完成 | [G471-bert-vs-lstm.md](episodes/G471-bert-vs-lstm.md) |
+| 472 | InfoNCE Loss 和 Cross Entropy Loss 有什么区别？对比学习核心损失全解析 | BV1VQMp6LEvg | 03:35 | 2026-07-10 | 已完成 | [G472-infonce-vs-ce.md](episodes/G472-infonce-vs-ce.md) |
+| 473 | 如何理解 MoE 网络？Router 怎么实现？ | BV15XMp6yEzV | 02:38 | 2026-07-09 | 已完成 | [G473-moe-router.md](episodes/G473-moe-router.md) |
+| 474 | 什么是熵坍塌和 Reward Hacking？它们的关系与解决办法 | BV1j1M36UEP1 | 03:13 | 2026-07-09 | 已完成 | [G474-entropy-collapse-reward-hacking.md](episodes/G474-entropy-collapse-reward-hacking.md) |
+| 475 | GRPO 的损失为什么开始时是 0？两部分同时归零 | BV1imM36EEqD | 02:45 | 2026-07-09 | 已完成 | [G475-grpo-loss-zero.md](episodes/G475-grpo-loss-zero.md) |
+| 476 | 交叉熵到底在惩罚什么？BCE 与多分类 CE 一次讲透 | BV1vmM36EEmH | 03:19 | 2026-07-09 | 已完成 | [G476-cross-entropy.md](episodes/G476-cross-entropy.md) |
+| 477 | Multi-Head Attention 多头注意力怎么写（接上期自注意力） | BV1imM36EETx | 03:46 | 2026-07-09 | 已完成 | [G477-mha-code.md](episodes/G477-mha-code.md) |
+| 478 | 什么是 Checkpoint？梯度/激活检查点：大模型省显存的救命技巧 | BV1dmM36EESX | 04:23 | 2026-07-08 | 已完成 | [G478-gradient-checkpointing.md](episodes/G478-gradient-checkpointing.md) |
+| 479 | GRPO 比 PPO 做了什么改进？一刀砍掉 Critic 省显存 | BV1iJMh6uERR | 02:46 | 2026-07-08 | 已完成 | [G479-grpo-vs-ppo.md](episodes/G479-grpo-vs-ppo.md) |
 | 480 | KL 散度计算的三种近似方法？K1/K2/K3 一次讲透 | BV11jMt6yED7 | 02:39 | 2026-07-08 | 待处理 | |
 | 481 | 熵、交叉熵、KL 散度什么关系？一枚硬币讲透 交叉熵 = 熵 + KL | BV1BJMh6uEGj | 03:17 | 2026-07-08 | 待处理 | |
 | 482 | Qwen 从 1 到 3 每个版本改了什么？一条线讲透六代改进点 | BV1KjMt6yE6h | 03:20 | 2026-07-08 | 待处理 | |
