@@ -126,26 +126,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 118 | 预训练数据配比：主流模型参考、DoReMi 与消融实验 | BV1TKb76PEcu | 01:53 | 2026-09-17 | 已完成 | [G118-pretrain-data-mix.md](episodes/G118-pretrain-data-mix.md) |
 | 119 | credit assignment 与 GRPO 的 advantage 分配机制 | BV1PTb76YEVw | 01:42 | 2026-09-17 | 已完成 | [G119-credit-assignment-grpo.md](episodes/G119-credit-assignment-grpo.md) |
 | 120 | 用投机解码给 rollout 提速：draft 模型选择与命中率优化 | BV1KTb76YELi | 01:47 | 2026-09-17 | 已完成 | [G120-speculative-rollout.md](episodes/G120-speculative-rollout.md) |
-| 121 | 学习率实操指南：十分之一法则、经验值与两侧症状 | BV1TAb76KEap | 02:24 | 2026-09-16 | 待处理 | |
-| 122 | SFT 数据自动筛选：GPT-4 打分、PPL 检测与 embedding 聚类 | BV1xPb76vEzd | 01:47 | 2026-09-16 | 待处理 | |
-| 123 | 序列 Packing 实现详解：装箱算法、cu_seqlens 与 block diagonal mask | BV1KPb76vEWq | 02:10 | 2026-09-16 | 待处理 | |
-| 124 | 序列长度怎么选？O(n²) 成本、主流演进与分阶段扩展 | BV1Sib76kEZk | 02:33 | 2026-09-16 | 待处理 | |
-| 125 | rollout 采样温度：让 group 内有区分度才有训练信号 | BV1DBb763EHZ | 02:35 | 2026-09-16 | 待处理 | |
-| 126 | 探索与利用的平衡：epsilon-greedy、UCB、entropy bonus 与好奇心驱动 | BV1UBb763E1D | 01:48 | 2026-09-16 | 待处理 | |
-| 127 | 中英数据配比：1T 纯中文 vs 2T 混合的实验结论与跨语言迁移 | BV1QYb76yEBu | 02:43 | 2026-09-15 | 待处理 | |
-| 128 | 从零训练完整流程：专家初始化、router 设置与训练 schedule | BV1Qvb76VE4D | 01:48 | 2026-09-15 | 待处理 | |
-| 129 | Model Soup 详解：权重平均为什么有效、三种炖法怎么选 | BV1Qvb76VEQi | 01:55 | 2026-09-15 | 待处理 | |
-| 130 | target KL 设置与 KL 曲线诊断 | BV12yb76TEzJ | 02:01 | 2026-09-15 | 待处理 | |
-| 131 | 同步 vs 异步梯度更新：staleness 与 99% 选同步的理由 | BV1Uzb766EtP | 01:45 | 2026-09-15 | 待处理 | |
-| 132 | 梯度范数多大算正常？基线建立与三种预警阈值设法 | BV1Urb76uETw | 02:38 | 2026-09-15 | 待处理 | |
-| 133 | 数据污染的检测与清洗：n-gram、embedding 与 PPL 三重检测 | BV1mrb76uEDc | 02:04 | 2026-09-14 | 待处理 | |
-| 134 | 早停配置详解：patience、验证集选择与预训练为何不用早停 | BV17Wb76QEma | 01:45 | 2026-09-14 | 待处理 | |
-| 135 | beta 参数详解：物理意义、两侧失效表现与经验值 | BV1dxb76JEVc | 02:41 | 2026-09-14 | 待处理 | |
-| 136 | 长度分桶策略：padding 浪费 98% 是怎么发生的 | BV1dxb76JEjP | 02:06 | 2026-09-14 | 待处理 | |
-| 137 | 数据不均衡详解：五步诊断、三种解法与主流模型配比 | BV1onb76XEqP | 02:09 | 2026-09-14 | 待处理 | |
-| 138 | 数据去重实操：MinHash、LSH 分桶与亿级数据并行处理 | BV1Zpb76HEeu | 02:07 | 2026-09-14 | 待处理 | |
-| 139 | 三种技术路线：经验回放、EWC 与渐进式网络（LoRA adapter） | BV17pb76pEuR | 01:59 | 2026-09-13 | 待处理 | |
-| 140 | 代码与数学数据加多少？20%~40% 最优区间与梯度实验结论 | BV198b762Euk | 02:51 | 2026-09-13 | 待处理 | |
+| 121 | 学习率实操指南：十分之一法则、经验值与两侧症状 | BV1TAb76KEap | 02:24 | 2026-09-16 | 已完成 | [G121-lr-practical-guide.md](episodes/G121-lr-practical-guide.md) |
+| 122 | SFT 数据自动筛选：GPT-4 打分、PPL 检测与 embedding 聚类 | BV1xPb76vEzd | 01:47 | 2026-09-16 | 已完成 | [G122-sft-data-filtering.md](episodes/G122-sft-data-filtering.md) |
+| 123 | 序列 Packing 实现详解：装箱算法、cu_seqlens 与 block diagonal mask | BV1KPb76vEWq | 02:10 | 2026-09-16 | 已完成 | [G123-packing-implementation.md](episodes/G123-packing-implementation.md) |
+| 124 | 序列长度怎么选？O(n²) 成本、主流演进与分阶段扩展 | BV1Sib76kEZk | 02:33 | 2026-09-16 | 已完成 | [G124-sequence-length-choice.md](episodes/G124-sequence-length-choice.md) |
+| 125 | rollout 采样温度：让 group 内有区分度才有训练信号 | BV1DBb763EHZ | 02:35 | 2026-09-16 | 已完成 | [G125-rollout-temperature.md](episodes/G125-rollout-temperature.md) |
+| 126 | 探索与利用的平衡：epsilon-greedy、UCB、entropy bonus 与好奇心驱动 | BV1UBb763E1D | 01:48 | 2026-09-16 | 已完成 | [G126-exploration-exploitation.md](episodes/G126-exploration-exploitation.md) |
+| 127 | 中英数据配比：1T 纯中文 vs 2T 混合的实验结论与跨语言迁移 | BV1QYb76yEBu | 02:43 | 2026-09-15 | 已完成 | [G127-zh-en-data-mix.md](episodes/G127-zh-en-data-mix.md) |
+| 128 | 从零训练完整流程：专家初始化、router 设置与训练 schedule | BV1Qvb76VE4D | 01:48 | 2026-09-15 | 已完成 | [G128-moe-training-pipeline.md](episodes/G128-moe-training-pipeline.md) |
+| 129 | Model Soup 详解：权重平均为什么有效、三种炖法怎么选 | BV1Qvb76VEQi | 01:55 | 2026-09-15 | 已完成 | [G129-model-soup.md](episodes/G129-model-soup.md) |
+| 130 | target KL 设置与 KL 曲线诊断 | BV12yb76TEzJ | 02:01 | 2026-09-15 | 已完成 | [G130-target-kl.md](episodes/G130-target-kl.md) |
+| 131 | 同步 vs 异步梯度更新：staleness 与 99% 选同步的理由 | BV1Uzb766EtP | 01:45 | 2026-09-15 | 已完成 | [G131-sync-vs-async.md](episodes/G131-sync-vs-async.md) |
+| 132 | 梯度范数多大算正常？基线建立与三种预警阈值设法 | BV1Urb76uETw | 02:38 | 2026-09-15 | 已完成 | [G132-grad-norm-baseline.md](episodes/G132-grad-norm-baseline.md) |
+| 133 | 数据污染的检测与清洗：n-gram、embedding 与 PPL 三重检测 | BV1mrb76uEDc | 02:04 | 2026-09-14 | 已完成 | [G133-data-contamination.md](episodes/G133-data-contamination.md) |
+| 134 | 早停配置详解：patience、验证集选择与预训练为何不用早停 | BV17Wb76QEma | 01:45 | 2026-09-14 | 已完成 | [G134-early-stopping.md](episodes/G134-early-stopping.md) |
+| 135 | beta 参数详解：物理意义、两侧失效表现与经验值 | BV1dxb76JEVc | 02:41 | 2026-09-14 | 已完成 | [G135-beta-parameter.md](episodes/G135-beta-parameter.md) |
+| 136 | 长度分桶策略：padding 浪费 98% 是怎么发生的 | BV1dxb76JEjP | 02:06 | 2026-09-14 | 已完成 | [G136-length-bucketing.md](episodes/G136-length-bucketing.md) |
+| 137 | 数据不均衡详解：五步诊断、三种解法与主流模型配比 | BV1onb76XEqP | 02:09 | 2026-09-14 | 已完成 | [G137-data-imbalance.md](episodes/G137-data-imbalance.md) |
+| 138 | 数据去重实操：MinHash、LSH 分桶与亿级数据并行处理 | BV1Zpb76HEeu | 02:07 | 2026-09-14 | 已完成 | [G138-dedup-minhash.md](episodes/G138-dedup-minhash.md) |
+| 139 | 三种技术路线：经验回放、EWC 与渐进式网络（LoRA adapter） | BV17pb76pEuR | 01:59 | 2026-09-13 | 已完成 | [G139-continual-learning-routes.md](episodes/G139-continual-learning-routes.md) |
+| 140 | 代码与数学数据加多少？20%~40% 最优区间与梯度实验结论 | BV198b762Euk | 02:51 | 2026-09-13 | 已完成 | [G140-code-math-mix.md](episodes/G140-code-math-mix.md) |
 | 141 | Best-of-N 采样详解：四种挑选方法与 RFT 的衔接 | BV1Qab76LEvu | 02:17 | 2026-09-13 | 待处理 | |
 | 142 | benchmark 分数为什么会骗你？数据泄露与过拟合的检测方法 | BV1eab76jEkY | 02:08 | 2026-09-13 | 待处理 | |
 | 143 | 标注质量控制：流程、Cohen Kappa 一致性检验与五个质控手段 | BV1L4b76SEAd | 02:10 | 2026-09-13 | 待处理 | |
