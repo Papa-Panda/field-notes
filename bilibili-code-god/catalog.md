@@ -286,26 +286,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 278 | 滑动窗口注意力一次讲透：平方级降到线性，小窗口为何能看穿13万token | BV1D1ua6PErD | 03:36 | 2026-08-19 | 已完成 | [G278-sliding-window-attention.md](episodes/G278-sliding-window-attention.md) |
 | 279 | SimPO vs DPO：扔掉参考模型，显存省一半还更强？ | BV196ua6qELh | 03:22 | 2026-08-19 | 已完成 | [G279-simpo-vs-dpo.md](episodes/G279-simpo-vs-dpo.md) |
 | 280 | 自投机解码：不加显存，大模型推理怎么白捡两倍加速？ | BV1V6ua6BEnX | 03:18 | 2026-08-19 | 已完成 | [G280-self-speculative-decoding.md](episodes/G280-self-speculative-decoding.md) |
-| 281 | 大模型自我精炼Self-Refine：同一个模型自己批评自己，零训练提升输出质量 | BV1Gkua6TEHE | 03:39 | 2026-08-18 | 待处理 | |
-| 282 | Self-RAG 四种反思 token 全拆解：按需检索 + 批判资料 + 拦截幻觉 | BV1MSua6aEi6 | 03:18 | 2026-08-18 | 待处理 | |
-| 283 | 7B小模型自进化超o1？rStar-Math三件套（代码CoT+MCTS+过程偏好模型）一次讲透 | BV1tSua6aEHu | 03:31 | 2026-08-18 | 待处理 | |
-| 284 | 大模型四位量化为什么总崩？旋转量化一招治激活离群点 | BV1mQua6FEAN | 03:41 | 2026-08-18 | 待处理 | |
-| 285 | 一张图讲透推理型大模型：推理时计算/PRM/搜索/自我进化 四根支柱 | BV1mQua6FEf9 | 03:34 | 2026-08-17 | 待处理 | |
-| 286 | Quiet-STaR 原理拆解：每个 token 前先默想，推理能力自己长出来 | BV1U2ua6YEr4 | 03:18 | 2026-08-17 | 待处理 | |
-| 287 | 大模型训练为何突然 NaN？QK-Norm 两行代码治好注意力 logit 爆炸 | BV1UUua6wEVU | 03:11 | 2026-08-17 | 待处理 | |
-| 288 | PRM vs ORM：过程奖励为什么碾压结果奖励？一次讲透 | BV1UUua6wE44 | 03:24 | 2026-08-17 | 待处理 | |
-| 289 | 推理模型越想越歪？ParaThinker并行思考，打破长思维链的隧道视野 | BV1dhua6CEmV | 03:41 | 2026-08-16 | 待处理 | |
+| 281 | 大模型自我精炼Self-Refine：同一个模型自己批评自己，零训练提升输出质量 | BV1Gkua6TEHE | 03:39 | 2026-08-18 | 已完成 | [G281-self-refine.md](episodes/G281-self-refine.md) |
+| 282 | Self-RAG 四种反思 token 全拆解：按需检索 + 批判资料 + 拦截幻觉 | BV1MSua6aEi6 | 03:18 | 2026-08-18 | 已完成 | [G282-self-rag.md](episodes/G282-self-rag.md) |
+| 283 | 7B小模型自进化超o1？rStar-Math三件套（代码CoT+MCTS+过程偏好模型）一次讲透 | BV1tSua6aEHu | 03:31 | 2026-08-18 | 已完成 | [G283-rstar-math.md](episodes/G283-rstar-math.md) |
+| 284 | 大模型四位量化为什么总崩？旋转量化一招治激活离群点 | BV1mQua6FEAN | 03:41 | 2026-08-18 | 已完成 | [G284-rotation-quantization.md](episodes/G284-rotation-quantization.md) |
+| 285 | 一张图讲透推理型大模型：推理时计算/PRM/搜索/自我进化 四根支柱 | BV1mQua6FEf9 | 03:34 | 2026-08-17 | 已完成 | [G285-reasoning-model-pillars.md](episodes/G285-reasoning-model-pillars.md) |
+| 286 | Quiet-STaR 原理拆解：每个 token 前先默想，推理能力自己长出来 | BV1U2ua6YEr4 | 03:18 | 2026-08-17 | 已完成 | [G286-quiet-star.md](episodes/G286-quiet-star.md) |
+| 287 | 大模型训练为何突然 NaN？QK-Norm 两行代码治好注意力 logit 爆炸 | BV1UUua6wEVU | 03:11 | 2026-08-17 | 已完成 | [G287-qk-norm-nan.md](episodes/G287-qk-norm-nan.md) |
+| 288 | PRM vs ORM：过程奖励为什么碾压结果奖励？一次讲透 | BV1UUua6wE44 | 03:24 | 2026-08-17 | 已完成 | [G288-prm-vs-orm.md](episodes/G288-prm-vs-orm.md) |
+| 289 | 推理模型越想越歪？ParaThinker并行思考，打破长思维链的隧道视野 | BV1dhua6CEmV | 03:41 | 2026-08-16 | 已完成 | [G289-parathinker.md](episodes/G289-parathinker.md) |
 | 290 | 推理模型的显式思考真的必要吗？NoThinking 跳过思考反而更省更快 | BV1dYua6GEBn | 03:20 | 2026-08-16 | 待处理 | |
-| 291 | NaViT 原生任意分辨率 + Patch n' Pack：视觉大模型为什么不再把图片压成方块？ | BV1oYua6GERd | 03:14 | 2026-08-16 | 待处理 | |
-| 292 | μTransfer原理详解：小模型调超参如何零样本迁移到大模型 | BV1ftua61Ezc | 03:49 | 2026-08-16 | 待处理 | |
-| 293 | DeepSeek V3 招牌 MTP 多 token 预测全解：训练当辅助任务、推理当投机解码加速器 | BV1o8ua65EdB | 03:38 | 2026-08-15 | 待处理 | |
-| 294 | 模型合并 TIES 与 DARE 原理全拆解：任务向量加减法如何缝合大模型 | BV1Z8ua65E9h | 03:54 | 2026-08-15 | 待处理 | |
-| 295 | Mixture-of-Depths：让 token 学会跳层，Transformer 算力省一半还不掉点 | BV19qua6zExA | 03:17 | 2026-08-15 | 待处理 | |
-| 296 | 美杜莎解码：多解码头+树注意力，一次前向验证一整棵候选树 | BV1Vzua6uEKE | 03:10 | 2026-08-15 | 待处理 | |
-| 297 | M-RoPE 多模态位置编码全解：一套 RoPE 如何通吃文字图片视频 | BV1Xzua6MEe2 | 04:11 | 2026-08-14 | 待处理 | |
-| 298 | Lookahead Decoding：把大模型解码看成解方程，雅可比并行无损加速 | BV1Reua6rEkb | 03:31 | 2026-08-14 | 待处理 | |
-| 299 | Late Chunking：调换切块和编码顺序，RAG检索质量的零成本提升 | BV1Liua63ER5 | 03:23 | 2026-08-14 | 待处理 | |
-| 300 | KV缓存驱逐：H2O与SnapKV，95%的KV都在陪跑 | BV1Liua63EZG | 03:26 | 2026-08-14 | 待处理 | |
+| 291 | NaViT 原生任意分辨率 + Patch n' Pack：视觉大模型为什么不再把图片压成方块？ | BV1oYua6GERd | 03:14 | 2026-08-16 | 已完成 | [G291-navit.md](episodes/G291-navit.md) |
+| 292 | μTransfer原理详解：小模型调超参如何零样本迁移到大模型 | BV1ftua61Ezc | 03:49 | 2026-08-16 | 已完成 | [G292-mu-transfer.md](episodes/G292-mu-transfer.md) |
+| 293 | DeepSeek V3 招牌 MTP 多 token 预测全解：训练当辅助任务、推理当投机解码加速器 | BV1o8ua65EdB | 03:38 | 2026-08-15 | 已完成 | [G293-mtp.md](episodes/G293-mtp.md) |
+| 294 | 模型合并 TIES 与 DARE 原理全拆解：任务向量加减法如何缝合大模型 | BV1Z8ua65E9h | 03:54 | 2026-08-15 | 已完成 | [G294-ties-dare.md](episodes/G294-ties-dare.md) |
+| 295 | Mixture-of-Depths：让 token 学会跳层，Transformer 算力省一半还不掉点 | BV19qua6zExA | 03:17 | 2026-08-15 | 已完成 | [G295-mixture-of-depths-2.md](episodes/G295-mixture-of-depths-2.md) |
+| 296 | 美杜莎解码：多解码头+树注意力，一次前向验证一整棵候选树 | BV1Vzua6uEKE | 03:10 | 2026-08-15 | 已完成 | [G296-medusa.md](episodes/G296-medusa.md) |
+| 297 | M-RoPE 多模态位置编码全解：一套 RoPE 如何通吃文字图片视频 | BV1Xzua6MEe2 | 04:11 | 2026-08-14 | 已完成 | [G297-m-rope.md](episodes/G297-m-rope.md) |
+| 298 | Lookahead Decoding：把大模型解码看成解方程，雅可比并行无损加速 | BV1Reua6rEkb | 03:31 | 2026-08-14 | 已完成 | [G298-lookahead-decoding.md](episodes/G298-lookahead-decoding.md) |
+| 299 | Late Chunking：调换切块和编码顺序，RAG检索质量的零成本提升 | BV1Liua63ER5 | 03:23 | 2026-08-14 | 已完成 | [G299-late-chunking.md](episodes/G299-late-chunking.md) |
+| 300 | KV缓存驱逐：H2O与SnapKV，95%的KV都在陪跑 | BV1Liua63EZG | 03:26 | 2026-08-14 | 已完成 | [G300-kv-eviction.md](episodes/G300-kv-eviction.md) |
 | 301 | 不用成对偏好数据怎么做对齐？KTO 把前景理论塞进训练目标，损失厌恶一战封神 | BV1zMuY6EEZD | 03:41 | 2026-08-13 | 待处理 | |
 | 302 | Mamba+注意力+MoE三合一，Jamba如何把25万字塞进单张显卡？混合架构原理拆解 | BV1zuuY6mEqQ | 03:18 | 2026-08-13 | 待处理 | |
 | 303 | GraphRAG 原理拆解：先建图谱再分社区，RAG 终于能答全局问题了 | BV1zuuY6mEyK | 03:16 | 2026-08-13 | 待处理 | |
