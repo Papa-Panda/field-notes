@@ -66,26 +66,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 58 | 训练前为什么要先 fuzz 你的 verifier？93% 判卷失败来自空格标点、版本间半数判法相反 | BV1qaea6gE6K | 03:04 | 2026-09-28 | 已完成 | [G058-fuzz-verifier.md](episodes/G058-fuzz-verifier.md) |
 | 59 | VerIF：用代码校验硬约束、推理模型判软约束，改进指令遵循 RL 的验证难题，IFEval 68.4→84.5 | BV1vYea6zEDe | 03:27 | 2026-09-28 | 已完成 | [G059-verif.md](episodes/G059-verif.md) |
 | 60 | 训练的中间阶段该怎么评估？RL 前分最低的 Mixed SFT，RL 后打败 next-chunk RL | BV1iYea6zEvS | 04:22 | 2026-09-28 | 已完成 | [G060-midstage-eval.md](episodes/G060-midstage-eval.md) |
-| 61 | harness 原生 RL：在模型 API 边界记 token，训练与部署用同一套脚手架 | BV11jea6nEaK | 04:33 | 2026-09-28 | 待处理 | |
-| 62 | baseline 为什么不引入偏差？减 V 得到优势，GRPO 减的是组平均 | BV14Zhm6oEPG | 00:57 | 2026-09-28 | 待处理 | |
-| 63 | EnvHarness：通过围绕策略弱点改写环境动态，改进 Agent RL 的环境饱和问题（HF 518 赞） | BV1Cjea6nEUc | 04:28 | 2026-09-28 | 待处理 | |
-| 64 | 大模型真的不该用 Dropout 吗？层级 Dropout 配 1/ρ 缩放，8.2B 少用 25% 训练算力（Cerebras） | BV1y7ea6SEe6 | 04:19 | 2026-09-27 | 待处理 | |
-| 65 | 策略梯度是怎么推出来的？REINFORCE 与 DeepSeekMath 的统一形式 | BV14Zhm6oE5i | 01:00 | 2026-09-27 | 待处理 | |
-| 66 | max response length 该分阶段放开还是一步到位？DeepScaleR、Skywork-OR1 与 Polaris 反例 | BV12Vea6pEBV | 03:35 | 2026-09-27 | 待处理 | |
-| 67 | 数学、代码、表格混训 RL，哪些域能跨域迁移、哪些必须专训？Guru 六域实验与 CARE-RL、TAC | BV1yVea6pE2L | 03:45 | 2026-09-27 | 待处理 | |
-| 68 | DART-SD：多轮工具调用是菱形不是链，只在第一个断点之后算 loss，BFCL 多轮 57.38 对 48.81 | BV115ea6QEuR | 04:43 | 2026-09-27 | 待处理 | |
-| 69 | CompactionRL：通过把写摘要纳入 RL 训练，改进长程 Agent 的上下文压缩问题 | BV1y5ea6QEnz | 04:24 | 2026-09-27 | 待处理 | |
-| 70 | 蒙特卡洛和 TD 差在哪？偏差方差的取舍与 TD 误差 δ | BV1nKhU6HEva | 00:59 | 2026-09-27 | 待处理 | |
-| 71 | Uniqueness-Aware RL：通过按解题策略聚类加权优势，改进 RLVR 解题策略单一化的坍缩问题 | BV1rpea6jELJ | 02:58 | 2026-09-27 | 待处理 | |
-| 72 | RL 后期熵为什么会突然暴涨？正负样本不对称与 token 级熵流失衡，常规旋钮为何无效 | BV1ppea67Eni | 03:04 | 2026-09-26 | 待处理 | |
-| 73 | V、Q 和 Advantage 分别在算什么？贝尔曼方程与 PPO 的 Critic | BV16ThU6DEk9 | 00:59 | 2026-09-26 | 待处理 | |
-| 74 | RL 训练数据的难度怎么定？待训模型跑 8 次筛题、镜像 J 形分布、通过率拉回 50% | BV1rWea61Erm | 03:41 | 2026-09-26 | 待处理 | |
-| 75 | OPSA：通过压低学生自身低概率 token 改进 OPD 的老师噪声问题，不要老师 AIME24 +35 | BV1rWea61EUz | 03:56 | 2026-09-26 | 待处理 | |
-| 76 | VLM 微调要不要解冻视觉编码器？只训 ViT 感知涨分、MMMU 可能下降，按任务来定 | BV1CJea6EEXs | 03:18 | 2026-09-26 | 待处理 | |
-| 77 | VAPO：通过 value 预训练与解耦 GAE 改进长思维链上 critic 训不准的问题（字节 Seed） | BV1rnea6mE4y | 03:30 | 2026-09-26 | 待处理 | |
-| 78 | 折扣因子 γ 到底在决定什么？为什么大模型里直接取 1 | BV1HThU6DEJi | 00:59 | 2026-09-26 | 待处理 | |
-| 79 | 六个决定一次讲透：为什么按验证 loss 早停会停错？LoRA lr 1e-3、过 2 轮 IFEval 退化、Muon | BV1knea6mErC | 03:19 | 2026-09-26 | 待处理 | |
-| 80 | Self-Routing：通过按对错与置信度把样本分到四条路，改进后训练用单一算法的浪费 | BV14Xea6dE8q | 03:29 | 2026-09-25 | 待处理 | |
+| 61 | harness 原生 RL：在模型 API 边界记 token，训练与部署用同一套脚手架 | BV11jea6nEaK | 04:33 | 2026-09-28 | 已完成 | [G061-harness-native-rl.md](episodes/G061-harness-native-rl.md) |
+| 62 | baseline 为什么不引入偏差？减 V 得到优势，GRPO 减的是组平均 | BV14Zhm6oEPG | 00:57 | 2026-09-28 | 已完成 | [G062-baseline-no-bias.md](episodes/G062-baseline-no-bias.md) |
+| 63 | EnvHarness：通过围绕策略弱点改写环境动态，改进 Agent RL 的环境饱和问题（HF 518 赞） | BV1Cjea6nEUc | 04:28 | 2026-09-28 | 已完成 | [G063-envharness.md](episodes/G063-envharness.md) |
+| 64 | 大模型真的不该用 Dropout 吗？层级 Dropout 配 1/ρ 缩放，8.2B 少用 25% 训练算力（Cerebras） | BV1y7ea6SEe6 | 04:19 | 2026-09-27 | 已完成 | [G064-dropout-llm.md](episodes/G064-dropout-llm.md) |
+| 65 | 策略梯度是怎么推出来的？REINFORCE 与 DeepSeekMath 的统一形式 | BV14Zhm6oE5i | 01:00 | 2026-09-27 | 已完成 | [G065-policy-gradient.md](episodes/G065-policy-gradient.md) |
+| 66 | max response length 该分阶段放开还是一步到位？DeepScaleR、Skywork-OR1 与 Polaris 反例 | BV12Vea6pEBV | 03:35 | 2026-09-27 | 已完成 | [G066-max-response-length.md](episodes/G066-max-response-length.md) |
+| 67 | 数学、代码、表格混训 RL，哪些域能跨域迁移、哪些必须专训？Guru 六域实验与 CARE-RL、TAC | BV1yVea6pE2L | 03:45 | 2026-09-27 | 已完成 | [G067-cross-domain-rl.md](episodes/G067-cross-domain-rl.md) |
+| 68 | DART-SD：多轮工具调用是菱形不是链，只在第一个断点之后算 loss，BFCL 多轮 57.38 对 48.81 | BV115ea6QEuR | 04:43 | 2026-09-27 | 已完成 | [G068-dart-sd.md](episodes/G068-dart-sd.md) |
+| 69 | CompactionRL：通过把写摘要纳入 RL 训练，改进长程 Agent 的上下文压缩问题 | BV1y5ea6QEnz | 04:24 | 2026-09-27 | 已完成 | [G069-compactionrl.md](episodes/G069-compactionrl.md) |
+| 70 | 蒙特卡洛和 TD 差在哪？偏差方差的取舍与 TD 误差 δ | BV1nKhU6HEva | 00:59 | 2026-09-27 | 已完成 | [G070-mc-vs-td.md](episodes/G070-mc-vs-td.md) |
+| 71 | Uniqueness-Aware RL：通过按解题策略聚类加权优势，改进 RLVR 解题策略单一化的坍缩问题 | BV1rpea6jELJ | 02:58 | 2026-09-27 | 已完成 | [G071-uniqueness-aware-rl.md](episodes/G071-uniqueness-aware-rl.md) |
+| 72 | RL 后期熵为什么会突然暴涨？正负样本不对称与 token 级熵流失衡，常规旋钮为何无效 | BV1ppea67Eni | 03:04 | 2026-09-26 | 已完成 | [G072-entropy-surge.md](episodes/G072-entropy-surge.md) |
+| 73 | V、Q 和 Advantage 分别在算什么？贝尔曼方程与 PPO 的 Critic | BV16ThU6DEk9 | 00:59 | 2026-09-26 | 已完成 | [G073-v-q-advantage.md](episodes/G073-v-q-advantage.md) |
+| 74 | RL 训练数据的难度怎么定？待训模型跑 8 次筛题、镜像 J 形分布、通过率拉回 50% | BV1rWea61Erm | 03:41 | 2026-09-26 | 已完成 | [G074-rl-data-difficulty.md](episodes/G074-rl-data-difficulty.md) |
+| 75 | OPSA：通过压低学生自身低概率 token 改进 OPD 的老师噪声问题，不要老师 AIME24 +35 | BV1rWea61EUz | 03:56 | 2026-09-26 | 已完成 | [G075-opsa.md](episodes/G075-opsa.md) |
+| 76 | VLM 微调要不要解冻视觉编码器？只训 ViT 感知涨分、MMMU 可能下降，按任务来定 | BV1CJea6EEXs | 03:18 | 2026-09-26 | 已完成 | [G076-vlm-vision-encoder.md](episodes/G076-vlm-vision-encoder.md) |
+| 77 | VAPO：通过 value 预训练与解耦 GAE 改进长思维链上 critic 训不准的问题（字节 Seed） | BV1rnea6mE4y | 03:30 | 2026-09-26 | 已完成 | [G077-vapo.md](episodes/G077-vapo.md) |
+| 78 | 折扣因子 γ 到底在决定什么？为什么大模型里直接取 1 | BV1HThU6DEJi | 00:59 | 2026-09-26 | 已完成 | [G078-discount-gamma.md](episodes/G078-discount-gamma.md) |
+| 79 | 六个决定一次讲透：为什么按验证 loss 早停会停错？LoRA lr 1e-3、过 2 轮 IFEval 退化、Muon | BV1knea6mErC | 03:19 | 2026-09-26 | 已完成 | [G079-six-decisions.md](episodes/G079-six-decisions.md) |
+| 80 | Self-Routing：通过按对错与置信度把样本分到四条路，改进后训练用单一算法的浪费 | BV14Xea6dE8q | 03:29 | 2026-09-25 | 已完成 | [G080-self-routing.md](episodes/G080-self-routing.md) |
 | 81 | 强化学习到底在学什么？监督学习给答案，RL 只给一个分数 | BV1HAhU6WEod | 01:00 | 2026-09-25 | 待处理 | |
 | 82 | RL 微调的幻觉税：为什么 RFT 之后模型对无解题不再拒答？混 10% 无解题 SUM 就能修回来 | BV1xXea6dECx | 03:15 | 2026-09-25 | 待处理 | |
 | 83 | 没有标准答案的任务怎么做 RL？给裁判一份参考回答，比 SFT 蒸馏高 20 分 | BV1tSea6ZEQm | 03:07 | 2026-09-25 | 待处理 | |

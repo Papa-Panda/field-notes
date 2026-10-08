@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G064 — 大模型真的不该用 Dropout 吗？层级 Dropout 配 1/ρ 缩放，8.2B 少用 25% 训练算力（Cerebras）</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#ffffff; --ink:#23272f; --muted:#6b7280;
+  --accent:#1e40af; --accent-ink:#1e3a8a; --accent-bg:#eff6ff;
+  --border:#e8e4dc; --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;padding:40px 36px}
+.kicker{display:inline-block;font-size:13px;letter-spacing:.1em;background:rgba(255,255,255,.18);padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.hero h1{margin:0 0 10px;font-size:29px;line-height:1.45;font-weight:700}
+.hero .sub{opacity:.88;font-size:14.5px;margin:0}
+.toc{position:sticky;top:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.05);z-index:10}
+.toc summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toc a{font-size:13.5px;color:var(--accent-ink);background:var(--accent-bg);padding:4px 12px;border-radius:999px;text-decoration:none}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 34px;margin:0 0 18px;box-shadow:0 1px 6px rgba(0,0,0,.03);scroll-margin-top:80px}
+.sec h2{margin:0 0 18px;font-size:21px;display:flex;align-items:center;gap:12px;line-height:1.5}
+.sec h2 .n{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent-bg);
+  color:var(--accent-ink);font-size:15px;align-items:center;justify-content:center;flex:none;font-weight:700}
+.sec h3{font-size:17.5px;margin:26px 0 10px}
+.sec h4{font-size:16px;margin:20px 0 8px}
+.sec p{margin:0 0 14px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:24px}
+.sec li{margin-bottom:10px}
+.sec li::marker{color:var(--accent);font-weight:600}
+.sec-lede{background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);border-color:#bfdbfe}
+.sec-lede p{font-size:18px}
+.sec-qa ol{list-style:none;padding:0;counter-reset:q}
+.sec-qa ol>li{counter-increment:q;background:var(--bg);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px 18px 66px;position:relative;margin-bottom:14px}
+.sec-qa ol>li::before{content:counter(q);position:absolute;left:20px;top:20px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.sec blockquote{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;
+  padding:14px 22px;margin:0 0 16px;color:var(--accent-ink);font-size:17px}
+.sec blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px;line-height:1.6}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f4f6;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fafafa}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:.88em}
+pre{background:#1f2937;color:#e5e7eb;border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
+.katex{font-size:1.05em}
+.katex-display{margin:18px 0;overflow-x:auto;overflow-y:hidden}
+.mermaid{display:flex;justify-content:center;margin:10px 0 20px;overflow-x:auto;
+  background:#fbfcfe;border:1px solid var(--border);border-radius:12px;padding:18px 12px}
+.mermaid svg{max-width:100%;height:auto}
+.tag{display:inline-block;font-size:12.5px;background:#f3f4f6;border:1px solid var(--border);
+  border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0 10px}
+.meta-grid{display:grid;grid-template-columns:132px 1fr;gap:10px 14px;font-size:15px;margin:2px 0 8px;align-items:start}
+.meta-grid dt{color:var(--muted);font-weight:600}
+.meta-grid dd{margin:0;line-height:1.7;overflow-wrap:anywhere}
+.viz{margin:8px 0 22px}
+.stat-strip{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 150px;min-width:128px;background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);
+  border:1px solid #bfdbfe;border-radius:12px;padding:14px 14px;text-align:center}
+.stat .v{font-size:25px;font-weight:800;color:var(--accent-ink);line-height:1.35}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.fnode{flex:1 1 0;min-width:104px;background:var(--accent-bg);border:1.5px solid #bfdbfe;border-radius:12px;
+  padding:10px 10px;font-size:13.5px;font-weight:600;color:var(--accent-ink);text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.farrow{align-self:center;flex:0 0 auto;color:var(--accent);font-weight:800;font-size:19px;padding:2px 5px}
+.viz-bars{display:flex;flex-direction:column;gap:10px}
+.barrow{display:grid;grid-template-columns:minmax(80px,150px) 1fr 72px;gap:10px;align-items:center;font-size:14px}
+.barlabel{text-align:right;font-weight:600;line-height:1.4;overflow:hidden}
+.bartrack{background:#e8eefc;border-radius:999px;height:22px;overflow:hidden}
+.barfill{background:linear-gradient(90deg,#60a5fa,#1e40af);height:100%;border-radius:999px}
+.barval{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vscol{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.vscol h4{margin:0 0 10px;font-size:15px}
+.vscol.vs-a h4{color:var(--accent-ink)}
+.vscol.vs-b h4{color:#7c3aed}
+.vscol ul{margin:0;padding-left:20px}
+.vscol li{margin-bottom:8px;font-size:14.5px}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:36px;line-height:2}
+.foot a{color:var(--accent)}
+@media(max-width:640px){.sec{padding:22px 20px}.hero{padding:30px 24px}.hero h1{font-size:23px}body{font-size:16px}
+.vs{grid-template-columns:1fr}.barrow{grid-template-columns:86px 1fr 62px}.meta-grid{grid-template-columns:104px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">B站 · 古希腊掌管代码的神</span>
+    <h1>G064 — 大模型真的不该用 Dropout 吗？层级 Dropout 配 1/ρ 缩放，8.2B 少用 25% 训练算力（Cerebras）</h1>
+    <p class="sub">大模型抛弃的是神经元级 Dropout，不是整层跳过：Cerebras 用 2400 多次实验证明，层级 Dropout（随机深度）只要把缩放因子写对——训练时保留层输出乘 $… · 完整阅读版 · 由 GitHub NOTES.md 生成</p>
+  </header>
+  <details class="toc" open>
+    <summary>目录（点击跳转）</summary>
+    <nav><a href="#sec-1">元信息</a><a href="#sec-2">一句话总结</a><a href="#sec-3">核心</a><a href="#sec-4">关键数字</a><a href="#sec-5">可迁移</a><a href="#sec-6">疑问 / 下一步</a></nav>
+  </details>
+  <section class="sec" id="sec-0">
+<blockquote class="pq">
+<p>📖 阅读版：https://papa-panda.github.io/field-notes/bilibili-code-god/episodes/G064-dropout-llm.html</p>
+</blockquote>
+</section>
+<section class="sec" id="sec-1"><h2><span class="n">1</span>元信息</h2>
+<dl class="meta-grid"><dt>编号</dt><dd>G064</dd><dt>标题</dt><dd>大模型真的不该用 Dropout 吗？层级 Dropout 配 1/ρ 缩放，8.2B 少用 25% 训练算力（Cerebras）</dd><dt>BV</dt><dd>BV1y7ea6SEe6</dd><dt>时长</dt><dd>04:19</dd><dt>发布日期</dt><dd>2026-09-27</dd><dt>来源</dt><dd>Bilibili UP「古希腊掌管代码的神」</dd><dt>相关论文/工作</dt><dd>Cerebras 层级 Dropout 研究（2400+ 次训练实验）；Stochastic Depth；μP（maximal update parametrization）</dd></dl>
+</section>
+<section class="sec sec-lede" id="sec-2"><h2><span class="n">2</span>一句话总结</h2>
+<p>大模型抛弃的是神经元级 Dropout，不是整层跳过：Cerebras 用 2400 多次实验证明，层级 Dropout（随机深度）只要把缩放因子写对——训练时保留层输出乘 $1/\rho$ 、评测不缩放——再配「深层多丢、后期少丢」的调度，8.2B 模型能少用 25% 训练算力达到与稠密基线一模一样的验证损失，还附赠推理弹性。</p>
+</section>
+<section class="sec" id="sec-3"><h2><span class="n">3</span>核心</h2>
+<ol>
+<li>问题/背景：经典 Dropout 在一层内随机把部分神经元输出置零，防的是小数据多轮训练的过拟合；大模型单轮训练、海量数据，过拟合基本不发生，激活 Dropout 经验上反而掉点，且这种稀疏省不下墙钟时间。层级 Dropout 不同：以一定概率把整个 Transformer 块跳过、输入沿残差直传，这一层的前向反向算力是真省了——但早期尝试它的人也失败了。</li>
+<li>机制/方法：失败根源是一个被写错的细节：缩放因子。某层以概率 $\rho$ 保留，保留时输出应乘 $1/\rho$ 补偿期望、评测时不缩放；最早的随机深度论文是训练不缩放、评测乘 $\rho$ ，PyTorch/TensorFlow 标准实现是训练乘 $1/\rho$ ，而近期不少复现用了「训练不缩放」的版本，于是退化。Cerebras 采用 $1/(1-p)$ 的密度缩放并遵循 μP 的最大残差流更新准则，效果是学习率、batch size、权重衰减的最优值在不同丢弃率下不用重调，「超参彩票」消失。空间分布三种（全层同率、从第一层 0 线性递增到最后一层 $p_{max}$ 的递增式 ILD、只丢奇数层的交替式 ALD），时间调度三种（常数、线性递增、线性递减），外加整层优于子层、每条序列独立 mask 优于整 batch 共用 mask。</li>
+<li>关键证据或数字：2400 次实验的结论一致：固定算力预算下，从最大率衰减到零的递减时间调度在所有规模上最好，空间上递增式最好，一句话「深层多丢，后期少丢」。3.9B 在算力最优的 20 tokens/parameter 下，稠密验证损失 1.732，$p_{max} = 0.8$ 的层级 Dropout 是 1.745、几乎持平而训练 FLOPs 少 28.2%；8.2B 把 $p_{max}$ 拉到 0.99，验证损失 1.663 对 1.663 一模一样、算力少 25%；503M 在省 5% 算力的配置下损失从 2.1096 降到 1.9514，用更少算力打败稠密基线。趋势与直觉相反：模型越大越耐丢（271M 省 10% 算力时损失涨 1.6%，8.2B 完全持平）。推理红利：早退在一半深度输出，Dropout 训出的模型损失比稠密模型低 2%–4%；跳层推理时交替式模型的损失 2.129，稠密基线一跳就炸到 6.446；自投机解码 3.9B 用浅层当草稿、全模型验证，稠密基线只有 1.02 倍， $p_{max} = 0.4$ 的模型达 1.43 倍、接受率 97%。</li>
+<li>结论/判断：配方卡——空间 ILD、时间递减调度、训练缩放 $1/\rho$ 、每序列整层丢弃； $p_{max}$ 按规模定：1.8B 用 0.6、3.9B 用 0.8、8.2B 用 0.99；想要跳层弹性就用交替式 ALD，牺牲一点基础精度。</li>
+</ol>
+</section>
+<section class="sec" id="sec-4"><h2><span class="n">4</span>关键数字</h2>
+<table>
+<thead>
+<tr>
+<th>规模</th>
+<th>配置</th>
+<th>验证损失</th>
+<th>训练算力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.9B</td>
+<td>稠密基线</td>
+<td>1.732</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>3.9B</td>
+<td>层级 Dropout， $p_{max} = 0.8$</td>
+<td>1.745</td>
+<td>少 28.2%</td>
+</tr>
+<tr>
+<td>8.2B</td>
+<td>层级 Dropout， $p_{max} = 0.99$</td>
+<td>1.663（与基线相同）</td>
+<td>少 25%</td>
+</tr>
+<tr>
+<td>3.9B</td>
+<td>自投机解码加速（稠密基线 1.02×）</td>
+<td>—</td>
+<td>1.43×</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="sec" id="sec-5"><h2><span class="n">5</span>可迁移</h2>
+<ul>
+<li>这是「旧技术失败先查实现细节」的样本：缩放因子写错就能让一个有效方法看起来无效，排障时优先核对这类一行级约定，再怀疑方法本身。</li>
+<li>层级 Dropout 的推理弹性（早退、跳层、自投机解码）对推理 infra 有直接价值：训练阶段一个开关，换部署阶段的动态深度能力。</li>
+</ul>
+</section>
+<section class="sec" id="sec-6"><h2><span class="n">6</span>疑问 / 下一步</h2>
+<ul>
+<li>结论目前只在预训练验证损失上成立；层级 Dropout 对下游后训练（SFT/RL）阶段的 checkpoint 质量是否有同样中性影响，视频未涉及。</li>
+</ul></section>
+  <div class="foot">由 <a href="">GitHub NOTES.md</a> 生成 · 公式由 KaTeX、流程图由 Mermaid 渲染（需联网加载）</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+  if (window.mermaid) {
+    mermaid.initialize({startOnLoad: true, theme: "default", securityLevel: "loose"});
+  }
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function() {
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = p + "%";
+  }, {passive: true});
+});
+</script>
+</body>
+</html>
