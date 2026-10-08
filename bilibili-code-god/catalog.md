@@ -146,26 +146,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 138 | 数据去重实操：MinHash、LSH 分桶与亿级数据并行处理 | BV1Zpb76HEeu | 02:07 | 2026-09-14 | 已完成 | [G138-dedup-minhash.md](episodes/G138-dedup-minhash.md) |
 | 139 | 三种技术路线：经验回放、EWC 与渐进式网络（LoRA adapter） | BV17pb76pEuR | 01:59 | 2026-09-13 | 已完成 | [G139-continual-learning-routes.md](episodes/G139-continual-learning-routes.md) |
 | 140 | 代码与数学数据加多少？20%~40% 最优区间与梯度实验结论 | BV198b762Euk | 02:51 | 2026-09-13 | 已完成 | [G140-code-math-mix.md](episodes/G140-code-math-mix.md) |
-| 141 | Best-of-N 采样详解：四种挑选方法与 RFT 的衔接 | BV1Qab76LEvu | 02:17 | 2026-09-13 | 待处理 | |
-| 142 | benchmark 分数为什么会骗你？数据泄露与过拟合的检测方法 | BV1eab76jEkY | 02:08 | 2026-09-13 | 待处理 | |
-| 143 | 标注质量控制：流程、Cohen Kappa 一致性检验与五个质控手段 | BV1L4b76SEAd | 02:10 | 2026-09-13 | 待处理 | |
-| 144 | 初始化标准差 0.02 的由来：从方差不变推导到实践修正 | BV1dbb767EV5 | 02:39 | 2026-09-13 | 待处理 | |
-| 145 | Weight Decay 详解：系数怎么选、为什么 AdamW 的解耦这么关键 | BV1ebb76EEYc | 02:02 | 2026-09-12 | 待处理 | |
-| 146 | warmup 步数详解：比例怎么定、做错了会怎样、怎么监控 | BV1qcbE6xEoL | 02:26 | 2026-09-12 | 待处理 | |
-| 147 | 大模型训练 pipeline 设计：PT、SFT、偏好对齐与 PAFT 并行范式 | BV1zwbE6REjt | 03:18 | 2026-09-12 | 待处理 | |
-| 148 | 除了 loss 还必须看的五个指标：grad norm、PPL、MFU、学习率、吞吐量 | BV1zwbE6REWX | 03:12 | 2026-09-12 | 待处理 | |
-| 149 | 评测频率怎么定？proxy 高频看趋势、完整低频做决策，兼谈数据污染 | BV1FZb76bEW8 | 02:56 | 2026-09-12 | 待处理 | |
-| 150 | train vs val loss：过拟合、欠拟合的判断标准与量化指标 | BV1RTbE6HEkW | 02:41 | 2026-09-12 | 待处理 | |
-| 151 | 可复现性详解：cuDNN、DataLoader 与分布式浮点误差三大随机源 | BV1iMbE6DEbj | 02:55 | 2026-09-12 | 待处理 | |
-| 152 | 给训练做体检：PyTorch Profiler 与 nsys 的用法与瓶颈定位 | BV1eMbE6DEWh | 02:55 | 2026-09-11 | 待处理 | |
-| 153 | tokenizer 词表设计：vocab size、中英混合与 Byte-level BPE | BV1BPbE6WELv | 03:18 | 2026-09-11 | 待处理 | |
-| 154 | token level mean vs sequence level sum：一个除法决定训练稳定还是崩溃 | BV1qNbE6XEfw | 02:37 | 2026-09-11 | 待处理 | |
-| 155 | 合成数据完整 pipeline：Self-Instruct、Evol-Instruct 与四步质量控制 | BV1qNbE6XEU2 | 01:52 | 2026-09-11 | 待处理 | |
-| 156 | 压力测试六维度：超长、空输入、特殊字符、多语言、对抗与重复 | BV1PUb76vEkx | 02:09 | 2026-09-11 | 待处理 | |
-| 157 | 红队测试实操：四种攻击手法、安全分类器与 RLHF 安全对齐 | BV1CDb76AEB8 | 01:54 | 2026-09-11 | 待处理 | |
-| 158 | reward 归一化详解：running mean-std、batch 归一化与三个常见坑 | BV1CDb76AEk8 | 02:14 | 2026-09-10 | 待处理 | |
-| 159 | rollout 是 RL 训练的瓶颈：vLLM 加速与异步训练详解 | BV1N1b76qEif | 03:14 | 2026-09-10 | 待处理 | |
-| 160 | entropy bonus 详解：系数怎么设、衰减调度怎么做、熵坍缩怎么救 | BV1Tmb76KEFh | 03:16 | 2026-09-10 | 待处理 | |
+| 141 | Best-of-N 采样详解：四种挑选方法与 RFT 的衔接 | BV1Qab76LEvu | 02:17 | 2026-09-13 | 已完成 | [G141-best-of-n.md](episodes/G141-best-of-n.md) |
+| 142 | benchmark 分数为什么会骗你？数据泄露与过拟合的检测方法 | BV1eab76jEkY | 02:08 | 2026-09-13 | 已完成 | [G142-benchmark-leakage.md](episodes/G142-benchmark-leakage.md) |
+| 143 | 标注质量控制：流程、Cohen Kappa 一致性检验与五个质控手段 | BV1L4b76SEAd | 02:10 | 2026-09-13 | 已完成 | [G143-annotation-qc-kappa.md](episodes/G143-annotation-qc-kappa.md) |
+| 144 | 初始化标准差 0.02 的由来：从方差不变推导到实践修正 | BV1dbb767EV5 | 02:39 | 2026-09-13 | 已完成 | [G144-init-std-002.md](episodes/G144-init-std-002.md) |
+| 145 | Weight Decay 详解：系数怎么选、为什么 AdamW 的解耦这么关键 | BV1ebb76EEYc | 02:02 | 2026-09-12 | 已完成 | [G145-weight-decay-adamw.md](episodes/G145-weight-decay-adamw.md) |
+| 146 | warmup 步数详解：比例怎么定、做错了会怎样、怎么监控 | BV1qcbE6xEoL | 02:26 | 2026-09-12 | 已完成 | [G146-warmup-steps.md](episodes/G146-warmup-steps.md) |
+| 147 | 大模型训练 pipeline 设计：PT、SFT、偏好对齐与 PAFT 并行范式 | BV1zwbE6REjt | 03:18 | 2026-09-12 | 已完成 | [G147-training-pipeline-paft.md](episodes/G147-training-pipeline-paft.md) |
+| 148 | 除了 loss 还必须看的五个指标：grad norm、PPL、MFU、学习率、吞吐量 | BV1zwbE6REWX | 03:12 | 2026-09-12 | 已完成 | [G148-five-metrics.md](episodes/G148-five-metrics.md) |
+| 149 | 评测频率怎么定？proxy 高频看趋势、完整低频做决策，兼谈数据污染 | BV1FZb76bEW8 | 02:56 | 2026-09-12 | 已完成 | [G149-eval-frequency.md](episodes/G149-eval-frequency.md) |
+| 150 | train vs val loss：过拟合、欠拟合的判断标准与量化指标 | BV1RTbE6HEkW | 02:41 | 2026-09-12 | 已完成 | [G150-train-val-loss.md](episodes/G150-train-val-loss.md) |
+| 151 | 可复现性详解：cuDNN、DataLoader 与分布式浮点误差三大随机源 | BV1iMbE6DEbj | 02:55 | 2026-09-12 | 已完成 | [G151-reproducibility.md](episodes/G151-reproducibility.md) |
+| 152 | 给训练做体检：PyTorch Profiler 与 nsys 的用法与瓶颈定位 | BV1eMbE6DEWh | 02:55 | 2026-09-11 | 已完成 | [G152-profiler-nsys.md](episodes/G152-profiler-nsys.md) |
+| 153 | tokenizer 词表设计：vocab size、中英混合与 Byte-level BPE | BV1BPbE6WELv | 03:18 | 2026-09-11 | 已完成 | [G153-tokenizer-vocab.md](episodes/G153-tokenizer-vocab.md) |
+| 154 | token level mean vs sequence level sum：一个除法决定训练稳定还是崩溃 | BV1qNbE6XEfw | 02:37 | 2026-09-11 | 已完成 | [G154-token-mean-vs-seq-sum.md](episodes/G154-token-mean-vs-seq-sum.md) |
+| 155 | 合成数据完整 pipeline：Self-Instruct、Evol-Instruct 与四步质量控制 | BV1qNbE6XEU2 | 01:52 | 2026-09-11 | 已完成 | [G155-synthetic-data-pipeline.md](episodes/G155-synthetic-data-pipeline.md) |
+| 156 | 压力测试六维度：超长、空输入、特殊字符、多语言、对抗与重复 | BV1PUb76vEkx | 02:09 | 2026-09-11 | 已完成 | [G156-stress-testing.md](episodes/G156-stress-testing.md) |
+| 157 | 红队测试实操：四种攻击手法、安全分类器与 RLHF 安全对齐 | BV1CDb76AEB8 | 01:54 | 2026-09-11 | 已完成 | [G157-red-teaming.md](episodes/G157-red-teaming.md) |
+| 158 | reward 归一化详解：running mean-std、batch 归一化与三个常见坑 | BV1CDb76AEk8 | 02:14 | 2026-09-10 | 已完成 | [G158-reward-normalization.md](episodes/G158-reward-normalization.md) |
+| 159 | rollout 是 RL 训练的瓶颈：vLLM 加速与异步训练详解 | BV1N1b76qEif | 03:14 | 2026-09-10 | 已完成 | [G159-rollout-bottleneck-vllm.md](episodes/G159-rollout-bottleneck-vllm.md) |
+| 160 | entropy bonus 详解：系数怎么设、衰减调度怎么做、熵坍缩怎么救 | BV1Tmb76KEFh | 03:16 | 2026-09-10 | 已完成 | [G160-entropy-bonus.md](episodes/G160-entropy-bonus.md) |
 | 161 | batch 组织策略：难度分布、类型平衡与 rollout 数量 | BV1Kmb76KEqu | 01:50 | 2026-09-10 | 待处理 | |
 | 162 | reward hacking 详解：Goodhart 定律与五种实用防御手段 | BV16Rb768EZo | 03:15 | 2026-09-10 | 待处理 | |
 | 163 | RFT 拒绝采样微调详解：性价比最高的推理能力提升方法 | BV1kdb76fEAX | 02:57 | 2026-09-10 | 待处理 | |
