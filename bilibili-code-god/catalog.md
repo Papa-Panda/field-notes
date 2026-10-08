@@ -226,26 +226,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 218 | PPO 为什么需要四个模型？演员、评论家、奖励、参考各自的作用 | BV1og8S6CE26 | 02:59 | 2026-08-31 | 已完成 | [G218-ppo-four-models.md](episodes/G218-ppo-four-models.md) |
 | 219 | 奖励稀疏问题详解：奖励塑形、课程学习、好奇心驱动与 PRM | BV1Lg8S6yE84 | 02:53 | 2026-08-31 | 已完成 | [G219-sparse-reward.md](episodes/G219-sparse-reward.md) |
 | 220 | RLEP 经验回放：把高质量 rollout 存进 buffer 反复利用 | BV1fK8S6jE8G | 01:03 | 2026-08-31 | 已完成 | [G220-rlep-replay.md](episodes/G220-rlep-replay.md) |
-| 221 | 奖励模型是怎么训练出来的？用排序代替打分的成对比较损失 | BV17T8S62EnA | 02:36 | 2026-08-31 | 待处理 | |
+| 221 | 奖励模型是怎么训练出来的？用排序代替打分的成对比较损失 | BV17T8S62EnA | 02:36 | 2026-08-31 | 已完成 | [G221-rm-training.md](episodes/G221-rm-training.md) |
 | 222 | 检索器与生成器的微调 pipeline：对比学习、上下文利用与联合训练 | BV1ZT8S61E3b | 01:45 | 2026-08-31 | 待处理 | |
-| 223 | R1 是怎么训练出来的？四阶段配方：RL 涌现、冷启动、拒绝采样、蒸馏 | BV1RL8S6gECS | 03:25 | 2026-08-30 | 待处理 | |
-| 224 | 预训练为什么只做「预测下一个词」就能学到知识？兼谈曝光偏差 | BV1RL8S6gEDV | 03:33 | 2026-08-30 | 待处理 | |
-| 225 | Prefill 与 Decode 为什么差 140 倍？PD 分离架构的由来 | BV1Xj8S6zEe1 | 03:37 | 2026-08-30 | 待处理 | |
-| 226 | PPO 的奖励为什么只在最后一个 token 才发？逐 token 算账拆解 | BV1RG8S6GEoq | 02:41 | 2026-08-30 | 待处理 | |
-| 227 | PPO 的 clip 为什么只在一半情况下才生效？不对称四象限详解 | BV1RG8S6GEhk | 03:21 | 2026-08-30 | 待处理 | |
-| 228 | PPO 训练显存爆炸怎么办？四模型驻留、offload 与稳定性调参 | BV15V8S6kEkq | 01:58 | 2026-08-30 | 待处理 | |
-| 229 | 存在惩罚和频率惩罚的区别在哪里？两个治复读旋钮讲透 | BV1e8826PEYT | 03:37 | 2026-08-29 | 待处理 | |
-| 230 | MMLU 分数有水分？57 个学科的评估细节、三大坑与改进版 | BV1e8826PEiP | 04:13 | 2026-08-29 | 待处理 | |
+| 223 | R1 是怎么训练出来的？四阶段配方：RL 涌现、冷启动、拒绝采样、蒸馏 | BV1RL8S6gECS | 03:25 | 2026-08-30 | 已完成 | [G223-r1-recipe.md](episodes/G223-r1-recipe.md) |
+| 224 | 预训练为什么只做「预测下一个词」就能学到知识？兼谈曝光偏差 | BV1RL8S6gEDV | 03:33 | 2026-08-30 | 已完成 | [G224-next-token-pretraining.md](episodes/G224-next-token-pretraining.md) |
+| 225 | Prefill 与 Decode 为什么差 140 倍？PD 分离架构的由来 | BV1Xj8S6zEe1 | 03:37 | 2026-08-30 | 已完成 | [G225-pd-separation.md](episodes/G225-pd-separation.md) |
+| 226 | PPO 的奖励为什么只在最后一个 token 才发？逐 token 算账拆解 | BV1RG8S6GEoq | 02:41 | 2026-08-30 | 已完成 | [G226-ppo-terminal-reward.md](episodes/G226-ppo-terminal-reward.md) |
+| 227 | PPO 的 clip 为什么只在一半情况下才生效？不对称四象限详解 | BV1RG8S6GEhk | 03:21 | 2026-08-30 | 已完成 | [G227-ppo-clip-quadrants.md](episodes/G227-ppo-clip-quadrants.md) |
+| 228 | PPO 训练显存爆炸怎么办？四模型驻留、offload 与稳定性调参 | BV15V8S6kEkq | 01:58 | 2026-08-30 | 已完成 | [G228-ppo-memory.md](episodes/G228-ppo-memory.md) |
+| 229 | 存在惩罚和频率惩罚的区别在哪里？两个治复读旋钮讲透 | BV1e8826PEYT | 03:37 | 2026-08-29 | 已完成 | [G229-presence-frequency-penalty.md](episodes/G229-presence-frequency-penalty.md) |
+| 230 | MMLU 分数有水分？57 个学科的评估细节、三大坑与改进版 | BV1e8826PEiP | 04:13 | 2026-08-29 | 已完成 | [G230-mmlu-pitfalls.md](episodes/G230-mmlu-pitfalls.md) |
 | 231 | MFU 和 GPU 利用率的区别在哪里？兼谈 MFU 与 HFU | BV1Vh826YExp | 03:13 | 2026-08-29 | 待处理 | |
-| 232 | Medusa 多解码头讲透：一次预测 k 个 token，无需草稿模型的内嵌方案 | BV1j4826KEUb | 04:03 | 2026-08-29 | 待处理 | |
-| 233 | 离群激活详解：为什么清零 99% 的激活模型还活着，动几个大的就崩 | BV1vt826vEKv | 01:59 | 2026-08-29 | 待处理 | |
-| 234 | 机器遗忘详解：梯度上升、RMU、NPO 三种让大模型选择性失忆的方法 | BV15t826vEUA | 02:05 | 2026-08-29 | 待处理 | |
+| 232 | Medusa 多解码头讲透：一次预测 k 个 token，无需草稿模型的内嵌方案 | BV1j4826KEUb | 04:03 | 2026-08-29 | 已完成 | [G232-medusa.md](episodes/G232-medusa.md) |
+| 233 | 离群激活详解：为什么清零 99% 的激活模型还活着，动几个大的就崩 | BV1vt826vEKv | 01:59 | 2026-08-29 | 已完成 | [G233-outlier-activations.md](episodes/G233-outlier-activations.md) |
+| 234 | 机器遗忘详解：梯度上升、RMU、NPO 三种让大模型选择性失忆的方法 | BV15t826vEUA | 02:05 | 2026-08-29 | 已完成 | [G234-machine-unlearning.md](episodes/G234-machine-unlearning.md) |
 | 235 | 大模型学习率怎么选？LR Range Test、warmup 与 cosine decay 实操 | BV13i826FEjB | 02:25 | 2026-08-28 | 待处理 | |
-| 236 | Lost in the Middle 详解：答案放中间为什么就找不到了？兼谈 RAG 重排 | BV1hi826FEwT | 03:28 | 2026-08-28 | 待处理 | |
-| 237 | LoRA 显存悖论：只训 1% 参数，为什么显存没等比例下降 | BV1aq826bExU | 02:51 | 2026-08-28 | 待处理 | |
-| 238 | LoRA 超参调优：rank、alpha、target modules 与学习率怎么设 | BV1VY826wEd2 | 02:30 | 2026-08-28 | 待处理 | |
-| 239 | LongRoPE 讲透：把 4K 上下文扩到 2048K，非均匀插值 vs 均匀插值 | BV13e826hE9X | 04:23 | 2026-08-28 | 待处理 | |
-| 240 | Logit Lens 详解：把每一层的残差解码成词，看答案如何逐层结晶 | BV1Ye826hEBW | 02:17 | 2026-08-28 | 待处理 | |
+| 236 | Lost in the Middle 详解：答案放中间为什么就找不到了？兼谈 RAG 重排 | BV1hi826FEwT | 03:28 | 2026-08-28 | 已完成 | [G236-lost-in-the-middle.md](episodes/G236-lost-in-the-middle.md) |
+| 237 | LoRA 显存悖论：只训 1% 参数，为什么显存没等比例下降 | BV1aq826bExU | 02:51 | 2026-08-28 | 已完成 | [G237-lora-memory-paradox.md](episodes/G237-lora-memory-paradox.md) |
+| 238 | LoRA 超参调优：rank、alpha、target modules 与学习率怎么设 | BV1VY826wEd2 | 02:30 | 2026-08-28 | 已完成 | [G238-lora-hyperparams.md](episodes/G238-lora-hyperparams.md) |
+| 239 | LongRoPE 讲透：把 4K 上下文扩到 2048K，非均匀插值 vs 均匀插值 | BV13e826hE9X | 04:23 | 2026-08-28 | 已完成 | [G239-longrope.md](episodes/G239-longrope.md) |
+| 240 | Logit Lens 详解：把每一层的残差解码成词，看答案如何逐层结晶 | BV1Ye826hEBW | 02:17 | 2026-08-28 | 已完成 | [G240-logit-lens-layers.md](episodes/G240-logit-lens-layers.md) |
 | 241 | 大模型水印是怎么做的？绿名单方案详解：γ 切名单、δ 加分数、z 做检验 | BV1J7826GEU2 | 03:31 | 2026-08-28 | 待处理 | |
 | 242 | 大模型为什么算不对多位数乘法？三重根因与逆序输入解法 | BV1rE826rEF6 | 02:52 | 2026-08-27 | 待处理 | |
 | 243 | Linear Attention 讲透：核函数替代 softmax，O(n²) 降到 O(n) | BV1JE826rEVe | 04:57 | 2026-08-27 | 待处理 | |
