@@ -445,26 +445,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 437 | In-Context Learning 机理：贝叶斯任务定位，为什么乱标签也能 work | BV1F5Kj68EPG | 03:24 | 2026-07-16 | 已完成 | [G437-icl-mechanism.md](episodes/G437-icl-mechanism.md) |
 | 438 | 学习率 Warmup 为什么重要：损失面陡峭 + Adam 二阶矩不准，不加会怎样（与 #415 同题重发） | BV1F5Kj68Ecy | 03:19 | 2026-07-16 | 已完成 | [G438-lr-warmup-repost.md](episodes/G438-lr-warmup-repost.md) |
 | 439 | 梯度裁剪原理：按范数裁剪 vs 按值裁剪，阈值怎么设，为什么必开 | BV14ZNa6HEru | 03:03 | 2026-07-16 | 已完成 | [G439-gradient-clipping.md](episodes/G439-gradient-clipping.md) |
-| 440 | 残差连接为什么重要：退化问题、梯度高速路，与 Transformer 的残差流 | BV1SXNa6RE4J | 03:22 | 2026-07-15 | 待处理 | |
-| 441 | 权重初始化 0.02 的由来：Xavier/He、残差流与小初始化，为什么不是随便设的 | BV17BNa6NEDc | 03:57 | 2026-07-15 | 待处理 | |
-| 442 | 训练算力 6ND 公式详解（与 #421 同题重发） | BV1jzNa6eEom | 03:28 | 2026-07-15 | 待处理 | |
-| 443 | 7B 参数量怎么手算？（与 #423 同题重发） | BV1jiNa6iECe | 03:17 | 2026-07-15 | 待处理 | |
-| 444 | Transformer FFN 详解：为什么先升维 4 倍再降回？升维 / 降维 / 残差 / SwiGLU 2.67 倍全讲透 | BV14LN86GEG1 | 03:23 | 2026-07-15 | 待处理 | |
-| 445 | Word2Vec 词向量详解：CBOW / Skip-gram / 负采样，为什么它是 Embedding 的祖师爷 | BV1hmN86nEVC | 03:49 | 2026-07-15 | 待处理 | |
-| 446 | BPE 分词详解：中文为什么比英文更费 Token？子词 / 字节级 / WordPiece / Unigram 全讲透 | BV1uUN86SEHs | 03:25 | 2026-07-14 | 待处理 | |
-| 447 | 解码策略详解：贪心 / Beam Search / 采样怎么选？（与 #417 同题重发） | BV1LyNa6cELQ | 03:15 | 2026-07-14 | 待处理 | |
-| 448 | weight tying 详解（与 #419 同题重发） | BV151Na68EcR | 03:44 | 2026-07-14 | 待处理 | |
-| 449 | 大模型能过律考却算不对六位数乘法：分词错位+进位是未来信息+概率≠确定+调工具 | BV1azNU6BEpK | 03:17 | 2026-07-14 | 待处理 | |
-| 450 | SwiGLU 激活函数：GLU 门控 × Swish，为何取代 ReLU/GELU 成大模型 FFN 标配 | BV1i3NS62E68 | 04:17 | 2026-07-14 | 待处理 | |
-| 451 | Kimi AttnRes：把残差升级成对历史层的注意力，伪查询+块级检索，N≈8 延迟<2% | BV1LVNS6LEHX | 04:13 | 2026-07-14 | 待处理 | |
-| 452 | Engram 以存储换算力：确定性哈希查表的先天记忆，O(1) 取语义，NIAH 84→97 | BV17MNS6UEhc | 04:15 | 2026-07-14 | 待处理 | |
-| 453 | 门控注意力：SDPA 输出后加 Sigmoid 门，强稀疏+破低秩+去 attention-sink，只多 1% 参数 | BV1jgNS67EsS | 03:58 | 2026-07-13 | 待处理 | |
-| 454 | DeepSeek DSA 稀疏注意力：闪电索引器选 top-2048，真正省的是访存而非 FLOPs | BV1LFN366ER5 | 03:37 | 2026-07-13 | 待处理 | |
-| 455 | DCA 双块注意力：块内/块间/相邻块 + 位置重映射封顶，零训练扩到百万上下文 | BV1zdNg6VEsk | 03:29 | 2026-07-13 | 待处理 | |
-| 456 | MTP 多 Token 预测：一次预测多个未来字 + 投机解码，步数砍半提速 1.8× | BV1EoNg6kERe | 03:43 | 2026-07-13 | 待处理 | |
-| 457 | YaRN 长度外推：RoPE 高频外推低频内插 + 注意力温度，4k→128k 几乎零成本 | BV1RNN36TEva | 03:42 | 2026-07-13 | 待处理 | |
-| 458 | DeepSeek NSA 原生稀疏注意力：压缩+选择+滑窗，长文本解码快 11 倍还反超全注意力 | BV1YKN36iEBs | 03:58 | 2026-07-12 | 待处理 | |
-| 459 | Encoder 和 Decoder 中的 Mask 有什么不同？两层掩码一次讲透 | BV1cENA6xEtb | 02:57 | 2026-07-12 | 待处理 | |
+| 440 | 残差连接为什么重要：退化问题、梯度高速路，与 Transformer 的残差流 | BV1SXNa6RE4J | 03:22 | 2026-07-15 | 已完成 | [G440-residual-stream.md](episodes/G440-residual-stream.md) |
+| 441 | 权重初始化 0.02 的由来：Xavier/He、残差流与小初始化，为什么不是随便设的 | BV17BNa6NEDc | 03:57 | 2026-07-15 | 已完成 | [G441-weight-init.md](episodes/G441-weight-init.md) |
+| 442 | 训练算力 6ND 公式详解（与 #421 同题重发） | BV1jzNa6eEom | 03:28 | 2026-07-15 | 已完成 | [G442-compute-6nd-repost.md](episodes/G442-compute-6nd-repost.md) |
+| 443 | 7B 参数量怎么手算？（与 #423 同题重发） | BV1jiNa6iECe | 03:17 | 2026-07-15 | 已完成 | [G443-param-count-7b-repost.md](episodes/G443-param-count-7b-repost.md) |
+| 444 | Transformer FFN 详解：为什么先升维 4 倍再降回？升维 / 降维 / 残差 / SwiGLU 2.67 倍全讲透 | BV14LN86GEG1 | 03:23 | 2026-07-15 | 已完成 | [G444-transformer-ffn.md](episodes/G444-transformer-ffn.md) |
+| 445 | Word2Vec 词向量详解：CBOW / Skip-gram / 负采样，为什么它是 Embedding 的祖师爷 | BV1hmN86nEVC | 03:49 | 2026-07-15 | 已完成 | [G445-word2vec.md](episodes/G445-word2vec.md) |
+| 446 | BPE 分词详解：中文为什么比英文更费 Token？子词 / 字节级 / WordPiece / Unigram 全讲透 | BV1uUN86SEHs | 03:25 | 2026-07-14 | 已完成 | [G446-bpe-tokenizer.md](episodes/G446-bpe-tokenizer.md) |
+| 447 | 解码策略详解：贪心 / Beam Search / 采样怎么选？（与 #417 同题重发） | BV1LyNa6cELQ | 03:15 | 2026-07-14 | 已完成 | [G447-decoding-repost.md](episodes/G447-decoding-repost.md) |
+| 448 | weight tying 详解（与 #419 同题重发） | BV151Na68EcR | 03:44 | 2026-07-14 | 已完成 | [G448-weight-tying-repost.md](episodes/G448-weight-tying-repost.md) |
+| 449 | 大模型能过律考却算不对六位数乘法：分词错位+进位是未来信息+概率≠确定+调工具 | BV1azNU6BEpK | 03:17 | 2026-07-14 | 已完成 | [G449-llm-multiplication-fail.md](episodes/G449-llm-multiplication-fail.md) |
+| 450 | SwiGLU 激活函数：GLU 门控 × Swish，为何取代 ReLU/GELU 成大模型 FFN 标配 | BV1i3NS62E68 | 04:17 | 2026-07-14 | 已完成 | [G450-swiglu.md](episodes/G450-swiglu.md) |
+| 451 | Kimi AttnRes：把残差升级成对历史层的注意力，伪查询+块级检索，N≈8 延迟<2% | BV1LVNS6LEHX | 04:13 | 2026-07-14 | 已完成 | [G451-attnres.md](episodes/G451-attnres.md) |
+| 452 | Engram 以存储换算力：确定性哈希查表的先天记忆，O(1) 取语义，NIAH 84→97 | BV17MNS6UEhc | 04:15 | 2026-07-14 | 已完成 | [G452-engram.md](episodes/G452-engram.md) |
+| 453 | 门控注意力：SDPA 输出后加 Sigmoid 门，强稀疏+破低秩+去 attention-sink，只多 1% 参数 | BV1jgNS67EsS | 03:58 | 2026-07-13 | 已完成 | [G453-gated-attention.md](episodes/G453-gated-attention.md) |
+| 454 | DeepSeek DSA 稀疏注意力：闪电索引器选 top-2048，真正省的是访存而非 FLOPs | BV1LFN366ER5 | 03:37 | 2026-07-13 | 已完成 | [G454-deepseek-dsa.md](episodes/G454-deepseek-dsa.md) |
+| 455 | DCA 双块注意力：块内/块间/相邻块 + 位置重映射封顶，零训练扩到百万上下文 | BV1zdNg6VEsk | 03:29 | 2026-07-13 | 已完成 | [G455-dca.md](episodes/G455-dca.md) |
+| 456 | MTP 多 Token 预测：一次预测多个未来字 + 投机解码，步数砍半提速 1.8× | BV1EoNg6kERe | 03:43 | 2026-07-13 | 已完成 | [G456-mtp.md](episodes/G456-mtp.md) |
+| 457 | YaRN 长度外推：RoPE 高频外推低频内插 + 注意力温度，4k→128k 几乎零成本 | BV1RNN36TEva | 03:42 | 2026-07-13 | 已完成 | [G457-yarn.md](episodes/G457-yarn.md) |
+| 458 | DeepSeek NSA 原生稀疏注意力：压缩+选择+滑窗，长文本解码快 11 倍还反超全注意力 | BV1YKN36iEBs | 03:58 | 2026-07-12 | 已完成 | [G458-deepseek-nsa.md](episodes/G458-deepseek-nsa.md) |
+| 459 | Encoder 和 Decoder 中的 Mask 有什么不同？两层掩码一次讲透 | BV1cENA6xEtb | 02:57 | 2026-07-12 | 已完成 | [G459-encoder-decoder-mask.md](episodes/G459-encoder-decoder-mask.md) |
 | 460 | 什么是重要性采样？为什么 token 级的损失难以收敛？「猫喜欢鱼」讲透 | BV1HENA6xEpB | 03:30 | 2026-07-12 | 待处理 | |
 | 461 | GRPO 用旧策略数据，为什么还叫 on-policy？一个打篮球的例子讲透 | BV1fJNA69EFy | 03:09 | 2026-07-12 | 待处理 | |
 | 462 | Softmax 前为什么要除以根号 d？含完整数学推导 | BV1cJNA6REKc | 02:39 | 2026-07-12 | 待处理 | |
