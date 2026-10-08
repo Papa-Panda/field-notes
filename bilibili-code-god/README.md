@@ -10,7 +10,8 @@
 ## 进度
 
 - 批 1（#1–#20）：20/20 完成（#8 于批 2 补齐）。
-- 批 2（#21–#40）：20/20 完成。累计 40/515。
+- 批 2（#21–#40）：20/20 完成。
+- 批 3（#41–#60）：20/20 完成。累计 60/515。
 
 ## 已完成纪要
 
@@ -56,3 +57,23 @@
 | G038 | 大模型即策略：老虎机与 token 级 MDP |
 | G039 | 变长 SFT 梯度累积的归一化 bug |
 | G040 | Cut Cross-Entropy 与 Liger Kernel |
+| G041 | PPO 完整训练流程 |
+| G042 | 奖励随机错 40% RL 还能训吗 |
+| G043 | 进化策略 vs GRPO |
+| G044 | SPT 专用预训练 |
+| G045 | 多轮 Agent 工具 token 的 mask |
+| G046 | 从 TRPO 到 PPO |
+| G047 | TailSFT：为 RL 准备的 SFT |
+| G048 | ARC / FACA：多轮交互 RL 学裁判偏好 |
+| G049 | 重要性采样 |
+| G050 | 思维链监控不能进 RL 奖励 |
+| G051 | BroRL：rollout 16→512 |
+| G052 | Likelihood Displacement 与安全 DPO |
+| G053 | CPT Scaling Law |
+| G054 | GAE 的 λ |
+| G055 | 纯 bf16 训练停滞与舍入 |
+| G056 | Adam β₂ 为什么是 0.95 |
+| G057 | Actor-Critic 的代价 |
+| G058 | 先 fuzz 你的 verifier |
+| G059 | VerIF：硬约束代码校验 + 软约束模型判 |
+| G060 | 中间阶段评估看流水线终点 |

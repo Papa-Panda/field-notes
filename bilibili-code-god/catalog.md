@@ -46,26 +46,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 38 | 大模型怎么变成策略？单步老虎机与 token 级 MDP 的两种看法 | BV1LjhU6yEy1 | 00:56 | 2026-10-01 | 已完成 | [G038-llm-as-policy.md](episodes/G038-llm-as-policy.md) |
 | 39 | 变长 SFT 开梯度累积，loss 为什么会系统性偏高？HF Trainer 存在两年的归一化 bug | BV1LReh6iES9 | 03:28 | 2026-10-01 | 已完成 | [G039-sft-grad-accum-bug.md](episodes/G039-sft-grad-accum-bug.md) |
 | 40 | 大词表训练时 logits 为什么吃掉 89% 显存？Cut Cross-Entropy 与 Liger Kernel 讲透 | BV19Reh6vEk5 | 04:12 | 2026-09-30 | 已完成 | [G040-cut-cross-entropy.md](episodes/G040-cut-cross-entropy.md) |
-| 41 | PPO 完整训练流程：三步一轮、三项损失，以及大模型版的参数 | BV1WFhU6xEmR | 00:58 | 2026-09-30 | 待处理 | |
-| 42 | 奖励随机错 40% 为什么 RL 还能训？看训练奖励饱和速度判断模型在学还是在背 | BV1Xoeh6PEzc | 04:50 | 2026-09-30 | 待处理 | |
-| 43 | 不用反向传播能训大模型 Agent 吗？进化策略与 GRPO 的方差、显存与 pass@k 对比 | BV1zbea6GEF9 | 04:38 | 2026-09-30 | 待处理 | |
-| 44 | 专用预训练 SPT：领域数据混进预训练，为什么 1B 能打赢微调的 3B | BV1Zbea6GEq7 | 04:17 | 2026-09-30 | 待处理 | |
-| 45 | 多轮 Agent RL 里工具返回的 token 为什么要 mask？loss、KL、重要性比三处都要排 | BV1B8ea6rEc7 | 03:59 | 2026-09-30 | 待处理 | |
-| 46 | 从 TRPO 到 PPO：KL 围栏与 clip 剪刀，ε 为什么是 0.2 | BV1WFhU6xED8 | 00:59 | 2026-09-30 | 待处理 | |
-| 47 | 为 RL 准备的 SFT 为什么不该追求最低 loss？TailSFT、SWE-Prime 与数据选择的容量边界 | BV16xea65ExR | 04:51 | 2026-09-30 | 待处理 | |
-| 48 | 多轮交互 RL 为什么学到的是裁判偏好？ARC 按策略分组 τ-airline +12.67，FACA 用户反应奖励 +10.22 | BV1rxea65EFj | 04:52 | 2026-09-29 | 待处理 | |
-| 49 | 重要性采样是什么？旧策略采的数据为什么还能用、能用到什么程度 | BV1schU6REqP | 00:56 | 2026-09-29 | 待处理 | |
-| 50 | 为什么不能把思维链监控写进 RL 奖励？混淆式作弊、反馈外溢与可监控性税 | BV1B4ea6CES3 | 04:34 | 2026-09-29 | 待处理 | |
-| 51 | BroRL：通过把每题 rollout 从 16 加到 512 改进 RL 训练饱和的问题（NVIDIA） | BV1f4ea6CETH | 04:25 | 2026-09-29 | 待处理 | |
-| 52 | Likelihood Displacement：为什么 DPO 越训 chosen 的概率越低？安全 DPO 拒答率反降 55% | BV1ivea6MEGr | 03:34 | 2026-09-29 | 待处理 | |
-| 53 | CPT Scaling Law：用分布偏移项与退火面积预测继续预训练的 loss 曲线 | BV1Rvea6MEhE | 04:24 | 2026-09-29 | 待处理 | |
-| 54 | GAE 的 λ 到底在调什么？λ 为什么可以比 γ 小得多 | BV1Tohm6bEe4 | 01:00 | 2026-09-29 | 待处理 | |
-| 55 | 纯 bf16 训练为什么会停滞？相对更新小于 0.39% 就被舍入吞掉 | BV1viea6qEhh | 04:30 | 2026-09-29 | 待处理 | |
-| 56 | 大模型 Adam 的 β₂ 为什么是 0.95 而不是 0.999？记忆 20 步 vs 1000 步 | BV1Zaea6gE8C | 04:12 | 2026-09-28 | 待处理 | |
-| 57 | Actor-Critic 为什么要两个网络？Critic 的作业与它在大模型上的代价 | BV1Tohm6bE1K | 00:59 | 2026-09-28 | 待处理 | |
-| 58 | 训练前为什么要先 fuzz 你的 verifier？93% 判卷失败来自空格标点、版本间半数判法相反 | BV1qaea6gE6K | 03:04 | 2026-09-28 | 待处理 | |
-| 59 | VerIF：用代码校验硬约束、推理模型判软约束，改进指令遵循 RL 的验证难题，IFEval 68.4→84.5 | BV1vYea6zEDe | 03:27 | 2026-09-28 | 待处理 | |
-| 60 | 训练的中间阶段该怎么评估？RL 前分最低的 Mixed SFT，RL 后打败 next-chunk RL | BV1iYea6zEvS | 04:22 | 2026-09-28 | 待处理 | |
+| 41 | PPO 完整训练流程：三步一轮、三项损失，以及大模型版的参数 | BV1WFhU6xEmR | 00:58 | 2026-09-30 | 已完成 | [G041-ppo-full-loop.md](episodes/G041-ppo-full-loop.md) |
+| 42 | 奖励随机错 40% 为什么 RL 还能训？看训练奖励饱和速度判断模型在学还是在背 | BV1Xoeh6PEzc | 04:50 | 2026-09-30 | 已完成 | [G042-noisy-reward-rl.md](episodes/G042-noisy-reward-rl.md) |
+| 43 | 不用反向传播能训大模型 Agent 吗？进化策略与 GRPO 的方差、显存与 pass@k 对比 | BV1zbea6GEF9 | 04:38 | 2026-09-30 | 已完成 | [G043-evolution-strategies.md](episodes/G043-evolution-strategies.md) |
+| 44 | 专用预训练 SPT：领域数据混进预训练，为什么 1B 能打赢微调的 3B | BV1Zbea6GEq7 | 04:17 | 2026-09-30 | 已完成 | [G044-spt-specialized-pretrain.md](episodes/G044-spt-specialized-pretrain.md) |
+| 45 | 多轮 Agent RL 里工具返回的 token 为什么要 mask？loss、KL、重要性比三处都要排 | BV1B8ea6rEc7 | 03:59 | 2026-09-30 | 已完成 | [G045-tool-token-mask.md](episodes/G045-tool-token-mask.md) |
+| 46 | 从 TRPO 到 PPO：KL 围栏与 clip 剪刀，ε 为什么是 0.2 | BV1WFhU6xED8 | 00:59 | 2026-09-30 | 已完成 | [G046-trpo-to-ppo.md](episodes/G046-trpo-to-ppo.md) |
+| 47 | 为 RL 准备的 SFT 为什么不该追求最低 loss？TailSFT、SWE-Prime 与数据选择的容量边界 | BV16xea65ExR | 04:51 | 2026-09-30 | 已完成 | [G047-tailsft.md](episodes/G047-tailsft.md) |
+| 48 | 多轮交互 RL 为什么学到的是裁判偏好？ARC 按策略分组 τ-airline +12.67，FACA 用户反应奖励 +10.22 | BV1rxea65EFj | 04:52 | 2026-09-29 | 已完成 | [G048-arc-faca.md](episodes/G048-arc-faca.md) |
+| 49 | 重要性采样是什么？旧策略采的数据为什么还能用、能用到什么程度 | BV1schU6REqP | 00:56 | 2026-09-29 | 已完成 | [G049-importance-sampling.md](episodes/G049-importance-sampling.md) |
+| 50 | 为什么不能把思维链监控写进 RL 奖励？混淆式作弊、反馈外溢与可监控性税 | BV1B4ea6CES3 | 04:34 | 2026-09-29 | 已完成 | [G050-cot-monitor-reward.md](episodes/G050-cot-monitor-reward.md) |
+| 51 | BroRL：通过把每题 rollout 从 16 加到 512 改进 RL 训练饱和的问题（NVIDIA） | BV1f4ea6CETH | 04:25 | 2026-09-29 | 已完成 | [G051-brorl.md](episodes/G051-brorl.md) |
+| 52 | Likelihood Displacement：为什么 DPO 越训 chosen 的概率越低？安全 DPO 拒答率反降 55% | BV1ivea6MEGr | 03:34 | 2026-09-29 | 已完成 | [G052-likelihood-displacement.md](episodes/G052-likelihood-displacement.md) |
+| 53 | CPT Scaling Law：用分布偏移项与退火面积预测继续预训练的 loss 曲线 | BV1Rvea6MEhE | 04:24 | 2026-09-29 | 已完成 | [G053-cpt-scaling-law.md](episodes/G053-cpt-scaling-law.md) |
+| 54 | GAE 的 λ 到底在调什么？λ 为什么可以比 γ 小得多 | BV1Tohm6bEe4 | 01:00 | 2026-09-29 | 已完成 | [G054-gae-lambda.md](episodes/G054-gae-lambda.md) |
+| 55 | 纯 bf16 训练为什么会停滞？相对更新小于 0.39% 就被舍入吞掉 | BV1viea6qEhh | 04:30 | 2026-09-29 | 已完成 | [G055-bf16-stagnation.md](episodes/G055-bf16-stagnation.md) |
+| 56 | 大模型 Adam 的 β₂ 为什么是 0.95 而不是 0.999？记忆 20 步 vs 1000 步 | BV1Zaea6gE8C | 04:12 | 2026-09-28 | 已完成 | [G056-adam-beta2.md](episodes/G056-adam-beta2.md) |
+| 57 | Actor-Critic 为什么要两个网络？Critic 的作业与它在大模型上的代价 | BV1Tohm6bE1K | 00:59 | 2026-09-28 | 已完成 | [G057-actor-critic.md](episodes/G057-actor-critic.md) |
+| 58 | 训练前为什么要先 fuzz 你的 verifier？93% 判卷失败来自空格标点、版本间半数判法相反 | BV1qaea6gE6K | 03:04 | 2026-09-28 | 已完成 | [G058-fuzz-verifier.md](episodes/G058-fuzz-verifier.md) |
+| 59 | VerIF：用代码校验硬约束、推理模型判软约束，改进指令遵循 RL 的验证难题，IFEval 68.4→84.5 | BV1vYea6zEDe | 03:27 | 2026-09-28 | 已完成 | [G059-verif.md](episodes/G059-verif.md) |
+| 60 | 训练的中间阶段该怎么评估？RL 前分最低的 Mixed SFT，RL 后打败 next-chunk RL | BV1iYea6zEvS | 04:22 | 2026-09-28 | 已完成 | [G060-midstage-eval.md](episodes/G060-midstage-eval.md) |
 | 61 | harness 原生 RL：在模型 API 边界记 token，训练与部署用同一套脚手架 | BV11jea6nEaK | 04:33 | 2026-09-28 | 待处理 | |
 | 62 | baseline 为什么不引入偏差？减 V 得到优势，GRPO 减的是组平均 | BV14Zhm6oEPG | 00:57 | 2026-09-28 | 待处理 | |
 | 63 | EnvHarness：通过围绕策略弱点改写环境动态，改进 Agent RL 的环境饱和问题（HF 518 赞） | BV1Cjea6nEUc | 04:28 | 2026-09-28 | 待处理 | |
