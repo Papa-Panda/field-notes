@@ -306,26 +306,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 298 | Lookahead Decoding：把大模型解码看成解方程，雅可比并行无损加速 | BV1Reua6rEkb | 03:31 | 2026-08-14 | 已完成 | [G298-lookahead-decoding.md](episodes/G298-lookahead-decoding.md) |
 | 299 | Late Chunking：调换切块和编码顺序，RAG检索质量的零成本提升 | BV1Liua63ER5 | 03:23 | 2026-08-14 | 已完成 | [G299-late-chunking.md](episodes/G299-late-chunking.md) |
 | 300 | KV缓存驱逐：H2O与SnapKV，95%的KV都在陪跑 | BV1Liua63EZG | 03:26 | 2026-08-14 | 已完成 | [G300-kv-eviction.md](episodes/G300-kv-eviction.md) |
-| 301 | 不用成对偏好数据怎么做对齐？KTO 把前景理论塞进训练目标，损失厌恶一战封神 | BV1zMuY6EEZD | 03:41 | 2026-08-13 | 待处理 | |
-| 302 | Mamba+注意力+MoE三合一，Jamba如何把25万字塞进单张显卡？混合架构原理拆解 | BV1zuuY6mEqQ | 03:18 | 2026-08-13 | 待处理 | |
-| 303 | GraphRAG 原理拆解：先建图谱再分社区，RAG 终于能答全局问题了 | BV1zuuY6mEyK | 03:16 | 2026-08-13 | 待处理 | |
-| 304 | 思维图GoT讲透：链→树→图演进+聚合/回环+三大思维变换，质量涨六成还更省钱 | BV1nNuY6HEF4 | 03:14 | 2026-08-13 | 待处理 | |
-| 305 | 生成式奖励模型GRM全解：会思考的考官，让奖励不再黑箱 | BV1zKuY6SEqJ | 03:36 | 2026-08-12 | 待处理 | |
-| 306 | DPO 变体全家桶：SimPO/KTO/ORPO/IPO 各改了什么、怎么选？ | BV1zKuY6SEhi | 03:18 | 2026-08-12 | 待处理 | |
-| 307 | CRAG 纠错式检索增强：给 RAG 加一道质检，三档纠错让大模型不再胡说 | BV1v5uY65EXS | 03:29 | 2026-08-12 | 待处理 | |
-| 308 | 一次讲透宪法AI与RLAIF：大模型如何用AI反馈替代人类标注 | BV1iLuY6CESB | 04:03 | 2026-08-12 | 待处理 | |
-| 309 | 多模态早融合 vs 后融合：Chameleon 凭什么把图文从头一起训 | BV1iLuY6CEX1 | 03:29 | 2026-08-12 | 待处理 | |
-| 310 | 思维草稿Chain-of-Draft：一句提示词让大模型少写80%token，正确率几乎不掉 | BV1q3uY6jEYg | 03:19 | 2026-08-11 | 待处理 | |
-| 311 | 扔掉分词器！Byte Latent Transformer 用字节熵动态切 patch 全解析 | BV1oGuY61EFH | 04:03 | 2026-08-11 | 待处理 | |
-| 312 | BitNet b1.58 全解：权重只用-1/0/1，乘法变加法，省电71倍还不掉点 | BV1iGuY61EDX | 03:37 | 2026-08-11 | 待处理 | |
-| 313 | DeepSeek 删掉辅助损失，MoE 反而更均衡？无辅助损失负载均衡一次讲透（BV 与 #104 重复，待核） | BV1aWeY6vEpH | 03:15 | 2026-08-10 | 待处理 | |
-| 314 | 删掉开头几个 token 大模型当场崩盘？一图看透 Attention Sink 与 StreamingLLM | BV11dua64ECo | 02:55 | 2026-08-10 | 待处理 | |
-| 315 | Toolformer 讲透：让模型自监督学会"何时调工具"，零人工标注 | BV1youa6dEug | 04:55 | 2026-08-10 | 待处理 | |
-| 316 | Token-level MDP：LLM 的 state 和 action 到底是什么？ | BV1e63Z6nECL | 04:08 | 2026-08-10 | 待处理 | |
-| 317 | SFT 和 RLHF 竟是同一枚硬币的两面：正向 KL vs 反向 KL | BV1R63Z6nEeD | 04:26 | 2026-08-09 | 待处理 | |
-| 318 | Self-Rewarding LM：不要 Reward Model，让 LLM 自己当裁判 | BV1er3Z6SEcf | 04:19 | 2026-08-09 | 待处理 | |
-| 319 | Reward Model Calibration：RM 分数到底能不能信？0.2 差距的真实含义 | BV1XZ3R63EYU | 04:54 | 2026-08-09 | 待处理 | |
-| 320 | RLHF 三阶段：SFT → RM → PPO 是怎么串起来的？ | BV1GZ3R6GEmJ | 04:33 | 2026-08-09 | 待处理 | |
+| 301 | 不用成对偏好数据怎么做对齐？KTO 把前景理论塞进训练目标，损失厌恶一战封神 | BV1zMuY6EEZD | 03:41 | 2026-08-13 | 已完成 | [G301-kto.md](episodes/G301-kto.md) |
+| 302 | Mamba+注意力+MoE三合一，Jamba如何把25万字塞进单张显卡？混合架构原理拆解 | BV1zuuY6mEqQ | 03:18 | 2026-08-13 | 已完成 | [G302-jamba.md](episodes/G302-jamba.md) |
+| 303 | GraphRAG 原理拆解：先建图谱再分社区，RAG 终于能答全局问题了 | BV1zuuY6mEyK | 03:16 | 2026-08-13 | 已完成 | [G303-graphrag.md](episodes/G303-graphrag.md) |
+| 304 | 思维图GoT讲透：链→树→图演进+聚合/回环+三大思维变换，质量涨六成还更省钱 | BV1nNuY6HEF4 | 03:14 | 2026-08-13 | 已完成 | [G304-graph-of-thoughts.md](episodes/G304-graph-of-thoughts.md) |
+| 305 | 生成式奖励模型GRM全解：会思考的考官，让奖励不再黑箱 | BV1zKuY6SEqJ | 03:36 | 2026-08-12 | 已完成 | [G305-generative-rm.md](episodes/G305-generative-rm.md) |
+| 306 | DPO 变体全家桶：SimPO/KTO/ORPO/IPO 各改了什么、怎么选？ | BV1zKuY6SEhi | 03:18 | 2026-08-12 | 已完成 | [G306-dpo-variants.md](episodes/G306-dpo-variants.md) |
+| 307 | CRAG 纠错式检索增强：给 RAG 加一道质检，三档纠错让大模型不再胡说 | BV1v5uY65EXS | 03:29 | 2026-08-12 | 已完成 | [G307-crag.md](episodes/G307-crag.md) |
+| 308 | 一次讲透宪法AI与RLAIF：大模型如何用AI反馈替代人类标注 | BV1iLuY6CESB | 04:03 | 2026-08-12 | 已完成 | [G308-constitutional-ai-rlaif.md](episodes/G308-constitutional-ai-rlaif.md) |
+| 309 | 多模态早融合 vs 后融合：Chameleon 凭什么把图文从头一起训 | BV1iLuY6CEX1 | 03:29 | 2026-08-12 | 已完成 | [G309-chameleon-early-fusion.md](episodes/G309-chameleon-early-fusion.md) |
+| 310 | 思维草稿Chain-of-Draft：一句提示词让大模型少写80%token，正确率几乎不掉 | BV1q3uY6jEYg | 03:19 | 2026-08-11 | 已完成 | [G310-chain-of-draft.md](episodes/G310-chain-of-draft.md) |
+| 311 | 扔掉分词器！Byte Latent Transformer 用字节熵动态切 patch 全解析 | BV1oGuY61EFH | 04:03 | 2026-08-11 | 已完成 | [G311-byte-latent-transformer.md](episodes/G311-byte-latent-transformer.md) |
+| 312 | BitNet b1.58 全解：权重只用-1/0/1，乘法变加法，省电71倍还不掉点 | BV1iGuY61EDX | 03:37 | 2026-08-11 | 已完成 | [G312-bitnet.md](episodes/G312-bitnet.md) |
+| 313 | DeepSeek 删掉辅助损失，MoE 反而更均衡？无辅助损失负载均衡一次讲透 | BV11dua64ECo | 03:15 | 2026-08-10 | 已完成 | [G313-aux-loss-free-moe.md](episodes/G313-aux-loss-free-moe.md) |
+| 314 | 删掉开头几个 token 大模型当场崩盘？一图看透 Attention Sink 与 StreamingLLM | BV1youa6dEug | 02:55 | 2026-08-10 | 已完成 | [G314-attention-sink.md](episodes/G314-attention-sink.md) |
+| 315 | Toolformer 讲透：让模型自监督学会"何时调工具"，零人工标注 | BV1e63Z6nECL | 04:55 | 2026-08-10 | 已完成 | [G315-toolformer.md](episodes/G315-toolformer.md) |
+| 316 | Token-level MDP：LLM 的 state 和 action 到底是什么？ | BV1R63Z6nEeD | 04:08 | 2026-08-10 | 已完成 | [G316-token-level-mdp.md](episodes/G316-token-level-mdp.md) |
+| 317 | SFT 和 RLHF 竟是同一枚硬币的两面：正向 KL vs 反向 KL | BV1er3Z6SEcf | 04:26 | 2026-08-09 | 已完成 | [G317-sft-rlhf-kl.md](episodes/G317-sft-rlhf-kl.md) |
+| 318 | Self-Rewarding LM：不要 Reward Model，让 LLM 自己当裁判 | BV1XZ3R63EYU | 04:19 | 2026-08-09 | 已完成 | [G318-self-rewarding-lm.md](episodes/G318-self-rewarding-lm.md) |
+| 319 | Reward Model Calibration：RM 分数到底能不能信？0.2 差距的真实含义 | BV1GZ3R6GEmJ | 04:54 | 2026-08-09 | 已完成 | [G319-rm-calibration.md](episodes/G319-rm-calibration.md) |
+| 320 | RLHF 三阶段：SFT → RM → PPO 是怎么串起来的？ | 待核 | 04:33 | 2026-08-09 | 待处理 | |
 | 321 | Reward Model Ensemble：一个 RM 易被骗，K 个 RM 投票才公正 | BV1Qf3R66E8c | 04:15 | 2026-08-08 | 待处理 | |
 | 322 | RetNet 讲透：微软的 Transformer 杀手，训练并行 + 推理 O(1) | BV15R3R65E2J | 03:54 | 2026-08-08 | 待处理 | |
 | 323 | Reference Model 是干嘛的？为什么 PPO 离不开这个"躺平"的模型 | BV1RR3R6VEn7 | 04:28 | 2026-08-08 | 待处理 | |
