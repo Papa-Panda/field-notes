@@ -385,26 +385,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 377 | 大模型训练所需显存怎么计算？三大件 + RLHF 讲透 | BV1R7gD6FEF5 | 02:42 | 2026-07-23 | 已完成 | [G377-training-memory-calc.md](episodes/G377-training-memory-calc.md) |
 | 378 | self-attention 自注意力：一个公式讲透 Transformer 的心脏 | BV1d7gD6FEUe | 03:24 | 2026-07-22 | 已完成 | [G378-self-attention-formula.md](episodes/G378-self-attention-formula.md) |
 | 379 | BatchNorm 与 LayerNorm 的区别：为什么 Transformer 只用 LayerNorm？ | BV1j7gD6cE75 | 03:00 | 2026-07-22 | 已完成 | [G379-bn-vs-ln.md](episodes/G379-bn-vs-ln.md) |
-| 380 | GSM8K 数据污染：benchmark 过拟合、n-gram 重叠检测、记忆探测 | BV1PzKx6PEo3 | 03:12 | 2026-07-21 | 待处理 | |
-| 381 | pass@k 怎么推导计算：无偏估计公式 1−C(n−c,k)/C(n,k)，有偏 vs 无偏 | BV1DMK46VEAW | 03:13 | 2026-07-21 | 待处理 | |
+| 380 | GSM8K 数据污染：benchmark 过拟合、n-gram 重叠检测、记忆探测 | BV1PzKx6PEo3 | 03:12 | 2026-07-21 | 已完成 | [G380-gsm8k-contamination.md](episodes/G380-gsm8k-contamination.md) |
+| 381 | pass@k 怎么推导计算：无偏估计公式 1−C(n−c,k)/C(n,k)，有偏 vs 无偏 | BV1DMK46VEAW | 03:13 | 2026-07-21 | 已完成 | [G381-pass-at-k.md](episodes/G381-pass-at-k.md) |
 | 382 | FineWeb：15T token 数据集怎么筛出来的，消融驱动、FineWeb-Edu | BV127K46TEyc | 03:32 | 2026-07-21 | 待处理 | |
 | 383 | 扩散的数学=分层 VAE：x₀/噪声/分数 三种预测目标为什么等价 | BV1nPKW6JEJy | 03:42 | 2026-07-21 | 待处理 | |
-| 384 | VAE 变分自编码器：ELBO 推导、重参数化、KL 正则的作用 | BV1U5K46uEJN | 03:58 | 2026-07-21 | 待处理 | |
-| 385 | Actor-Critic / A2C / A3C：优势函数 A=Q−V、多 worker 并行为什么更稳 | BV15fKx6nEDN | 03:15 | 2026-07-21 | 待处理 | |
-| 386 | 数据去重 MinHash / SimHash：Jaccard、LSH 分桶、汉明距离 | BV1EdKx6pEuH | 03:47 | 2026-07-21 | 待处理 | |
-| 387 | 预训练数据清洗全流程：抽正文、质量过滤、去重、数据配比 | BV1QNK46LEea | 04:04 | 2026-07-21 | 待处理 | |
-| 388 | Longformer & BigBird：滑动窗口、全局、随机注意力，O(n²) 降到 O(n) | BV19wK467EJE | 03:31 | 2026-07-21 | 待处理 | |
+| 384 | VAE 变分自编码器：ELBO 推导、重参数化、KL 正则的作用 | BV1U5K46uEJN | 03:58 | 2026-07-21 | 已完成 | [G384-vae.md](episodes/G384-vae.md) |
+| 385 | Actor-Critic / A2C / A3C：优势函数 A=Q−V、多 worker 并行为什么更稳 | BV15fKx6nEDN | 03:15 | 2026-07-21 | 已完成 | [G385-actor-critic.md](episodes/G385-actor-critic.md) |
+| 386 | 数据去重 MinHash / SimHash：Jaccard、LSH 分桶、汉明距离 | BV1EdKx6pEuH | 03:47 | 2026-07-21 | 已完成 | [G386-minhash-dedup.md](episodes/G386-minhash-dedup.md) |
+| 387 | 预训练数据清洗全流程：抽正文、质量过滤、去重、数据配比 | BV1QNK46LEea | 04:04 | 2026-07-21 | 已完成 | [G387-pretrain-data-cleaning.md](episodes/G387-pretrain-data-cleaning.md) |
+| 388 | Longformer & BigBird：滑动窗口、全局、随机注意力，O(n²) 降到 O(n) | BV19wK467EJE | 03:31 | 2026-07-21 | 已完成 | [G388-longformer-bigbird.md](episodes/G388-longformer-bigbird.md) |
 | 389 | Linformer & Performer：低秩投影、核化+结合律，O(n²) 降到 O(n) | BV1GJKW6uEEH | 03:21 | 2026-07-21 | 待处理 | |
-| 390 | 高效 Transformer 四大流派：稀疏、低秩、核化、可逆，一张图看懂 | BV15jKW63E8e | 03:26 | 2026-07-20 | 待处理 | |
-| 391 | 位置插值 PI → NTK-aware → YaRN：怎么把 32K 免训练扩到 128K | BV1uxKW6NE7B | 03:47 | 2026-07-20 | 待处理 | |
+| 390 | 高效 Transformer 四大流派：稀疏、低秩、核化、可逆，一张图看懂 | BV15jKW63E8e | 03:26 | 2026-07-20 | 已完成 | [G390-efficient-transformer-schools.md](episodes/G390-efficient-transformer-schools.md) |
+| 391 | 位置插值 PI → NTK-aware → YaRN：怎么把 32K 免训练扩到 128K | BV1uxKW6NE7B | 03:47 | 2026-07-20 | 已完成 | [G391-pi-ntk-yarn.md](episodes/G391-pi-ntk-yarn.md) |
 | 392 | Actor-Critic / A2C / A3C：优势函数 A=Q−V、多 worker 并行为什么更稳（重发） | BV13bKt6UELM | 03:15 | 2026-07-20 | 待处理 | |
-| 393 | 长度外推：训短推长为什么崩，ALiBi/PI/NTK/YaRN 方法全景 | BV13pKW6TECw | 03:13 | 2026-07-20 | 待处理 | |
+| 393 | 长度外推：训短推长为什么崩，ALiBi/PI/NTK/YaRN 方法全景 | BV13pKW6TECw | 03:13 | 2026-07-20 | 已完成 | [G393-length-extrapolation.md](episodes/G393-length-extrapolation.md) |
 | 394 | softmax / safe softmax / online softmax：从会溢出到一遍算完（FlashAttention 核心） | BV1ETKW67EXG | 03:40 | 2026-07-20 | 待处理 | |
-| 395 | Whisper 原理：弱监督 68 万小时、encoder-decoder、特殊 token 多任务 | BV1qYKs6EEBj | 03:00 | 2026-07-20 | 待处理 | |
-| 396 | 多臂老虎机：探索利用、ε-greedy、UCB、汤普森采样 | BV1ZYKs6EEGQ | 04:03 | 2026-07-20 | 待处理 | |
-| 397 | 策略梯度定理：log-derivative 技巧、REINFORCE，怎么对随机采样求梯度 | BV1LVKW6VEEy | 03:47 | 2026-07-20 | 待处理 | |
-| 398 | SparseGPT / Wanda：一次性剪枝不重训，按权重×激活选，公式讲透 | BV1qgKW6LEDW | 03:39 | 2026-07-20 | 待处理 | |
-| 399 | 张量并行为什么先列切再行切？MLP 的切分秘密全在 GELU | BV1nCKW6XEji | 03:22 | 2026-07-20 | 待处理 | |
+| 395 | Whisper 原理：弱监督 68 万小时、encoder-decoder、特殊 token 多任务 | BV1qYKs6EEBj | 03:00 | 2026-07-20 | 已完成 | [G395-whisper.md](episodes/G395-whisper.md) |
+| 396 | 多臂老虎机：探索利用、ε-greedy、UCB、汤普森采样 | BV1ZYKs6EEGQ | 04:03 | 2026-07-20 | 已完成 | [G396-bandit.md](episodes/G396-bandit.md) |
+| 397 | 策略梯度定理：log-derivative 技巧、REINFORCE，怎么对随机采样求梯度 | BV1LVKW6VEEy | 03:47 | 2026-07-20 | 已完成 | [G397-policy-gradient-theorem.md](episodes/G397-policy-gradient-theorem.md) |
+| 398 | SparseGPT / Wanda：一次性剪枝不重训，按权重×激活选，公式讲透 | BV1qgKW6LEDW | 03:39 | 2026-07-20 | 已完成 | [G398-sparsegpt-wanda.md](episodes/G398-sparsegpt-wanda.md) |
+| 399 | 张量并行为什么先列切再行切？MLP 的切分秘密全在 GELU | BV1nCKW6XEji | 03:22 | 2026-07-20 | 已完成 | [G399-tp-column-row-gelu.md](episodes/G399-tp-column-row-gelu.md) |
 | 400 | 彩票假设：稀疏子网、重置回初始化，为什么小子网能单独达标 | BV1w6KW6RENb | 03:37 | 2026-07-20 | 待处理 | |
 | 401 | 向量数据库索引 HNSW / IVF-PQ：多层图导航、聚类分桶、乘积量化 | BV1EQKW67EgT | 04:05 | 2026-07-20 | 待处理 | |
 | 402 | Q-Learning 到 DQN：TD 更新、经验回放、target 网络，为什么能玩 Atari | BV1FUKW6JE3P | 03:02 | 2026-07-20 | 待处理 | |
