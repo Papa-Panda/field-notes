@@ -505,19 +505,19 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 497 | 交叉熵 vs KL散度到底是什么？从惊讶度讲到损失函数，一次说清它俩的关系 | BV13tMK6oEAA | 05:53 | 2026-07-05 | 已完成 | [G497-ce-vs-kl.md](episodes/G497-ce-vs-kl.md) |
 | 498 | 大模型Agentic RL最新方向到底是什么？从GLM/Qwen看RL的下半场 | BV1HcMP6qEfQ | 05:57 | 2026-07-05 | 已完成 | [G498-agentic-rl-directions.md](episodes/G498-agentic-rl-directions.md) |
 | 499 | 大模型Agent的Function Calling怎么设计更稳定？约束解码/工具检索/校验重试三层拆解 | BV14aMP6jEj3 | 04:23 | 2026-07-05 | 已完成 | [G499-function-calling-design.md](episodes/G499-function-calling-design.md) |
-| 500 | GRPO、DAPO、GSPO三代强化学习算法，到底改了什么？从PPO讲起 | BV1oRMP6hE7f | 05:04 | 2026-07-05 | 待处理 | |
-| 501 | 大模型为什么很少用Dropout？从过拟合讲到单epoch时代，config考古实锤 | BV1YhT46HEhM | 03:56 | 2026-07-04 | 待处理 | |
-| 502 | LayerNorm为什么被RMSNorm全面取代？从0讲透归一化+手撕LLaMA同款代码 | BV1owTx6pEqM | 04:29 | 2026-07-04 | 待处理 | |
-| 503 | 从概率模型看 SFT 和 RL 的区别：正向 KL vs 反向 KL 完整推导 | BV1rKTn65E9V | 03:21 | 2026-07-03 | 待处理 | |
-| 504 | 内存墙 Memory-Bound 到底是什么？H100 算力利用率不足 1% 的真相 | BV1euTj6dEqX | 03:28 | 2026-07-03 | 待处理 | |
-| 505 | RoPE位置编码到底是什么？从0手撕Qwen3源码，代码和公式竟然对不上!? | BV1gLTx6CEHx | 04:26 | 2026-07-03 | 待处理 | |
-| 506 | Scaling Law 到底是什么原理？从幂律直线到 Chinchilla 黄金配比全解析 | BV1ECTj6YEyT | 03:36 | 2026-07-03 | 待处理 | |
-| 507 | GLM-5.2 为什么放弃 GRPO 换回 critic-based PPO？三个隐性假设崩塌全解析 | BV1qSTr6vEys | 04:06 | 2026-07-02 | 待处理 | |
-| 508 | 同策略蒸馏 On-Policy Distillation：AIME 74.4 反超 RL，算力只要 1/10 | BV16tTk6zE7N | 03:30 | 2026-07-02 | 待处理 | |
-| 509 | 推测解码 Speculative Decoding 原理详解：从草稿验证到拒绝采样 | BV1CsTv6tEDU | 03:31 | 2026-07-02 | 待处理 | |
-| 510 | 图解大模型缓存 KV Cache的原理 | BV1yy5o6zELy | 03:27 | 2026-05-17 | 待处理 | |
-| 511 | 强化学习中的熵坍塌 | BV1qY9NBCEo2 | 02:46 | 2026-04-02 | 待处理 | |
-| 512 | 职场斗争就是那么朴实无华 | BV18wX6BZEjE | 03:33 | 2026-03-30 | 待处理 | |
-| 513 | QwenVL到Qwen3.5技术改进 | BV1GpXaBGEoE | 03:36 | 2026-03-29 | 待处理 | |
-| 514 | 大模型面试：为什么现在的大模型都是Decoder-Only架构？ | BV1uiXmBUEfp | 03:41 | 2026-03-28 | 待处理 | |
-| 515 | 大模型KV Cache原理详解 | BV12fXyBKEor | 01:51 | 2026-03-28 | 待处理 | |
+| 500 | GRPO、DAPO、GSPO三代强化学习算法，到底改了什么？从PPO讲起 | BV1oRMP6hE7f | 05:04 | 2026-07-05 | 已完成 | [G500-grpo-dapo-gspo.md](episodes/G500-grpo-dapo-gspo.md) |
+| 501 | 大模型为什么很少用Dropout？从过拟合讲到单epoch时代，config考古实锤 | BV1YhT46HEhM | 03:56 | 2026-07-04 | 已完成 | [G501-dropout-llm.md](episodes/G501-dropout-llm.md) |
+| 502 | LayerNorm为什么被RMSNorm全面取代？从0讲透归一化+手撕LLaMA同款代码 | BV1owTx6pEqM | 04:29 | 2026-07-04 | 已完成 | [G502-rmsnorm.md](episodes/G502-rmsnorm.md) |
+| 503 | 从概率模型看 SFT 和 RL 的区别：正向 KL vs 反向 KL 完整推导 | BV1rKTn65E9V | 03:21 | 2026-07-03 | 已完成 | [G503-sft-vs-rl-kl.md](episodes/G503-sft-vs-rl-kl.md) |
+| 504 | 内存墙 Memory-Bound 到底是什么？H100 算力利用率不足 1% 的真相 | BV1euTj6dEqX | 03:28 | 2026-07-03 | 已完成 | [G504-memory-wall.md](episodes/G504-memory-wall.md) |
+| 505 | RoPE位置编码到底是什么？从0手撕Qwen3源码，代码和公式竟然对不上!? | BV1gLTx6CEHx | 04:26 | 2026-07-03 | 已完成 | [G505-rope.md](episodes/G505-rope.md) |
+| 506 | Scaling Law 到底是什么原理？从幂律直线到 Chinchilla 黄金配比全解析 | BV1ECTj6YEyT | 03:36 | 2026-07-03 | 已完成 | [G506-scaling-law.md](episodes/G506-scaling-law.md) |
+| 507 | GLM-5.2 为什么放弃 GRPO 换回 critic-based PPO？三个隐性假设崩塌全解析 | BV1qSTr6vEys | 04:06 | 2026-07-02 | 已完成 | [G507-glm52-critic-ppo.md](episodes/G507-glm52-critic-ppo.md) |
+| 508 | 同策略蒸馏 On-Policy Distillation：AIME 74.4 反超 RL，算力只要 1/10 | BV16tTk6zE7N | 03:30 | 2026-07-02 | 已完成 | [G508-opd-aime.md](episodes/G508-opd-aime.md) |
+| 509 | 推测解码 Speculative Decoding 原理详解：从草稿验证到拒绝采样 | BV1CsTv6tEDU | 03:31 | 2026-07-02 | 已完成 | [G509-speculative-decoding.md](episodes/G509-speculative-decoding.md) |
+| 510 | 图解大模型缓存 KV Cache的原理 | BV1yy5o6zELy | 03:27 | 2026-05-17 | 已完成 | [G510-kv-cache-illustrated.md](episodes/G510-kv-cache-illustrated.md) |
+| 511 | 强化学习中的熵坍塌 | BV1qY9NBCEo2 | 02:46 | 2026-04-02 | 已完成 | [G511-entropy-collapse.md](episodes/G511-entropy-collapse.md) |
+| 512 | 职场斗争就是那么朴实无华 | BV18wX6BZEjE | 03:33 | 2026-03-30 | 已完成 | [G512-workplace.md](episodes/G512-workplace.md) |
+| 513 | QwenVL到Qwen3.5技术改进 | BV1GpXaBGEoE | 03:36 | 2026-03-29 | 已完成 | [G513-qwenvl-qwen35.md](episodes/G513-qwenvl-qwen35.md) |
+| 514 | 大模型面试：为什么现在的大模型都是Decoder-Only架构？ | BV1uiXmBUEfp | 03:41 | 2026-03-28 | 已完成 | [G514-decoder-only.md](episodes/G514-decoder-only.md) |
+| 515 | 大模型KV Cache原理详解 | BV12fXyBKEor | 01:51 | 2026-03-28 | 已完成 | [G515-kv-cache-basics.md](episodes/G515-kv-cache-basics.md) |
