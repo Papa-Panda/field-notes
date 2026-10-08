@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G013 — RL 到底改了模型什么？用带符号的 Δlog p 定位关键 token，外推零训练多 1~3 分</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#ffffff; --ink:#23272f; --muted:#6b7280;
+  --accent:#1e40af; --accent-ink:#1e3a8a; --accent-bg:#eff6ff;
+  --border:#e8e4dc; --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;padding:40px 36px}
+.kicker{display:inline-block;font-size:13px;letter-spacing:.1em;background:rgba(255,255,255,.18);padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.hero h1{margin:0 0 10px;font-size:29px;line-height:1.45;font-weight:700}
+.hero .sub{opacity:.88;font-size:14.5px;margin:0}
+.toc{position:sticky;top:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.05);z-index:10}
+.toc summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toc a{font-size:13.5px;color:var(--accent-ink);background:var(--accent-bg);padding:4px 12px;border-radius:999px;text-decoration:none}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 34px;margin:0 0 18px;box-shadow:0 1px 6px rgba(0,0,0,.03);scroll-margin-top:80px}
+.sec h2{margin:0 0 18px;font-size:21px;display:flex;align-items:center;gap:12px;line-height:1.5}
+.sec h2 .n{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent-bg);
+  color:var(--accent-ink);font-size:15px;align-items:center;justify-content:center;flex:none;font-weight:700}
+.sec h3{font-size:17.5px;margin:26px 0 10px}
+.sec h4{font-size:16px;margin:20px 0 8px}
+.sec p{margin:0 0 14px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:24px}
+.sec li{margin-bottom:10px}
+.sec li::marker{color:var(--accent);font-weight:600}
+.sec-lede{background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);border-color:#bfdbfe}
+.sec-lede p{font-size:18px}
+.sec-qa ol{list-style:none;padding:0;counter-reset:q}
+.sec-qa ol>li{counter-increment:q;background:var(--bg);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px 18px 66px;position:relative;margin-bottom:14px}
+.sec-qa ol>li::before{content:counter(q);position:absolute;left:20px;top:20px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.sec blockquote{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;
+  padding:14px 22px;margin:0 0 16px;color:var(--accent-ink);font-size:17px}
+.sec blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px;line-height:1.6}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f4f6;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fafafa}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:.88em}
+pre{background:#1f2937;color:#e5e7eb;border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
+.katex{font-size:1.05em}
+.katex-display{margin:18px 0;overflow-x:auto;overflow-y:hidden}
+.mermaid{display:flex;justify-content:center;margin:10px 0 20px;overflow-x:auto;
+  background:#fbfcfe;border:1px solid var(--border);border-radius:12px;padding:18px 12px}
+.mermaid svg{max-width:100%;height:auto}
+.tag{display:inline-block;font-size:12.5px;background:#f3f4f6;border:1px solid var(--border);
+  border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0 10px}
+.meta-grid{display:grid;grid-template-columns:132px 1fr;gap:10px 14px;font-size:15px;margin:2px 0 8px;align-items:start}
+.meta-grid dt{color:var(--muted);font-weight:600}
+.meta-grid dd{margin:0;line-height:1.7;overflow-wrap:anywhere}
+.viz{margin:8px 0 22px}
+.stat-strip{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 150px;min-width:128px;background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);
+  border:1px solid #bfdbfe;border-radius:12px;padding:14px 14px;text-align:center}
+.stat .v{font-size:25px;font-weight:800;color:var(--accent-ink);line-height:1.35}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.fnode{flex:1 1 0;min-width:104px;background:var(--accent-bg);border:1.5px solid #bfdbfe;border-radius:12px;
+  padding:10px 10px;font-size:13.5px;font-weight:600;color:var(--accent-ink);text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.farrow{align-self:center;flex:0 0 auto;color:var(--accent);font-weight:800;font-size:19px;padding:2px 5px}
+.viz-bars{display:flex;flex-direction:column;gap:10px}
+.barrow{display:grid;grid-template-columns:minmax(80px,150px) 1fr 72px;gap:10px;align-items:center;font-size:14px}
+.barlabel{text-align:right;font-weight:600;line-height:1.4;overflow:hidden}
+.bartrack{background:#e8eefc;border-radius:999px;height:22px;overflow:hidden}
+.barfill{background:linear-gradient(90deg,#60a5fa,#1e40af);height:100%;border-radius:999px}
+.barval{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vscol{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.vscol h4{margin:0 0 10px;font-size:15px}
+.vscol.vs-a h4{color:var(--accent-ink)}
+.vscol.vs-b h4{color:#7c3aed}
+.vscol ul{margin:0;padding-left:20px}
+.vscol li{margin-bottom:8px;font-size:14.5px}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:36px;line-height:2}
+.foot a{color:var(--accent)}
+@media(max-width:640px){.sec{padding:22px 20px}.hero{padding:30px 24px}.hero h1{font-size:23px}body{font-size:16px}
+.vs{grid-template-columns:1fr}.barrow{grid-template-columns:86px 1fr 62px}.meta-grid{grid-template-columns:104px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">B站 · 古希腊掌管代码的神</span>
+    <h1>G013 — RL 到底改了模型什么？用带符号的 Δlog p 定位关键 token，外推零训练多 1~3 分</h1>
+    <p class="sub">RL 对模型的改动是稀疏且有方向的：逐 token 的带符号对数概率差 $Δlog p$ 呈双峰长尾分布，只替换其中最大的约 10% 的 token 就能复现 RL 的表现；沿… · 完整阅读版 · 由 GitHub NOTES.md 生成</p>
+  </header>
+  <details class="toc" open>
+    <summary>目录（点击跳转）</summary>
+    <nav><a href="#sec-1">元信息</a><a href="#sec-2">一句话总结</a><a href="#sec-3">核心</a><a href="#sec-4">关键数字</a><a href="#sec-5">可迁移</a><a href="#sec-6">疑问 / 下一步</a></nav>
+  </details>
+  <section class="sec" id="sec-0">
+<blockquote class="pq">
+<p>📖 阅读版：https://papa-panda.github.io/field-notes/bilibili-code-god/episodes/G013-rl-delta-logp-tokens.html</p>
+</blockquote>
+</section>
+<section class="sec" id="sec-1"><h2><span class="n">1</span>元信息</h2>
+<dl class="meta-grid"><dt>编号</dt><dd>G013</dd><dt>标题</dt><dd>RL 到底改了模型什么？用带符号的 Δlog p 定位关键 token，外推零训练多 1~3 分</dd><dt>BV</dt><dd>BV1LLHn6uEVq</dd><dt>时长</dt><dd>04:29</dd><dt>发布日期</dt><dd>2026-10-06</dd><dt>来源</dt><dd>Bilibili UP「古希腊掌管代码的神」</dd><dt>相关论文/工作</dt><dd>ICLR 2026 关于 Δlog p 分析 RL 改动的工作（视频未给出确切论文名，口径据视频）</dd></dl>
+</section>
+<section class="sec sec-lede" id="sec-2"><h2><span class="n">2</span>一句话总结</h2>
+<p>RL 对模型的改动是稀疏且有方向的：逐 token 的带符号对数概率差 $Δlog p$ 呈双峰长尾分布，只替换其中最大的约 10% 的 token 就能复现 RL 的表现；沿这个方向还能在测试时零训练外推、或在训练时给低概率 token 的优势加权。</p>
+</section>
+<section class="sec" id="sec-3"><h2><span class="n">3</span>核心</h2><div class="viz viz-flow flow"><div class="fnode">32B 模型 46.15</div><div class="farrow">→</div><div class="fnode">约 47.5，14B 模型 54.58</div><div class="farrow">→</div><div class="fnode">约 55.8，均为 avg@32</div></div>
+<ol>
+<li><strong>问题/背景</strong>：想知道 RL 训完模型到底哪里变了，习惯看的熵和 KL 是幅度指标——只说变了多少、不说往哪变，在 base 模型与 RL 模型的输出上画直方图几乎重合，什么都看不出来。换成带符号的 token 级对数概率差：对同一段文本，RL 模型与 base 模型各给每个 token 一个对数概率，相减即得 $Δlog p$ ，正值表示 RL 把这个 token 推高、负值表示压低。</li>
+<li><strong>机制/方法</strong>： $Δlog p$ 的直方图是双峰加两条长尾：绝大多数 token 在 0 附近没动，少数 token 被大幅推高或压低——RL 的改动集中在一小撮位置。替换实验验证因果：让 base 模型生成，按某指标挑出部分位置、把 base 的 token 换成 RL 模型在同样上下文下的选择再继续生成；按 $Δlog p$ 挑、只换约 10% 的 token，分数就追平 RL 模型；按 divergence 挑需要换多得多，按熵挑最差。原因看梯度：每个 token 的梯度范数正比于 $1 - π$ ，概率本来就高的 token 梯度几乎为零，低概率 token 梯度大，所以 RL 天然把「本来不太可能、但推理上关键」的 token 推高——RL 不是在重写整个分布，是在少数关键分叉口改变选择。</li>
+<li><strong>关键证据或数字</strong>：两个可直接用的工具。① 测试时外推：构造新分布沿 $Δlog p$ 方向再走一步，只在 $Δlog p$ 大幅为负（RL 明显压低）的位置施加，系数 $γ$ 取 0.05–0.1，不训练在 AIME24 上多 1–3 分（视频口径：32B 模型 46.15 → 约 47.5，14B 模型 54.58 → 约 55.8，均为 avg@32）；代价是推理时要同时跑 base 与 RL 两个模型，外加 $γ$ 与阈值两个超参。② 训练时加权：给低概率 token 的优势乘上与概率负相关的放大因子（视频口径：优势乘 $1 + α(1 - π)$ 一类形式， $α$ 取 0.1 或 0.2），在 Qwen2.5-Math-7B 上 AIME24 的 avg@32 从 35.73 涨到 39.06、pass@16 从 54.09 涨到 60.58；但该加权未在全部规模上验证， $α$ 不是通用常数。</li>
+<li><strong>结论/判断</strong>：分析 RL 改了什么要看方向、不看幅度：画 $Δlog p$ 直方图看双峰与长尾。实操上，手里有 base 与 RL 两个 checkpoint 就能先零成本试外推（ $γ$ 从 0.05 起、只作用于负得多的位置、盯 avg@32）；训练想加速再试优势加权（ $α$ 从 0.1 起步，看 pass@k 是否一起涨）。</li>
+</ol>
+</section>
+<section class="sec" id="sec-4"><h2><span class="n">4</span>关键数字</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>基线</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>替换 token 比例（复现 RL 表现）</td>
+<td>全量</td>
+<td>约 10%（按 $Δlog p$ 挑选）</td>
+</tr>
+<tr>
+<td>测试时外推 AIME24 avg@32（32B）</td>
+<td>46.15</td>
+<td>约 47.5</td>
+</tr>
+<tr>
+<td>测试时外推 AIME24 avg@32（14B）</td>
+<td>54.58</td>
+<td>约 55.8</td>
+</tr>
+<tr>
+<td>优势加权 AIME24 avg@32（Qwen2.5-Math-7B）</td>
+<td>35.73</td>
+<td>39.06</td>
+</tr>
+<tr>
+<td>优势加权 AIME24 pass@16（Qwen2.5-Math-7B）</td>
+<td>54.09</td>
+<td>60.58</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="sec" id="sec-5"><h2><span class="n">5</span>可迁移</h2>
+<ul>
+<li>诊断 RL run 时把 $Δlog p$ 直方图加进常规面板（与 trainer/inference logprob 差互补：一个看一致性、一个看改动的方向与稀疏度）。</li>
+<li>面试答「RL 学到了什么」：一个可定位（少数关键 token）、可外推（测试时沿方向放大）、可加权（训练时给低概率 token 更大优势）的方向，而非整个分布的重写。</li>
+</ul>
+</section>
+<section class="sec" id="sec-6"><h2><span class="n">6</span>疑问 / 下一步</h2>
+<ul>
+<li>外推只作用于 $Δlog p$ 大幅为负的位置、而非全局放大，这个不对称处理的理论依据与失效边界是什么？</li>
+</ul></section>
+  <div class="foot">由 <a href="">GitHub NOTES.md</a> 生成 · 公式由 KaTeX、流程图由 Mermaid 渲染（需联网加载）</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+  if (window.mermaid) {
+    mermaid.initialize({startOnLoad: true, theme: "default", securityLevel: "loose"});
+  }
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function() {
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = p + "%";
+  }, {passive: true});
+});
+</script>
+</body>
+</html>
