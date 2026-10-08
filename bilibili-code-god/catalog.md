@@ -206,26 +206,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 198 | RIRM + RAPO：用负奖励改进推理模型答对后仍继续反思的浪费 | BV1LX8462E9d | 02:47 | 2026-09-04 | 已完成 | [G198-rirm-rapo.md](episodes/G198-rirm-rapo.md) |
 | 199 | 大模型预训练为什么只跑 1 个 epoch？三个原因与什么时候可以多跑 | BV1vR846LEHM | 02:44 | 2026-09-03 | 已完成 | [G199-one-epoch-pretraining.md](episodes/G199-one-epoch-pretraining.md) |
 | 200 | ViT 视觉 Transformer：把图像切成 patch，Transformer 也能做视觉 | BV1VR846LEY6 | 04:48 | 2026-09-03 | 已完成 | [G200-vit.md](episodes/G200-vit.md) |
-| 201 | Transformer 会被取代吗？三个致命伤，取代派/改良派/共存派三种解法 | BV1jS846SETu | 03:54 | 2026-09-03 | 待处理 | |
-| 202 | 训练显存花在哪？缩 batch、梯度检查点、ZeRO、LoRA 四级省显存阶梯 | BV15Q8467EdP | 03:13 | 2026-09-03 | 待处理 | |
-| 203 | 训练不收敛的系统排查清单：学习率、数据、初始化、精度四步走 | BV1LQ8467E4e | 02:54 | 2026-09-03 | 待处理 | |
-| 204 | loss 突然变 NaN 怎么办？脏数据、梯度爆炸、精度溢出三路排查 | BV13f846kEU1 | 02:57 | 2026-09-03 | 待处理 | |
-| 205 | 大模型数不清 strawberry 的 r、算不对乘法，根因都在 tokenizer | BV1hc8t63EKR | 03:52 | 2026-09-02 | 待处理 | |
-| 206 | SwiGLU 的中间层维度为什么是 8/3·d？从参数量守恒一步步推导 | BV1Qc8t63EsP | 02:41 | 2026-09-02 | 待处理 | |
-| 207 | StreamingLLM 讲透：保留 4 个 sink token 让模型记住无限长对话 | BV1Rd846yETR | 03:31 | 2026-09-02 | 待处理 | |
-| 208 | Spike-Aware Adam：loss 尖峰之后动量 buffer 的残留问题 | BV15Z846VE3Y | 00:58 | 2026-09-02 | 待处理 | |
-| 209 | Google 用 sigmoid 替代 softmax——SigLIP vs CLIP 讲透 | BV1GZ846VETv | 04:23 | 2026-09-02 | 待处理 | |
-| 210 | SFT 和预训练的区别在哪里？损失掩码机制详解 | BV19V8s6vEKY | 02:37 | 2026-09-02 | 待处理 | |
-| 211 | 第二个 epoch loss 断崖暴跌：三大根因、判断方法与五个避免手段 | BV1hL8s6PE3u | 03:15 | 2026-09-01 | 待处理 | |
-| 212 | SFT 后的三种退化：重复、啰嗦、幻觉加剧各自的根因与修复 | BV1YL8s6PENV | 01:05 | 2026-09-01 | 待处理 | |
-| 213 | SFT 到底需要多少条数据？从 LIMA 与 Alpaca 的对比讲透质量与数量 | BV1Rg8s6qEyy | 03:12 | 2026-09-01 | 待处理 | |
-| 214 | 自洽性采样详解：为什么多想几遍取多数票能涨点 | BV1gs8S6NEtr | 01:50 | 2026-09-01 | 待处理 | |
-| 215 | SAE 稀疏自编码器详解：用 L1 约束把多义神经元拆成单义特征 | BV1ux8S6eEc4 | 02:58 | 2026-09-01 | 待处理 | |
-| 216 | 规则奖励 vs 奖励模型：两种奖励来源的优劣与选择策略 | BV1Sx8S6YESV | 01:54 | 2026-09-01 | 待处理 | |
-| 217 | 三大崩溃现象诊断：reward 崩塌、KL 爆炸、输出发散 | BV1Bu8S6LEJU | 01:08 | 2026-08-31 | 待处理 | |
-| 218 | PPO 为什么需要四个模型？演员、评论家、奖励、参考各自的作用 | BV1og8S6CE26 | 02:59 | 2026-08-31 | 待处理 | |
-| 219 | 奖励稀疏问题详解：奖励塑形、课程学习、好奇心驱动与 PRM | BV1Lg8S6yE84 | 02:53 | 2026-08-31 | 待处理 | |
-| 220 | RLEP 经验回放：把高质量 rollout 存进 buffer 反复利用 | BV1fK8S6jE8G | 01:03 | 2026-08-31 | 待处理 | |
+| 201 | Transformer 会被取代吗？三个致命伤，取代派/改良派/共存派三种解法 | BV1jS846SETu | 03:54 | 2026-09-03 | 已完成 | [G201-transformer-replacement.md](episodes/G201-transformer-replacement.md) |
+| 202 | 训练显存花在哪？缩 batch、梯度检查点、ZeRO、LoRA 四级省显存阶梯 | BV15Q8467EdP | 03:13 | 2026-09-03 | 已完成 | [G202-memory-saving-ladder.md](episodes/G202-memory-saving-ladder.md) |
+| 203 | 训练不收敛的系统排查清单：学习率、数据、初始化、精度四步走 | BV1LQ8467E4e | 02:54 | 2026-09-03 | 已完成 | [G203-nonconvergence-checklist.md](episodes/G203-nonconvergence-checklist.md) |
+| 204 | loss 突然变 NaN 怎么办？脏数据、梯度爆炸、精度溢出三路排查 | BV13f846kEU1 | 02:57 | 2026-09-03 | 已完成 | [G204-nan-loss-debug.md](episodes/G204-nan-loss-debug.md) |
+| 205 | 大模型数不清 strawberry 的 r、算不对乘法，根因都在 tokenizer | BV1hc8t63EKR | 03:52 | 2026-09-02 | 已完成 | [G205-tokenizer-root-cause.md](episodes/G205-tokenizer-root-cause.md) |
+| 206 | SwiGLU 的中间层维度为什么是 8/3·d？从参数量守恒一步步推导 | BV1Qc8t63EsP | 02:41 | 2026-09-02 | 已完成 | [G206-swiglu-dim-derivation.md](episodes/G206-swiglu-dim-derivation.md) |
+| 207 | StreamingLLM 讲透：保留 4 个 sink token 让模型记住无限长对话 | BV1Rd846yETR | 03:31 | 2026-09-02 | 已完成 | [G207-streamingllm-sink.md](episodes/G207-streamingllm-sink.md) |
+| 208 | Spike-Aware Adam：loss 尖峰之后动量 buffer 的残留问题 | BV15Z846VE3Y | 00:58 | 2026-09-02 | 已完成 | [G208-spike-aware-adam.md](episodes/G208-spike-aware-adam.md) |
+| 209 | Google 用 sigmoid 替代 softmax——SigLIP vs CLIP 讲透 | BV1GZ846VETv | 04:23 | 2026-09-02 | 已完成 | [G209-siglip-vs-clip.md](episodes/G209-siglip-vs-clip.md) |
+| 210 | SFT 和预训练的区别在哪里？损失掩码机制详解 | BV19V8s6vEKY | 02:37 | 2026-09-02 | 已完成 | [G210-sft-vs-pretrain-mask.md](episodes/G210-sft-vs-pretrain-mask.md) |
+| 211 | 第二个 epoch loss 断崖暴跌：三大根因、判断方法与五个避免手段 | BV1hL8s6PE3u | 03:15 | 2026-09-01 | 已完成 | [G211-second-epoch-cliff.md](episodes/G211-second-epoch-cliff.md) |
+| 212 | SFT 后的三种退化：重复、啰嗦、幻觉加剧各自的根因与修复 | BV1YL8s6PENV | 01:05 | 2026-09-01 | 已完成 | [G212-sft-degradations.md](episodes/G212-sft-degradations.md) |
+| 213 | SFT 到底需要多少条数据？从 LIMA 与 Alpaca 的对比讲透质量与数量 | BV1Rg8s6qEyy | 03:12 | 2026-09-01 | 已完成 | [G213-sft-data-amount-lima.md](episodes/G213-sft-data-amount-lima.md) |
+| 214 | 自洽性采样详解：为什么多想几遍取多数票能涨点 | BV1gs8S6NEtr | 01:50 | 2026-09-01 | 已完成 | [G214-self-consistency.md](episodes/G214-self-consistency.md) |
+| 215 | SAE 稀疏自编码器详解：用 L1 约束把多义神经元拆成单义特征 | BV1ux8S6eEc4 | 02:58 | 2026-09-01 | 已完成 | [G215-sae.md](episodes/G215-sae.md) |
+| 216 | 规则奖励 vs 奖励模型：两种奖励来源的优劣与选择策略 | BV1Sx8S6YESV | 01:54 | 2026-09-01 | 已完成 | [G216-rule-vs-rm-reward.md](episodes/G216-rule-vs-rm-reward.md) |
+| 217 | 三大崩溃现象诊断：reward 崩塌、KL 爆炸、输出发散 | BV1Bu8S6LEJU | 01:08 | 2026-08-31 | 已完成 | [G217-three-collapses.md](episodes/G217-three-collapses.md) |
+| 218 | PPO 为什么需要四个模型？演员、评论家、奖励、参考各自的作用 | BV1og8S6CE26 | 02:59 | 2026-08-31 | 已完成 | [G218-ppo-four-models.md](episodes/G218-ppo-four-models.md) |
+| 219 | 奖励稀疏问题详解：奖励塑形、课程学习、好奇心驱动与 PRM | BV1Lg8S6yE84 | 02:53 | 2026-08-31 | 已完成 | [G219-sparse-reward.md](episodes/G219-sparse-reward.md) |
+| 220 | RLEP 经验回放：把高质量 rollout 存进 buffer 反复利用 | BV1fK8S6jE8G | 01:03 | 2026-08-31 | 已完成 | [G220-rlep-replay.md](episodes/G220-rlep-replay.md) |
 | 221 | 奖励模型是怎么训练出来的？用排序代替打分的成对比较损失 | BV17T8S62EnA | 02:36 | 2026-08-31 | 待处理 | |
 | 222 | 检索器与生成器的微调 pipeline：对比学习、上下文利用与联合训练 | BV1ZT8S61E3b | 01:45 | 2026-08-31 | 待处理 | |
 | 223 | R1 是怎么训练出来的？四阶段配方：RL 涌现、冷启动、拒绝采样、蒸馏 | BV1RL8S6gECS | 03:25 | 2026-08-30 | 待处理 | |
