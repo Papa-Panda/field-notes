@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G022 — SFT 一定要 mask 掉 prompt 吗？指令长 5 倍、样本少于 1 万时给 prompt 算 loss 反而涨点</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#ffffff; --ink:#23272f; --muted:#6b7280;
+  --accent:#1e40af; --accent-ink:#1e3a8a; --accent-bg:#eff6ff;
+  --border:#e8e4dc; --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;padding:40px 36px}
+.kicker{display:inline-block;font-size:13px;letter-spacing:.1em;background:rgba(255,255,255,.18);padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.hero h1{margin:0 0 10px;font-size:29px;line-height:1.45;font-weight:700}
+.hero .sub{opacity:.88;font-size:14.5px;margin:0}
+.toc{position:sticky;top:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.05);z-index:10}
+.toc summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toc a{font-size:13.5px;color:var(--accent-ink);background:var(--accent-bg);padding:4px 12px;border-radius:999px;text-decoration:none}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 34px;margin:0 0 18px;box-shadow:0 1px 6px rgba(0,0,0,.03);scroll-margin-top:80px}
+.sec h2{margin:0 0 18px;font-size:21px;display:flex;align-items:center;gap:12px;line-height:1.5}
+.sec h2 .n{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent-bg);
+  color:var(--accent-ink);font-size:15px;align-items:center;justify-content:center;flex:none;font-weight:700}
+.sec h3{font-size:17.5px;margin:26px 0 10px}
+.sec h4{font-size:16px;margin:20px 0 8px}
+.sec p{margin:0 0 14px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:24px}
+.sec li{margin-bottom:10px}
+.sec li::marker{color:var(--accent);font-weight:600}
+.sec-lede{background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);border-color:#bfdbfe}
+.sec-lede p{font-size:18px}
+.sec-qa ol{list-style:none;padding:0;counter-reset:q}
+.sec-qa ol>li{counter-increment:q;background:var(--bg);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px 18px 66px;position:relative;margin-bottom:14px}
+.sec-qa ol>li::before{content:counter(q);position:absolute;left:20px;top:20px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.sec blockquote{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;
+  padding:14px 22px;margin:0 0 16px;color:var(--accent-ink);font-size:17px}
+.sec blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px;line-height:1.6}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f4f6;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fafafa}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:.88em}
+pre{background:#1f2937;color:#e5e7eb;border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
+.katex{font-size:1.05em}
+.katex-display{margin:18px 0;overflow-x:auto;overflow-y:hidden}
+.mermaid{display:flex;justify-content:center;margin:10px 0 20px;overflow-x:auto;
+  background:#fbfcfe;border:1px solid var(--border);border-radius:12px;padding:18px 12px}
+.mermaid svg{max-width:100%;height:auto}
+.tag{display:inline-block;font-size:12.5px;background:#f3f4f6;border:1px solid var(--border);
+  border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0 10px}
+.meta-grid{display:grid;grid-template-columns:132px 1fr;gap:10px 14px;font-size:15px;margin:2px 0 8px;align-items:start}
+.meta-grid dt{color:var(--muted);font-weight:600}
+.meta-grid dd{margin:0;line-height:1.7;overflow-wrap:anywhere}
+.viz{margin:8px 0 22px}
+.stat-strip{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 150px;min-width:128px;background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);
+  border:1px solid #bfdbfe;border-radius:12px;padding:14px 14px;text-align:center}
+.stat .v{font-size:25px;font-weight:800;color:var(--accent-ink);line-height:1.35}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.fnode{flex:1 1 0;min-width:104px;background:var(--accent-bg);border:1.5px solid #bfdbfe;border-radius:12px;
+  padding:10px 10px;font-size:13.5px;font-weight:600;color:var(--accent-ink);text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.farrow{align-self:center;flex:0 0 auto;color:var(--accent);font-weight:800;font-size:19px;padding:2px 5px}
+.viz-bars{display:flex;flex-direction:column;gap:10px}
+.barrow{display:grid;grid-template-columns:minmax(80px,150px) 1fr 72px;gap:10px;align-items:center;font-size:14px}
+.barlabel{text-align:right;font-weight:600;line-height:1.4;overflow:hidden}
+.bartrack{background:#e8eefc;border-radius:999px;height:22px;overflow:hidden}
+.barfill{background:linear-gradient(90deg,#60a5fa,#1e40af);height:100%;border-radius:999px}
+.barval{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vscol{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.vscol h4{margin:0 0 10px;font-size:15px}
+.vscol.vs-a h4{color:var(--accent-ink)}
+.vscol.vs-b h4{color:#7c3aed}
+.vscol ul{margin:0;padding-left:20px}
+.vscol li{margin-bottom:8px;font-size:14.5px}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:36px;line-height:2}
+.foot a{color:var(--accent)}
+@media(max-width:640px){.sec{padding:22px 20px}.hero{padding:30px 24px}.hero h1{font-size:23px}body{font-size:16px}
+.vs{grid-template-columns:1fr}.barrow{grid-template-columns:86px 1fr 62px}.meta-grid{grid-template-columns:104px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">B站 · 古希腊掌管代码的神</span>
+    <h1>G022 — SFT 一定要 mask 掉 prompt 吗？指令长 5 倍、样本少于 1 万时给 prompt 算 loss 反而涨点</h1>
+    <p class="sub">「prompt 不算 loss」只是默认值而非铁律：在指令远长于回答、且样本少于约 1 万的低资源场景，给 prompt 以 0.2–0.5 的权重算 loss 是一种正则化，… · 完整阅读版 · 由 GitHub NOTES.md 生成</p>
+  </header>
+  <details class="toc" open>
+    <summary>目录（点击跳转）</summary>
+    <nav><a href="#sec-1">元信息</a><a href="#sec-2">一句话总结</a><a href="#sec-3">核心</a><a href="#sec-4">关键数字</a><a href="#sec-5">可迁移</a><a href="#sec-6">疑问 / 下一步</a></nav>
+  </details>
+  <section class="sec" id="sec-0">
+<blockquote class="pq">
+<p>📖 阅读版：https://papa-panda.github.io/field-notes/bilibili-code-god/episodes/G022-sft-prompt-mask.html</p>
+</blockquote>
+</section>
+<section class="sec" id="sec-1"><h2><span class="n">1</span>元信息</h2>
+<dl class="meta-grid"><dt>编号</dt><dd>G022</dd><dt>标题</dt><dd>SFT 一定要 mask 掉 prompt 吗？指令长 5 倍、样本少于 1 万时给 prompt 算 loss 反而涨点</dd><dt>BV</dt><dd>BV1UTea64E3a</dd><dt>时长</dt><dd>04:06</dd><dt>发布日期</dt><dd>2026-10-03</dd><dt>来源</dt><dd>Bilibili UP「古希腊掌管代码的神」</dd><dt>相关论文/工作</dt><dd>Instruction Modelling（NeurIPS 2024）、Weighted Instruction Tuning（TACL 2025）；上一期 G465 讲标准 mask 做法</dd></dl>
+</section>
+<section class="sec sec-lede" id="sec-2"><h2><span class="n">2</span>一句话总结</h2>
+<p>「prompt 不算 loss」只是默认值而非铁律：在指令远长于回答、且样本少于约 1 万的低资源场景，给 prompt 以 0.2–0.5 的权重算 loss 是一种正则化，能显著涨点；样本量一大，收益归零。</p>
+</section>
+<section class="sec" id="sec-3"><h2><span class="n">3</span>核心</h2>
+<ol>
+<li>问题/背景：标准指令微调把样本分三段（模板 token、user 指令、assistant 回答），只对回答段算交叉熵，指令与模板的 label 设为 -100。理由很直觉：要学的是怎么回答，不是怎么提问。但 NeurIPS 2024 的 Instruction Modelling 与 TACL 2025 的加权版本（共 21 个基准、525 次训练）发现，这条默认在特定条件下是错的。</li>
+<li>机制/方法：Instruction Modelling 只改一处——指令段也算 loss，模板 token 仍不算。加权版进一步把 prompt 权重与 response 权重拆成两个超参分别扫。代码层面只改一行：labels 里 prompt 段由 -100 改成逐 token 权重向量（模板 0、prompt 约 0.3、response 约 0.8），loss 为加权交叉熵除以权重和。</li>
+<li>关键证据或数字：生效需要两个条件同时满足：① 长度比（指令 token 数 ÷ 回答 token 数）大——如 Less/MMLU-Chat 类数据比值 26、Science Literature 24.7，这类收益显著；而 Tulu V2 比值 0.58（回答比指令长），收益很小；② 样本量在 1000–9000 条最好，涨到 3.5 万收益接近零，超过 5 万完全没差别。效果上，Less/MMLU-Chat 的 AlpacaEval 从 4.42 涨到 9.78（翻倍，惟基线很低），Science Literature 低资源下提升超过 18%，NLP 基准平均 46.58 → 48.95。机制证据指向正则化：IM 的训练 loss 更高（1.45 vs 1.37），测试 loss 反而更低（1.17 vs 1.32），生成与训练集的 BLEU 重叠更少——训得「更差」却测得更好、更不像背书；它比 KL 正则更全面（KL 保住 NLP 分数却把指令跟随打到接近 0，IM 两者兼顾）。权重扫描结论：标准做法（0, 1）几乎从不是最优，全算（1, 1）也偏冷；81% 的配置里 prompt 权重落在 0–0.6 为最优区间，56% 的情况下非零 prompt 权重最优，response 权重取 1 在 24% 情况下最优；相对标准做法平均涨 6.55%，Mistral-7B + Alpaca Cleaned 涨 20%。不同基准偏好不同（IFEval 偏好 response 权重 0.43，AlpacaEval 0.64，BBH 的 prompt 权重约 0.17）。另外，用加权 SFT 当 DPO 的起点还能再涨 8%，可与 NEFTune 叠加。</li>
+<li>结论/判断：边界要讲清：指令短、回答长或样本超 5 万条时，保持标准 mask 别折腾；无论怎么设，模板 token 永远不算 loss；多轮对话下 prompt 权重如何设，两篇论文都没系统覆盖，不要外推。实操上先算自己数据的长度比与样本量，两个条件都满足再开，且别只看一个基准选权重。</li>
+</ol>
+</section>
+<section class="sec" id="sec-4"><h2><span class="n">4</span>关键数字</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>基线 → 结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Less/MMLU-Chat AlpacaEval</td>
+<td>4.42 → 9.78</td>
+</tr>
+<tr>
+<td>NLP 基准平均</td>
+<td>46.58 → 48.95</td>
+</tr>
+<tr>
+<td>训练 / 测试 loss（IM vs 标准）</td>
+<td>1.45 / 1.17 vs 1.37 / 1.32</td>
+</tr>
+<tr>
+<td>相对标准做法平均提升</td>
+<td>+6.55%（Mistral-7B + Alpaca Cleaned +20%）</td>
+</tr>
+<tr>
+<td>最优 prompt 权重区间</td>
+<td>0.2–0.5（response 0.6–1.0，模板恒 0）</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="sec" id="sec-5"><h2><span class="n">5</span>可迁移</h2>
+<ul>
+<li>做小样本、长上下文指令的 SFT（如长文档 QA、带大段上下文的分类）时，先算长度比：指令是回答 5 倍以上且样本不足 1 万，默认打开 prompt loss 并扫 0.2–0.5 权重。</li>
+<li>面试被问「SFT 的 loss 怎么算」，补一句适用条件与正则化机制，能明显拉开与只会背 mask 做法的差距。</li>
+</ul>
+</section>
+<section class="sec" id="sec-6"><h2><span class="n">6</span>疑问 / 下一步</h2>
+<ul>
+<li>多轮对话场景下各轮 prompt 的权重如何分配尚无系统结论，自己做多轮 SFT 时需小规模对照实验验证。</li>
+</ul></section>
+  <div class="foot">由 <a href="">GitHub NOTES.md</a> 生成 · 公式由 KaTeX、流程图由 Mermaid 渲染（需联网加载）</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+  if (window.mermaid) {
+    mermaid.initialize({startOnLoad: true, theme: "default", securityLevel: "loose"});
+  }
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function() {
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = p + "%";
+  }, {passive: true});
+});
+</script>
+</body>
+</html>

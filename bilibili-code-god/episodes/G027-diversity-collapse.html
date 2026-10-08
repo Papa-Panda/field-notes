@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G027 — 多样性坍塌发生在哪？集中在开头几个 token，只插值第 20 到 28 层就能找回 37% 覆盖</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#ffffff; --ink:#23272f; --muted:#6b7280;
+  --accent:#1e40af; --accent-ink:#1e3a8a; --accent-bg:#eff6ff;
+  --border:#e8e4dc; --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;padding:40px 36px}
+.kicker{display:inline-block;font-size:13px;letter-spacing:.1em;background:rgba(255,255,255,.18);padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.hero h1{margin:0 0 10px;font-size:29px;line-height:1.45;font-weight:700}
+.hero .sub{opacity:.88;font-size:14.5px;margin:0}
+.toc{position:sticky;top:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.05);z-index:10}
+.toc summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toc a{font-size:13.5px;color:var(--accent-ink);background:var(--accent-bg);padding:4px 12px;border-radius:999px;text-decoration:none}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 34px;margin:0 0 18px;box-shadow:0 1px 6px rgba(0,0,0,.03);scroll-margin-top:80px}
+.sec h2{margin:0 0 18px;font-size:21px;display:flex;align-items:center;gap:12px;line-height:1.5}
+.sec h2 .n{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent-bg);
+  color:var(--accent-ink);font-size:15px;align-items:center;justify-content:center;flex:none;font-weight:700}
+.sec h3{font-size:17.5px;margin:26px 0 10px}
+.sec h4{font-size:16px;margin:20px 0 8px}
+.sec p{margin:0 0 14px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:24px}
+.sec li{margin-bottom:10px}
+.sec li::marker{color:var(--accent);font-weight:600}
+.sec-lede{background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);border-color:#bfdbfe}
+.sec-lede p{font-size:18px}
+.sec-qa ol{list-style:none;padding:0;counter-reset:q}
+.sec-qa ol>li{counter-increment:q;background:var(--bg);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px 18px 66px;position:relative;margin-bottom:14px}
+.sec-qa ol>li::before{content:counter(q);position:absolute;left:20px;top:20px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.sec blockquote{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;
+  padding:14px 22px;margin:0 0 16px;color:var(--accent-ink);font-size:17px}
+.sec blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px;line-height:1.6}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f4f6;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fafafa}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:.88em}
+pre{background:#1f2937;color:#e5e7eb;border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
+.katex{font-size:1.05em}
+.katex-display{margin:18px 0;overflow-x:auto;overflow-y:hidden}
+.mermaid{display:flex;justify-content:center;margin:10px 0 20px;overflow-x:auto;
+  background:#fbfcfe;border:1px solid var(--border);border-radius:12px;padding:18px 12px}
+.mermaid svg{max-width:100%;height:auto}
+.tag{display:inline-block;font-size:12.5px;background:#f3f4f6;border:1px solid var(--border);
+  border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0 10px}
+.meta-grid{display:grid;grid-template-columns:132px 1fr;gap:10px 14px;font-size:15px;margin:2px 0 8px;align-items:start}
+.meta-grid dt{color:var(--muted);font-weight:600}
+.meta-grid dd{margin:0;line-height:1.7;overflow-wrap:anywhere}
+.viz{margin:8px 0 22px}
+.stat-strip{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 150px;min-width:128px;background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);
+  border:1px solid #bfdbfe;border-radius:12px;padding:14px 14px;text-align:center}
+.stat .v{font-size:25px;font-weight:800;color:var(--accent-ink);line-height:1.35}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.fnode{flex:1 1 0;min-width:104px;background:var(--accent-bg);border:1.5px solid #bfdbfe;border-radius:12px;
+  padding:10px 10px;font-size:13.5px;font-weight:600;color:var(--accent-ink);text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.farrow{align-self:center;flex:0 0 auto;color:var(--accent);font-weight:800;font-size:19px;padding:2px 5px}
+.viz-bars{display:flex;flex-direction:column;gap:10px}
+.barrow{display:grid;grid-template-columns:minmax(80px,150px) 1fr 72px;gap:10px;align-items:center;font-size:14px}
+.barlabel{text-align:right;font-weight:600;line-height:1.4;overflow:hidden}
+.bartrack{background:#e8eefc;border-radius:999px;height:22px;overflow:hidden}
+.barfill{background:linear-gradient(90deg,#60a5fa,#1e40af);height:100%;border-radius:999px}
+.barval{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vscol{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.vscol h4{margin:0 0 10px;font-size:15px}
+.vscol.vs-a h4{color:var(--accent-ink)}
+.vscol.vs-b h4{color:#7c3aed}
+.vscol ul{margin:0;padding-left:20px}
+.vscol li{margin-bottom:8px;font-size:14.5px}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:36px;line-height:2}
+.foot a{color:var(--accent)}
+@media(max-width:640px){.sec{padding:22px 20px}.hero{padding:30px 24px}.hero h1{font-size:23px}body{font-size:16px}
+.vs{grid-template-columns:1fr}.barrow{grid-template-columns:86px 1fr 62px}.meta-grid{grid-template-columns:104px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">B站 · 古希腊掌管代码的神</span>
+    <h1>G027 — 多样性坍塌发生在哪？集中在开头几个 token，只插值第 20 到 28 层就能找回 37% 覆盖</h1>
+    <p class="sub">RLVR 的多样性坍塌几乎全发生在序列开头几个 token：入口段的熵位移是下游段的 11–16 倍，能力本身没丢、只是入口被锁住，所以只需对第 20–28 层做 checkp… · 完整阅读版 · 由 GitHub NOTES.md 生成</p>
+  </header>
+  <details class="toc" open>
+    <summary>目录（点击跳转）</summary>
+    <nav><a href="#sec-1">元信息</a><a href="#sec-2">一句话总结</a><a href="#sec-3">核心</a><a href="#sec-4">关键数字</a><a href="#sec-5">可迁移</a><a href="#sec-6">疑问 / 下一步</a></nav>
+  </details>
+  <section class="sec" id="sec-0">
+<blockquote class="pq">
+<p>📖 阅读版：https://papa-panda.github.io/field-notes/bilibili-code-god/episodes/G027-diversity-collapse.html</p>
+</blockquote>
+</section>
+<section class="sec" id="sec-1"><h2><span class="n">1</span>元信息</h2>
+<dl class="meta-grid"><dt>编号</dt><dd>G027</dd><dt>标题</dt><dd>多样性坍塌发生在哪？集中在开头几个 token，只插值第 20 到 28 层就能找回 37% 覆盖</dd><dt>BV</dt><dd>BV1LQeh6BE1J</dd><dt>时长</dt><dd>05:04</dd><dt>发布日期</dt><dd>2026-10-02</dd><dt>来源</dt><dd>Bilibili UP「古希腊掌管代码的神」</dd><dt>相关论文/工作</dt><dd>Countdown 解空间解剖的 RLVR 多样性研究；数学 RLVR 后指令遵循退化的研究；OLMo 3（多解 SFT 对照）</dd></dl>
+</section>
+<section class="sec sec-lede" id="sec-2"><h2><span class="n">2</span>一句话总结</h2>
+<p>RLVR 的多样性坍塌几乎全发生在序列开头几个 token：入口段的熵位移是下游段的 11–16 倍，能力本身没丢、只是入口被锁住，所以只需对第 20–28 层做 checkpoint 差值插值就能找回三成多覆盖；而且这种两极化会顺着训练管线传到下一阶段，把可训练信号抽干。</p>
+</section>
+<section class="sec" id="sec-3"><h2><span class="n">3</span>核心</h2>
+<ol>
+<li>问题/背景：RL 训完后 pass@1 涨、pass@k 掉是常识，但多样性具体死在哪一步不清楚。在能穷举全部解法的 Countdown 任务上（150 道测试题、379 个可行「入口家族」、平均每题 2.53 个），可以精确度量模型采样能碰到多少种解法入口。多样性之所以重要：它决定 pass@k 的上限，也决定下一阶段训练里还有没有「有对有错」的混合信号。</li>
+<li>机制/方法：把每个有效解按第一个算术运算符切成「入口段」和「下游段」，逐 token 比较训练前后的熵位移；再用「给一个最小入口前缀、让模型续写」的访问—执行实验，区分「不会做」和「不从这个门进」。修复则用层级差值：只对晚期 checkpoint 与早期 checkpoint 在第 20–28 层的参数差做插值覆盖，其余层不动。</li>
+<li>关键证据或数字：PPO 训后 pass@1 涨 50 倍以上，解覆盖率却从 0.337 掉到 0.111（-67%），入口家族覆盖 0.932→0.571，入口熵 1.585→0.760 nats；GRPO 公开 checkpoint 准确率翻三倍、覆盖掉 43%。熵位移方面，PPO 入口段每 token 约 4.50 nats、下游仅 0.28（差 16 倍），GRPO 为 8.08 对 0.71（差 11 倍）。给定入口前缀后，指定家族完成率从 0.018 跳到 0.212（翻十倍多），下游执行能力甚至比训练前更强——证明能力还在、入口被锁。层差值修复后覆盖率 0.111→0.152（相对 +37%），pass@1 还从 0.278 涨到 0.305；调温度、换提示词均无效，只有动权重才行。跨 Qwen2.5 7B/14B 的六个数学基准上入口段散度都大于下游，SimpleRL 训后首 token 熵降 30%–41%，采样预算加 50 倍 pass@64 纹丝不动。</li>
+<li>结论/判断：坍塌是入口的锁死而非能力的消失，代价还会跨阶段传染：另一篇工作里 Qwen3-8B base 做数学 RLVR 后，指令遵循 pass@1 涨 6.5、best@32 却掉 9.8，原因是提示被两极化成全对或全错；先训指令遵循 RL 再训数学 RL 时，第 20 步混合支持的提示从 33.6% 掉到 1.6%，梯度随之消失。反例 OLMo 3 走 SFT→DPO→RLVR 阶梯保住了入口熵，多解 SFT 的覆盖是晚期 GRPO 的 2.6 倍。实操四条：盯首 token 的熵而非全局熵、SFT 阶段喂多解数据、想清楚阶段顺序、晚期崩了先用层差值救别急着重训。</li>
+</ol>
+</section>
+<section class="sec" id="sec-4"><h2><span class="n">4</span>关键数字</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>基线</th>
+<th>RL 后 / 处理后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>解覆盖率（Countdown, PPO）</td>
+<td>0.337</td>
+<td>0.111（-67%）</td>
+</tr>
+<tr>
+<td>入口段 vs 下游段每 token 熵位移（PPO）</td>
+<td>—</td>
+<td>4.50 vs 0.28 nats（16 倍）</td>
+</tr>
+<tr>
+<td>给定入口前缀的指定家族完成率</td>
+<td>0.018</td>
+<td>0.212</td>
+</tr>
+<tr>
+<td>层差值修复（20–28 层）后覆盖率</td>
+<td>0.111</td>
+<td>0.152（+37%），pass@1 0.278→0.305</td>
+</tr>
+<tr>
+<td>指令遵循 best@32（数学 RLVR 后）</td>
+<td>—</td>
+<td>-9.8（pass@1 同时 +6.5）</td>
+</tr>
+<tr>
+<td>接力 RL 中混合支持提示占比（第 20 步）</td>
+<td>33.6%</td>
+<td>1.6%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="sec" id="sec-5"><h2><span class="n">5</span>可迁移</h2>
+<ul>
+<li>做 RLVR 监控时把 first-token 熵和组内「全对/全错」比例列为一级指标：混合组比例塌掉，等于后续 step 没有梯度信号，这比看 reward 曲线更早预警。</li>
+<li>面试谈 pass@k 下降不要只说「熵坍塌」：给出入口/下游分解、访问—执行实验和层插值修复，才算把「能力还在、分布变窄」讲到机制层。</li>
+</ul>
+</section>
+<section class="sec" id="sec-6"><h2><span class="n">6</span>疑问 / 下一步</h2>
+<ul>
+<li>层差值修复只在 Countdown 和数学基准上验证过，代码/Agent 任务上「入口」对应什么（首个工具调用？首句计划？）尚待类比验证。</li>
+</ul></section>
+  <div class="foot">由 <a href="">GitHub NOTES.md</a> 生成 · 公式由 KaTeX、流程图由 Mermaid 渲染（需联网加载）</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+  if (window.mermaid) {
+    mermaid.initialize({startOnLoad: true, theme: "default", securityLevel: "loose"});
+  }
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function() {
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = p + "%";
+  }, {passive: true});
+});
+</script>
+</body>
+</html>

@@ -9,7 +9,8 @@
 
 ## 进度
 
-- 批 1（#1–#20）：19/20 完成；#8（BV1qgHn6kEwe）字幕串台，待下轮重试。
+- 批 1（#1–#20）：20/20 完成（#8 于批 2 补齐）。
+- 批 2（#21–#40）：20/20 完成。累计 40/515。
 
 ## 已完成纪要
 
@@ -34,3 +35,24 @@
 | G018 | DeepSeek-R1 配方（GRPO 入门 20） |
 | G019 | Dr. GRPO 与 DAPO（GRPO 入门 19） |
 | G020 | GRPO 改了 PPO 什么（GRPO 入门 18） |
+| G008 | chat template 训推不一致的四种错法 |
+| G021 | DPO 的推导：闭式解与隐式 reward |
+| G022 | SFT 要不要给 prompt 算 loss |
+| G023 | PPO 四模型与显存死穴（GRPO 入门 14） |
+| G024 | 训练末期 grad norm 上升与 AdamC |
+| G025 | LLMZero：RL 超参的 agent 诊断与树搜索 |
+| G026 | KL 惩罚：β 取值与放奖励还是放损失 |
+| G027 | 多样性坍塌在开头 token 与层插值 |
+| G028 | RL 涨分还是背题：基准污染诊断 |
+| G029 | RL 学习率为何比 SFT 小 10 倍 |
+| G030 | Reward Model 训练：Bradley-Terry 细节 |
+| G031 | QeRL：量化噪声当探索 |
+| G032 | APRIL：partial rollout 治长尾 |
+| G033 | RLHF 三阶段与对齐税 |
+| G034 | GRPO 训练曲线的阻尼振子模型 |
+| G035 | LLM 裁判的万能钥匙攻击与 Master-RM |
+| G036 | OctoThinker：中段训练补推理语料 |
+| G037 | 数据重复：记忆窗口决定过拟合 |
+| G038 | 大模型即策略：老虎机与 token 级 MDP |
+| G039 | 变长 SFT 梯度累积的归一化 bug |
+| G040 | Cut Cross-Entropy 与 Liger Kernel |

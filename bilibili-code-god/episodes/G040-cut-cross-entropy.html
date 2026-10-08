@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G040 — 大词表训练时 logits 为什么吃掉 89% 显存？Cut Cross-Entropy 与 Liger Kernel 讲透</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#ffffff; --ink:#23272f; --muted:#6b7280;
+  --accent:#1e40af; --accent-ink:#1e3a8a; --accent-bg:#eff6ff;
+  --border:#e8e4dc; --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;padding:40px 36px}
+.kicker{display:inline-block;font-size:13px;letter-spacing:.1em;background:rgba(255,255,255,.18);padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.hero h1{margin:0 0 10px;font-size:29px;line-height:1.45;font-weight:700}
+.hero .sub{opacity:.88;font-size:14.5px;margin:0}
+.toc{position:sticky;top:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.05);z-index:10}
+.toc summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toc a{font-size:13.5px;color:var(--accent-ink);background:var(--accent-bg);padding:4px 12px;border-radius:999px;text-decoration:none}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 34px;margin:0 0 18px;box-shadow:0 1px 6px rgba(0,0,0,.03);scroll-margin-top:80px}
+.sec h2{margin:0 0 18px;font-size:21px;display:flex;align-items:center;gap:12px;line-height:1.5}
+.sec h2 .n{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent-bg);
+  color:var(--accent-ink);font-size:15px;align-items:center;justify-content:center;flex:none;font-weight:700}
+.sec h3{font-size:17.5px;margin:26px 0 10px}
+.sec h4{font-size:16px;margin:20px 0 8px}
+.sec p{margin:0 0 14px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:24px}
+.sec li{margin-bottom:10px}
+.sec li::marker{color:var(--accent);font-weight:600}
+.sec-lede{background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);border-color:#bfdbfe}
+.sec-lede p{font-size:18px}
+.sec-qa ol{list-style:none;padding:0;counter-reset:q}
+.sec-qa ol>li{counter-increment:q;background:var(--bg);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px 18px 66px;position:relative;margin-bottom:14px}
+.sec-qa ol>li::before{content:counter(q);position:absolute;left:20px;top:20px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.sec blockquote{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;
+  padding:14px 22px;margin:0 0 16px;color:var(--accent-ink);font-size:17px}
+.sec blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px;line-height:1.6}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f4f6;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fafafa}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:.88em}
+pre{background:#1f2937;color:#e5e7eb;border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
+.katex{font-size:1.05em}
+.katex-display{margin:18px 0;overflow-x:auto;overflow-y:hidden}
+.mermaid{display:flex;justify-content:center;margin:10px 0 20px;overflow-x:auto;
+  background:#fbfcfe;border:1px solid var(--border);border-radius:12px;padding:18px 12px}
+.mermaid svg{max-width:100%;height:auto}
+.tag{display:inline-block;font-size:12.5px;background:#f3f4f6;border:1px solid var(--border);
+  border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0 10px}
+.meta-grid{display:grid;grid-template-columns:132px 1fr;gap:10px 14px;font-size:15px;margin:2px 0 8px;align-items:start}
+.meta-grid dt{color:var(--muted);font-weight:600}
+.meta-grid dd{margin:0;line-height:1.7;overflow-wrap:anywhere}
+.viz{margin:8px 0 22px}
+.stat-strip{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 150px;min-width:128px;background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);
+  border:1px solid #bfdbfe;border-radius:12px;padding:14px 14px;text-align:center}
+.stat .v{font-size:25px;font-weight:800;color:var(--accent-ink);line-height:1.35}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.fnode{flex:1 1 0;min-width:104px;background:var(--accent-bg);border:1.5px solid #bfdbfe;border-radius:12px;
+  padding:10px 10px;font-size:13.5px;font-weight:600;color:var(--accent-ink);text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.farrow{align-self:center;flex:0 0 auto;color:var(--accent);font-weight:800;font-size:19px;padding:2px 5px}
+.viz-bars{display:flex;flex-direction:column;gap:10px}
+.barrow{display:grid;grid-template-columns:minmax(80px,150px) 1fr 72px;gap:10px;align-items:center;font-size:14px}
+.barlabel{text-align:right;font-weight:600;line-height:1.4;overflow:hidden}
+.bartrack{background:#e8eefc;border-radius:999px;height:22px;overflow:hidden}
+.barfill{background:linear-gradient(90deg,#60a5fa,#1e40af);height:100%;border-radius:999px}
+.barval{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vscol{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.vscol h4{margin:0 0 10px;font-size:15px}
+.vscol.vs-a h4{color:var(--accent-ink)}
+.vscol.vs-b h4{color:#7c3aed}
+.vscol ul{margin:0;padding-left:20px}
+.vscol li{margin-bottom:8px;font-size:14.5px}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:36px;line-height:2}
+.foot a{color:var(--accent)}
+@media(max-width:640px){.sec{padding:22px 20px}.hero{padding:30px 24px}.hero h1{font-size:23px}body{font-size:16px}
+.vs{grid-template-columns:1fr}.barrow{grid-template-columns:86px 1fr 62px}.meta-grid{grid-template-columns:104px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">B站 · 古希腊掌管代码的神</span>
+    <h1>G040 — 大词表训练时 logits 为什么吃掉 89% 显存？Cut Cross-Entropy 与 Liger Kernel 讲透</h1>
+    <p class="sub">训练显存除了参数、梯度、优化器状态，还有第四件——logits：它随词表大小线性膨胀，在大词表模型上能占到总显存的 89%；解法是不物化完整 logits，靠分块在线计算（CC… · 完整阅读版 · 由 GitHub NOTES.md 生成</p>
+  </header>
+  <details class="toc" open>
+    <summary>目录（点击跳转）</summary>
+    <nav><a href="#sec-1">元信息</a><a href="#sec-2">一句话总结</a><a href="#sec-3">核心</a><a href="#sec-4">关键数字</a><a href="#sec-5">可迁移</a><a href="#sec-6">疑问 / 下一步</a></nav>
+  </details>
+  <section class="sec" id="sec-0">
+<blockquote class="pq">
+<p>📖 阅读版：https://papa-panda.github.io/field-notes/bilibili-code-god/episodes/G040-cut-cross-entropy.html</p>
+</blockquote>
+</section>
+<section class="sec" id="sec-1"><h2><span class="n">1</span>元信息</h2>
+<dl class="meta-grid"><dt>编号</dt><dd>G040</dd><dt>标题</dt><dd>大词表训练时 logits 为什么吃掉 89% 显存？Cut Cross-Entropy 与 Liger Kernel 讲透</dd><dt>BV</dt><dd>BV19Reh6vEk5</dd><dt>时长</dt><dd>04:12</dd><dt>发布日期</dt><dd>2026-09-30</dd><dt>来源</dt><dd>Bilibili UP「古希腊掌管代码的神」</dd><dt>相关论文/工作</dt><dd>Cut Cross-Entropy（Apple，arXiv:2411.09009）；Liger Kernel（LinkedIn，arXiv:2410.10989）</dd></dl>
+</section>
+<section class="sec sec-lede" id="sec-2"><h2><span class="n">2</span>一句话总结</h2>
+<p>训练显存除了参数、梯度、优化器状态，还有第四件——logits：它随词表大小线性膨胀，在大词表模型上能占到总显存的 89%；解法是不物化完整 logits，靠分块在线计算（CCE）或融合内核（Liger）把这块从几十 GB 压到 MB 量级。</p>
+</section>
+<section class="sec" id="sec-3"><h2><span class="n">3</span>核心</h2>
+<ol>
+<li>
+<p><strong>问题/背景</strong>：logits 是最后一层对每个位置、每个词表词打出的分数，张量形状为 batch × 序列长度 × 词表大小。以 Gemma-2 2B（词表约 25.6 万）为例，8192 个 token 的 logits 在 FP32 下单次前向就是 8.4 GB，反向还要存 softmax 与梯度，峰值约 24 GB。词表越大这块越大：Phi-3.5-mini（词表 3.2 万）logits 占训练显存 40%，Llama-3 8B（词表 12.8 万）占 65%，Gemma-2 2B 占 89%；一条 8 万 token 的长序列，光 logits 就能吃满一张 80 GB 的 H100。</p>
+</li>
+<li>
+<p><strong>机制/方法（为什么贵）</strong>：交叉熵拆开是两项——正确 token 的 logit，减去全词表的 log-sum-exp。第一项只需要一个数，第二项却要把 25.6 万个 logit 全算出来做分母；反向时 softmax 减 one-hot 使每个词表位置都有梯度，一列都省不掉；再加上交叉熵通常会 upcast 到 FP32 计算，于是这块中间量成了整个训练里最大的单个张量。</p>
+</li>
+<li>
+<p><strong>机制/方法（CCE）</strong>：Apple 的 Cut Cross-Entropy 分两路处理。正确 token 的 logit 用索引矩阵乘只取那一列，不碰其他列；log-sum-exp 把词表切块，在 GPU 片上 SRAM 里逐块维护在线的运行最大值与累加和，算完即弃，永不把完整 logits 写回显存；反向时同样在片上重算——思路与 FlashAttention 一致，用重算换显存。还有一层免费加速：softmax 后绝大多数词的概率小到连 BF16 都表示不了（ $2^{-12}$ 以下直接截零），前沿模型上超过 99.98% 的梯度块全为零，可以整块跳过，反向快 3.4 倍；再按平均 logit 重排词表让空块聚拢，又快 15%。</p>
+</li>
+<li>
+<p><strong>机制/方法（Liger Kernel）</strong>：LinkedIn 的 Liger Kernel 走融合路线：把 LM head 的矩阵乘与交叉熵融进一个内核，按 chunk 算一小块 logits，在前向里直接算出这一块的梯度，存梯度而不存 logits 本身。</p>
+</li>
+<li>
+<p><strong>结论/判断</strong>：两条路线的代价也要认清——词表/隐层比很低的模型（如 Phi-3.5-mini）上 CCE 比 torch.compile 慢约一半；需要更高精度开 Kahan 求和时，显存涨到 2.3 GB、耗时翻倍。所以选型原则是：显存估算先把 logits 这第四项算进去，词表超 10 万或序列超 8K 默认开 Liger，追求极致再换 CCE，开完必须对比 loss 曲线确认数值一致。</p>
+</li>
+</ol>
+</section>
+<section class="sec" id="sec-4"><h2><span class="n">4</span>关键数字</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>基线</th>
+<th>优化后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemma-2 2B、8192 token，loss 计算显存（CCE）</td>
+<td>24 GB</td>
+<td>1 MB</td>
+</tr>
+<tr>
+<td>同上，loss + 梯度峰值（CCE）</td>
+<td>28 GB</td>
+<td>164 MB</td>
+</tr>
+<tr>
+<td>同上，loss 计算耗时（CCE vs 朴素基线 208 ms）</td>
+<td>208 ms</td>
+<td>145 ms（与 torch.compile 的 143 ms 持平）</td>
+</tr>
+<tr>
+<td>Llama-3 8B、4×A100 吞吐（Liger）</td>
+<td>—</td>
+<td>+42.8%</td>
+</tr>
+<tr>
+<td>Llama-3 8B 显存（Liger）</td>
+<td>—</td>
+<td>−54.8%</td>
+</tr>
+<tr>
+<td>Qwen2 吞吐 / 显存（Liger）</td>
+<td>—</td>
+<td>+25.5% / −56.8%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="sec" id="sec-5"><h2><span class="n">5</span>可迁移</h2>
+<ul>
+<li><strong>显存估算公式要补第四项</strong>：估算训练显存时在参数/梯度/优化器状态之外，加上 logits 项——batch × 序列长 × 词表 × 4 字节，再乘 3 估反向峰值。面试被问「训练显存怎么算」时漏掉这一项，在大词表模型上会差出近一个数量级。</li>
+<li><strong>工程默认动作</strong>：词表 &gt;10 万或序列 &gt;8K 时，一行配置开 Liger（TRL 里 <code>use_liger=True</code>，或 <code>apply_liger_kernel_to_*</code>）；启用后先对 loss 曲线验数值、再看显存曲线确认最后一层的尖峰消失，这是低成本高收益的标准排障顺序。</li>
+</ul>
+</section>
+<section class="sec" id="sec-6"><h2><span class="n">6</span>疑问 / 下一步</h2>
+<ul>
+<li>CCE 的梯度块跳过依赖 softmax 概率的极端稀疏性；在 RL 训练（如 GRPO 大量采样、温度较高）场景下分布更平坦时，99.98% 的零块比例还成立吗，值得查 CCE 后续工作或实测。</li>
+</ul></section>
+  <div class="foot">由 <a href="">GitHub NOTES.md</a> 生成 · 公式由 KaTeX、流程图由 Mermaid 渲染（需联网加载）</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+  if (window.mermaid) {
+    mermaid.initialize({startOnLoad: true, theme: "default", securityLevel: "loose"});
+  }
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function() {
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = p + "%";
+  }, {passive: true});
+});
+</script>
+</body>
+</html>

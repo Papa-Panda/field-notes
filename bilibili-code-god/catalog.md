@@ -13,7 +13,7 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 5 | CrEST：通过轮分段优势与自教师调制改进多轮 Agent 的信用分配，verifier 定方向、老师只调幅度 | BV1MxHn6aEXo | 04:31 | 2026-10-08 | 已完成 | [G005-crest-credit-assignment.md](episodes/G005-crest-credit-assignment.md) |
 | 6 | SFT 和 RL 该混着训还是先后训？两个基线 bug 让先 SFT 再 RL 反超 22.2 分 | BV1EuHn6VE7k | 04:13 | 2026-10-07 | 已完成 | [G006-sft-rl-order.md](episodes/G006-sft-rl-order.md) |
 | 7 | SFT 分数越高，RL 为什么反而越涨不动？Meta 百万 GPU 小时实验与可塑性丧失 | BV1BuHn6VEvw | 04:35 | 2026-10-07 | 已完成 | [G007-sft-plasticity-loss.md](episodes/G007-sft-plasticity-loss.md) |
-| 8 | chat template 训推不一致的四种错法，Thinking 模型多轮拼接规则与逐 token 验证 | BV1qgHn6kEwe | 03:12 | 2026-10-07 | 待处理（字幕串台，下轮重试） | |
+| 8 | chat template 训推不一致的四种错法，Thinking 模型多轮拼接规则与逐 token 验证 | BV1qgHn6kEwe | 03:12 | 2026-10-07 | 已完成 | [G008-chat-template-mismatch.md](episodes/G008-chat-template-mismatch.md) |
 | 9 | GDPO：通过分开归一化各个奖励，改进 GRPO 多奖励相加时的信号坍缩问题 | BV1EKHn6LEnZ | 03:46 | 2026-10-06 | 已完成 | [G009-gdpo.md](episodes/G009-gdpo.md) |
 | 10 | DPO 为什么会训崩？似然位移、β 错档与离策略偏好数据三件事 | BV1BTHn6yE3G | 03:15 | 2026-10-06 | 已完成 | [G010-dpo-collapse.md](episodes/G010-dpo-collapse.md) |
 | 11 | SFT Packing 为什么会串样本？position ids 重置、varlen 分块注意力与各框架开关 | BV1ETHn6yEUv | 03:01 | 2026-10-06 | 已完成 | [G011-sft-packing.md](episodes/G011-sft-packing.md) |
@@ -26,26 +26,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 18 | DeepSeek-R1 做对了什么？规则奖励、顿悟时刻与四阶段配方 | BV17VhU62EwM | 00:59 | 2026-10-05 | 已完成 | [G018-r1-recipe.md](episodes/G018-r1-recipe.md) |
 | 19 | GRPO 的两个偏差藏在哪？Dr. GRPO 删两个分母、DAPO 放宽 clip 治熵坍塌 | BV1EVhU62Ein | 00:59 | 2026-10-04 | 已完成 | [G019-dr-grpo-dapo.md](episodes/G019-dr-grpo-dapo.md) |
 | 20 | GRPO 到底改了 PPO 什么？去掉 Critic、换成组内基线、KL 进损失 | BV1e6hm6uEYW | 00:58 | 2026-10-04 | 已完成 | [G020-grpo-vs-ppo.md](episodes/G020-grpo-vs-ppo.md) |
-| 21 | DPO 是怎么推出来的？闭式解、配分函数与「你的语言模型其实是个 Reward Model」 | BV1fghU6UEUB | 01:00 | 2026-10-03 | 待处理 | |
-| 22 | SFT 一定要 mask 掉 prompt 吗？指令长 5 倍、样本少于 1 万时给 prompt 算 loss 反而涨点 | BV1UTea64E3a | 04:06 | 2026-10-03 | 待处理 | |
-| 23 | PPO 的四个模型：谁在学、谁在看，以及显存为什么是它的死穴 | BV1vEhU6VE81 | 00:57 | 2026-10-03 | 待处理 | |
-| 24 | 训练末期 grad norm 为什么反而上升？weight decay 与 LR 衰减的耦合，AdamC 一行修正 | BV1mMea6dEtA | 03:58 | 2026-10-03 | 待处理 | |
-| 25 | LLMZero：通过 Agent 逐 checkpoint 诊断与树搜索改进 RL 超参的固定日程问题 | BV1dQeh6qEJJ | 03:25 | 2026-10-02 | 待处理 | |
-| 26 | KL 惩罚在拴住谁？β 的取值、k3 估计，以及放奖励还是放损失 | BV1iEhU6VEm5 | 01:00 | 2026-10-02 | 待处理 | |
-| 27 | 多样性坍塌发生在哪？集中在开头几个 token，只插值第 20 到 28 层就能找回 37% 覆盖 | BV1LQeh6BE1J | 05:04 | 2026-10-02 | 待处理 | |
-| 28 | RL 涨分是真学会还是在背题？Qwen 数学基准污染、记忆锚点电路与模型任务对齐度 | BV1R9eh6KEhk | 05:11 | 2026-10-02 | 待处理 | |
-| 29 | RL 的学习率为什么比 SFT 小 10 倍？1e-5 断崖式崩溃、JustRL 恒定 1e-6 与 LoRA 例外 | BV1R9eh6KEMN | 04:38 | 2026-10-02 | 待处理 | |
-| 30 | Reward Model 是怎么训出来的？Bradley-Terry 与 batch 的反直觉细节 | BV1LJhU6kEkp | 00:55 | 2026-10-02 | 待处理 | |
-| 31 | QeRL：4-bit 量化噪声为什么让 RL 探索更好？32B 模型单卡 H100 跑 GRPO | BV1ZUeh6zECH | 04:23 | 2026-10-02 | 待处理 | |
-| 32 | APRIL：通过 partial rollout 改进同步 RL 的长尾等待，多发一倍、够了就停、没写完续写 | BV1jDeh6uEYy | 03:57 | 2026-10-01 | 待处理 | |
-| 33 | RLHF 三阶段是怎么串起来的？InstructGPT 的三个数与对齐税 | BV17LhU6LEDs | 01:00 | 2026-10-01 | 待处理 | |
-| 34 | GRPO 的训练曲线能预测吗？用阻尼振子解释动量、陈旧度与 group size | BV1RZeh6YETk | 04:39 | 2026-10-01 | 待处理 | |
-| 35 | LLM 裁判为什么会被一个 token 骗过？万能钥匙攻击、Master-RM 与 rubric dropout | BV15Zeh6eEBg | 05:09 | 2026-10-01 | 待处理 | |
-| 36 | OctoThinker：通过中段训练补推理语料，改进 Llama 做 RL 时长度失控、不涨分的问题 | BV19Fea6wEg4 | 03:51 | 2026-10-01 | 待处理 | |
-| 37 | 数据重复训练，决定过拟合的是次数还是间隔？记忆窗口与 190 个 epoch | BV1XFea6wEqq | 04:10 | 2026-10-01 | 待处理 | |
-| 38 | 大模型怎么变成策略？单步老虎机与 token 级 MDP 的两种看法 | BV1LjhU6yEy1 | 00:56 | 2026-10-01 | 待处理 | |
-| 39 | 变长 SFT 开梯度累积，loss 为什么会系统性偏高？HF Trainer 存在两年的归一化 bug | BV1LReh6iES9 | 03:28 | 2026-10-01 | 待处理 | |
-| 40 | 大词表训练时 logits 为什么吃掉 89% 显存？Cut Cross-Entropy 与 Liger Kernel 讲透 | BV19Reh6vEk5 | 04:12 | 2026-09-30 | 待处理 | |
+| 21 | DPO 是怎么推出来的？闭式解、配分函数与「你的语言模型其实是个 Reward Model」 | BV1fghU6UEUB | 01:00 | 2026-10-03 | 已完成 | [G021-dpo-derivation.md](episodes/G021-dpo-derivation.md) |
+| 22 | SFT 一定要 mask 掉 prompt 吗？指令长 5 倍、样本少于 1 万时给 prompt 算 loss 反而涨点 | BV1UTea64E3a | 04:06 | 2026-10-03 | 已完成 | [G022-sft-prompt-mask.md](episodes/G022-sft-prompt-mask.md) |
+| 23 | PPO 的四个模型：谁在学、谁在看，以及显存为什么是它的死穴 | BV1vEhU6VE81 | 00:57 | 2026-10-03 | 已完成 | [G023-ppo-four-models.md](episodes/G023-ppo-four-models.md) |
+| 24 | 训练末期 grad norm 为什么反而上升？weight decay 与 LR 衰减的耦合，AdamC 一行修正 | BV1mMea6dEtA | 03:58 | 2026-10-03 | 已完成 | [G024-grad-norm-late.md](episodes/G024-grad-norm-late.md) |
+| 25 | LLMZero：通过 Agent 逐 checkpoint 诊断与树搜索改进 RL 超参的固定日程问题 | BV1dQeh6qEJJ | 03:25 | 2026-10-02 | 已完成 | [G025-llmzero.md](episodes/G025-llmzero.md) |
+| 26 | KL 惩罚在拴住谁？β 的取值、k3 估计，以及放奖励还是放损失 | BV1iEhU6VEm5 | 01:00 | 2026-10-02 | 已完成 | [G026-kl-penalty.md](episodes/G026-kl-penalty.md) |
+| 27 | 多样性坍塌发生在哪？集中在开头几个 token，只插值第 20 到 28 层就能找回 37% 覆盖 | BV1LQeh6BE1J | 05:04 | 2026-10-02 | 已完成 | [G027-diversity-collapse.md](episodes/G027-diversity-collapse.md) |
+| 28 | RL 涨分是真学会还是在背题？Qwen 数学基准污染、记忆锚点电路与模型任务对齐度 | BV1R9eh6KEhk | 05:11 | 2026-10-02 | 已完成 | [G028-rl-memorization.md](episodes/G028-rl-memorization.md) |
+| 29 | RL 的学习率为什么比 SFT 小 10 倍？1e-5 断崖式崩溃、JustRL 恒定 1e-6 与 LoRA 例外 | BV1R9eh6KEMN | 04:38 | 2026-10-02 | 已完成 | [G029-rl-lr-scale.md](episodes/G029-rl-lr-scale.md) |
+| 30 | Reward Model 是怎么训出来的？Bradley-Terry 与 batch 的反直觉细节 | BV1LJhU6kEkp | 00:55 | 2026-10-02 | 已完成 | [G030-reward-model-training.md](episodes/G030-reward-model-training.md) |
+| 31 | QeRL：4-bit 量化噪声为什么让 RL 探索更好？32B 模型单卡 H100 跑 GRPO | BV1ZUeh6zECH | 04:23 | 2026-10-02 | 已完成 | [G031-qerl.md](episodes/G031-qerl.md) |
+| 32 | APRIL：通过 partial rollout 改进同步 RL 的长尾等待，多发一倍、够了就停、没写完续写 | BV1jDeh6uEYy | 03:57 | 2026-10-01 | 已完成 | [G032-april-partial-rollout.md](episodes/G032-april-partial-rollout.md) |
+| 33 | RLHF 三阶段是怎么串起来的？InstructGPT 的三个数与对齐税 | BV17LhU6LEDs | 01:00 | 2026-10-01 | 已完成 | [G033-rlhf-three-stages.md](episodes/G033-rlhf-three-stages.md) |
+| 34 | GRPO 的训练曲线能预测吗？用阻尼振子解释动量、陈旧度与 group size | BV1RZeh6YETk | 04:39 | 2026-10-01 | 已完成 | [G034-grpo-dynamics.md](episodes/G034-grpo-dynamics.md) |
+| 35 | LLM 裁判为什么会被一个 token 骗过？万能钥匙攻击、Master-RM 与 rubric dropout | BV15Zeh6eEBg | 05:09 | 2026-10-01 | 已完成 | [G035-judge-master-key.md](episodes/G035-judge-master-key.md) |
+| 36 | OctoThinker：通过中段训练补推理语料，改进 Llama 做 RL 时长度失控、不涨分的问题 | BV19Fea6wEg4 | 03:51 | 2026-10-01 | 已完成 | [G036-octothinker.md](episodes/G036-octothinker.md) |
+| 37 | 数据重复训练，决定过拟合的是次数还是间隔？记忆窗口与 190 个 epoch | BV1XFea6wEqq | 04:10 | 2026-10-01 | 已完成 | [G037-data-repetition-window.md](episodes/G037-data-repetition-window.md) |
+| 38 | 大模型怎么变成策略？单步老虎机与 token 级 MDP 的两种看法 | BV1LjhU6yEy1 | 00:56 | 2026-10-01 | 已完成 | [G038-llm-as-policy.md](episodes/G038-llm-as-policy.md) |
+| 39 | 变长 SFT 开梯度累积，loss 为什么会系统性偏高？HF Trainer 存在两年的归一化 bug | BV1LReh6iES9 | 03:28 | 2026-10-01 | 已完成 | [G039-sft-grad-accum-bug.md](episodes/G039-sft-grad-accum-bug.md) |
+| 40 | 大词表训练时 logits 为什么吃掉 89% 显存？Cut Cross-Entropy 与 Liger Kernel 讲透 | BV19Reh6vEk5 | 04:12 | 2026-09-30 | 已完成 | [G040-cut-cross-entropy.md](episodes/G040-cut-cross-entropy.md) |
 | 41 | PPO 完整训练流程：三步一轮、三项损失，以及大模型版的参数 | BV1WFhU6xEmR | 00:58 | 2026-09-30 | 待处理 | |
 | 42 | 奖励随机错 40% 为什么 RL 还能训？看训练奖励饱和速度判断模型在学还是在背 | BV1Xoeh6PEzc | 04:50 | 2026-09-30 | 待处理 | |
 | 43 | 不用反向传播能训大模型 Agent 吗？进化策略与 GRPO 的方差、显存与 pass@k 对比 | BV1zbea6GEF9 | 04:38 | 2026-09-30 | 待处理 | |

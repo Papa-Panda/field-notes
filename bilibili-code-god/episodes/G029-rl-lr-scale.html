@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G029 — RL 的学习率为什么比 SFT 小 10 倍？1e-5 断崖式崩溃、JustRL 恒定 1e-6 与 LoRA 例外</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#ffffff; --ink:#23272f; --muted:#6b7280;
+  --accent:#1e40af; --accent-ink:#1e3a8a; --accent-bg:#eff6ff;
+  --border:#e8e4dc; --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;padding:40px 36px}
+.kicker{display:inline-block;font-size:13px;letter-spacing:.1em;background:rgba(255,255,255,.18);padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.hero h1{margin:0 0 10px;font-size:29px;line-height:1.45;font-weight:700}
+.hero .sub{opacity:.88;font-size:14.5px;margin:0}
+.toc{position:sticky;top:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.05);z-index:10}
+.toc summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toc a{font-size:13.5px;color:var(--accent-ink);background:var(--accent-bg);padding:4px 12px;border-radius:999px;text-decoration:none}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 34px;margin:0 0 18px;box-shadow:0 1px 6px rgba(0,0,0,.03);scroll-margin-top:80px}
+.sec h2{margin:0 0 18px;font-size:21px;display:flex;align-items:center;gap:12px;line-height:1.5}
+.sec h2 .n{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent-bg);
+  color:var(--accent-ink);font-size:15px;align-items:center;justify-content:center;flex:none;font-weight:700}
+.sec h3{font-size:17.5px;margin:26px 0 10px}
+.sec h4{font-size:16px;margin:20px 0 8px}
+.sec p{margin:0 0 14px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:24px}
+.sec li{margin-bottom:10px}
+.sec li::marker{color:var(--accent);font-weight:600}
+.sec-lede{background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);border-color:#bfdbfe}
+.sec-lede p{font-size:18px}
+.sec-qa ol{list-style:none;padding:0;counter-reset:q}
+.sec-qa ol>li{counter-increment:q;background:var(--bg);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px 18px 66px;position:relative;margin-bottom:14px}
+.sec-qa ol>li::before{content:counter(q);position:absolute;left:20px;top:20px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.sec blockquote{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;
+  padding:14px 22px;margin:0 0 16px;color:var(--accent-ink);font-size:17px}
+.sec blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px;line-height:1.6}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f4f6;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fafafa}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:.88em}
+pre{background:#1f2937;color:#e5e7eb;border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
+.katex{font-size:1.05em}
+.katex-display{margin:18px 0;overflow-x:auto;overflow-y:hidden}
+.mermaid{display:flex;justify-content:center;margin:10px 0 20px;overflow-x:auto;
+  background:#fbfcfe;border:1px solid var(--border);border-radius:12px;padding:18px 12px}
+.mermaid svg{max-width:100%;height:auto}
+.tag{display:inline-block;font-size:12.5px;background:#f3f4f6;border:1px solid var(--border);
+  border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0 10px}
+.meta-grid{display:grid;grid-template-columns:132px 1fr;gap:10px 14px;font-size:15px;margin:2px 0 8px;align-items:start}
+.meta-grid dt{color:var(--muted);font-weight:600}
+.meta-grid dd{margin:0;line-height:1.7;overflow-wrap:anywhere}
+.viz{margin:8px 0 22px}
+.stat-strip{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 150px;min-width:128px;background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);
+  border:1px solid #bfdbfe;border-radius:12px;padding:14px 14px;text-align:center}
+.stat .v{font-size:25px;font-weight:800;color:var(--accent-ink);line-height:1.35}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.fnode{flex:1 1 0;min-width:104px;background:var(--accent-bg);border:1.5px solid #bfdbfe;border-radius:12px;
+  padding:10px 10px;font-size:13.5px;font-weight:600;color:var(--accent-ink);text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.farrow{align-self:center;flex:0 0 auto;color:var(--accent);font-weight:800;font-size:19px;padding:2px 5px}
+.viz-bars{display:flex;flex-direction:column;gap:10px}
+.barrow{display:grid;grid-template-columns:minmax(80px,150px) 1fr 72px;gap:10px;align-items:center;font-size:14px}
+.barlabel{text-align:right;font-weight:600;line-height:1.4;overflow:hidden}
+.bartrack{background:#e8eefc;border-radius:999px;height:22px;overflow:hidden}
+.barfill{background:linear-gradient(90deg,#60a5fa,#1e40af);height:100%;border-radius:999px}
+.barval{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vscol{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.vscol h4{margin:0 0 10px;font-size:15px}
+.vscol.vs-a h4{color:var(--accent-ink)}
+.vscol.vs-b h4{color:#7c3aed}
+.vscol ul{margin:0;padding-left:20px}
+.vscol li{margin-bottom:8px;font-size:14.5px}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:36px;line-height:2}
+.foot a{color:var(--accent)}
+@media(max-width:640px){.sec{padding:22px 20px}.hero{padding:30px 24px}.hero h1{font-size:23px}body{font-size:16px}
+.vs{grid-template-columns:1fr}.barrow{grid-template-columns:86px 1fr 62px}.meta-grid{grid-template-columns:104px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">B站 · 古希腊掌管代码的神</span>
+    <h1>G029 — RL 的学习率为什么比 SFT 小 10 倍？1e-5 断崖式崩溃、JustRL 恒定 1e-6 与 LoRA 例外</h1>
+    <p class="sub">RL 全参学习率普遍比 SFT 小一个数量级（ $10^{-6}$ – $5\times10^{-6}$ 对 $10^{-5}$ – $2\times10^{-5}$ ），因为… · 完整阅读版 · 由 GitHub NOTES.md 生成</p>
+  </header>
+  <details class="toc" open>
+    <summary>目录（点击跳转）</summary>
+    <nav><a href="#sec-1">元信息</a><a href="#sec-2">一句话总结</a><a href="#sec-3">核心</a><a href="#sec-4">关键数字</a><a href="#sec-5">可迁移</a><a href="#sec-6">疑问 / 下一步</a></nav>
+  </details>
+  <section class="sec" id="sec-0">
+<blockquote class="pq">
+<p>📖 阅读版：https://papa-panda.github.io/field-notes/bilibili-code-god/episodes/G029-rl-lr-scale.html</p>
+</blockquote>
+</section>
+<section class="sec" id="sec-1"><h2><span class="n">1</span>元信息</h2>
+<dl class="meta-grid"><dt>编号</dt><dd>G029</dd><dt>标题</dt><dd>RL 的学习率为什么比 SFT 小 10 倍？1e-5 断崖式崩溃、JustRL 恒定 1e-6 与 LoRA 例外</dd><dt>BV</dt><dd>BV1R9eh6KEMN</dd><dt>时长</dt><dd>04:38</dd><dt>发布日期</dt><dd>2026-10-02</dd><dt>来源</dt><dd>Bilibili UP「古希腊掌管代码的神」</dd><dt>相关论文/工作</dt><dd>VideoThinker（Qwen2.5-VL-7B GRPO 学习率消融）；JustRL（极简配方长程训练）；PEFT-RLVR（LoRA 学习率不敏感性）</dd></dl>
+</section>
+<section class="sec sec-lede" id="sec-2"><h2><span class="n">2</span>一句话总结</h2>
+<p>RL 全参学习率普遍比 SFT 小一个数量级（ $10^{-6}$ – $5\times10^{-6}$ 对 $10^{-5}$ – $2\times10^{-5}$ ），因为 on-policy 数据会把大步子的误差正反馈放大、崩溃是断崖式的；学习率本质上是在给采样分布上保险，而 LoRA 因为只更新一小块参数，等效步长小，反而可以用回 $10^{-5}$ 。</p>
+</section>
+<section class="sec" id="sec-3"><h2><span class="n">3</span>核心</h2>
+<ol>
+<li>问题/背景：SFT 学习率大家熟（ $10^{-5}$ – $2\times10^{-5}$ ），RL 开源配方却几乎都写 $10^{-6}$ 量级，没人讲为什么。本期把三档数放在一条对数轴上对比：SFT 全参、RL 全参、RL+LoRA。</li>
+<li>机制/方法：解释分三层。其一，数据来源不同：SFT 数据固定，步子迈偏了下一步还是同一批数据把你拉回来；RL 是 on-policy，每步训练数据由当前策略自己采，步子迈偏，下一批数据就来自偏了的分布，误差正反馈放大。其二，策略梯度是优势加权的采样估计，一组 8 条回答算出的优势噪声很大，大步长等于把噪声一并放大。其三，KL 与 clip 只是局部约束，管单步比值；学习率管的是全局步长、整体跑多远。视频也坦承这套解释是直觉而非定理，但能预测「崩溃是断崖式而非渐变」这一现象。</li>
+<li>关键证据或数字：VideoThinker 在 Qwen2.5-VL-7B 上跑 GRPO 2500 步扫四档： $10^{-6}$ 各基准 39–80， $3\times10^{-6}$ 略低， $5\times10^{-6}$ 整体最好（43–81）， $10^{-5}$ 严重退化、最差基准掉到 1.14% 近乎没训——可用区间不到一个数量级，再上一档就崩。反面证据是 JustRL 的「最笨配方」：恒定 $10^{-6}$ 、batch 256、每题 8 条 rollout、clip 上界 1.28、温度 1.0，无调度、无参考模型重置、无长度惩罚、无课程；两个 1.5B 模型同一套超参零调参分别训 4380 步与 3440 步，熵在 1.0–1.6 自然震荡不漂移、奖励单调上升、回答长度从约 8000 自然压缩到 4000–5900，基准平均 54.87 与 64.32，算力只有对手的 1/2 到 1/5（作者注明博客未做学习率消融， $10^{-6}$ 是常规取值而非证明最优）。LoRA 例外来自 PEFT-RLVR：在 DAPO 上 LoRA 的 $10^{-5}$ / $5\times10^{-6}$ / $10^{-6}$ 得分 42.5 / 42.3 / 42.3，一个数量级内几乎不敏感；同篇算法间差距（42.5 / 42.0 / 40.5）比学习率差距还小，作者判断学习率量级是 RLVR 稳定性的决定因素。</li>
+<li>结论/判断：LoRA 能用大学习率，是因为只更新低秩的一小块参数、等效步长本来就小，与「LoRA 学习率是全参十倍」的既有结论一致。实操三条：全参 RL 从 $10^{-6}$ 起步、最多到 $5\times10^{-6}$ ， $10^{-5}$ 别碰；LoRA 做 RL 直接用 $10^{-5}$ ，不用像全参那样保守；先用恒定学习率跑长，盯熵与奖励两条线——熵不漂移、奖励单调涨就别动，只有明显失败再加调度与惩罚。</li>
+</ol>
+</section>
+<section class="sec" id="sec-4"><h2><span class="n">4</span>关键数字</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>常用学习率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SFT 全参</td>
+<td>$10^{-5}$ – $2\times10^{-5}$</td>
+</tr>
+<tr>
+<td>RL 全参（GRPO 类）</td>
+<td>$10^{-6}$ – $5\times10^{-6}$</td>
+</tr>
+<tr>
+<td>RL + LoRA</td>
+<td>可回到 $10^{-5}$（比全参大一个量级）</td>
+</tr>
+<tr>
+<td>VideoThinker 消融中 $10^{-5}$ 的最差基准</td>
+<td>1.14%（断崖崩溃）</td>
+</tr>
+<tr>
+<td>JustRL</td>
+<td>恒定 $10^{-6}$ 训 3440–4380 步，熵 1.0–1.6 不漂移</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="sec" id="sec-5"><h2><span class="n">5</span>可迁移</h2>
+<ul>
+<li>自己跑 GRPO 时把学习率当稳定性预算而非效率旋钮：先恒定小学习率跑长程基线，监控熵漂移与奖励单调性，再决定是否加调度。</li>
+<li>面试问 RL 超参，先答 $10^{-6}$ 量级及其 on-policy 正反馈理由，再答 LoRA 的十倍例外，层次立刻分明。</li>
+</ul>
+</section>
+<section class="sec" id="sec-6"><h2><span class="n">6</span>疑问 / 下一步</h2>
+<ul>
+<li>纯文本模型的崩溃阈值与多模态 7B 是否同形（视频只给了形状类比），值得在自己的 pilot run 里用小扫参验证一次。</li>
+</ul></section>
+  <div class="foot">由 <a href="">GitHub NOTES.md</a> 生成 · 公式由 KaTeX、流程图由 Mermaid 渲染（需联网加载）</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+  if (window.mermaid) {
+    mermaid.initialize({startOnLoad: true, theme: "default", securityLevel: "loose"});
+  }
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function() {
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = p + "%";
+  }, {passive: true});
+});
+</script>
+</body>
+</html>
