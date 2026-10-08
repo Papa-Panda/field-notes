@@ -365,26 +365,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 357 | 决策树三兄弟 ID3 / C4.5 / CART：划分标准、结构差异、工程选用 | BV1J5gR6mEuu | 04:39 | 2026-07-28 | 已完成 | [G357-decision-trees.md](episodes/G357-decision-trees.md) |
 | 358 | Continuous Batching：同样 8 张卡，凭啥 vLLM 比 HF 快 24 倍？ | BV1ipgR6GE1K | 04:22 | 2026-07-28 | 已完成 | [G358-continuous-batching.md](episodes/G358-continuous-batching.md) |
 | 359 | Continuous Batching：同样 8 张卡，凭啥 vLLM 比 HF 快 24 倍？（重发） | BV1jpgR6GEM1 | 04:22 | 2026-07-28 | 已完成 | [G359-continuous-batching-2.md](episodes/G359-continuous-batching-2.md) |
-| 360 | Chunked Prefill：8000 token prompt 一进，Decode 集体卡 1 秒？ | BV1jWgR6rEK9 | 04:27 | 2026-07-27 | 待处理 | |
-| 361 | 显卡摸鱼的元凶：GPipe 挤气泡 vs PipeDream 1F1B | BV15WgR6rEfr | 04:11 | 2026-07-27 | 待处理 | |
-| 362 | 打破参数服务器瓶颈：PyTorch DDP 的底层核心 | BV1Qggd6uE9u | 04:14 | 2026-07-27 | 待处理 | |
-| 363 | 一层都装不下？把权重矩阵劈开算 —— 4 次 AllReduce 讲透 | BV1GxgX6aELP | 03:54 | 2026-07-27 | 待处理 | |
-| 364 | 序列并行 × 专家并行：百万 token 与上千专家的解法 | BV1VxgX6aEz8 | 03:44 | 2026-07-26 | 待处理 | |
-| 365 | 70 亿参数训练要 110G？三刀砍掉 100G 冗余 | BV13tgX6cEYZ | 04:04 | 2026-07-26 | 待处理 | |
-| 366 | 大模型的 badcase 如何解决？从便宜到贵的解决顺序 | BV1YsKx6CEJq | 02:44 | 2026-07-24 | 待处理 | |
-| 367 | DeepSpeed 的 3 个 Stage 是什么？ZeRO 逐级切分省显存讲透 | BV1BuKx69EDn | 03:15 | 2026-07-24 | 待处理 | |
-| 368 | 熵坍塌为什么发生？又如何解决？从协方差机制到 Clip-Higher | BV1rKKx6dEjc | 03:20 | 2026-07-24 | 待处理 | |
-| 369 | Muon 优化器凭什么取代 AdamW？只存动量、显存减半，还收敛更快 | BV1LLKx6SEkQ | 03:44 | 2026-07-24 | 待处理 | |
-| 370 | GRPO 里被 clip 的 token 反向有没有梯度？用 torch.clamp 一跑就懂 | BV1HmKx6ZEyX | 02:46 | 2026-07-23 | 待处理 | |
-| 371 | 如何计算 sequence 粒度的负载均衡损失？MoE 专家忙闲不均怎么纠偏 | BV157gD6FE3J | 03:30 | 2026-07-23 | 待处理 | |
-| 372 | Scatter/Gather/Reduce/AllReduce 分别是什么？5 个通信原语一张图讲透 | BV1wCKx6hEoy | 02:52 | 2026-07-23 | 待处理 | |
-| 373 | 一层 Decoder 张量并行需要几次通信？答案 4 次 All-Reduce | BV1ZXKx6WEnK | 02:34 | 2026-07-23 | 待处理 | |
-| 374 | MQA 和 GQA：把 KV 头砍到 8 组为什么效果不掉？｜注意力演化 MHA→MQA→GQA→MLA | BV1tiKx6KE8v | 03:22 | 2026-07-23 | 待处理 | |
-| 375 | 寻找质数：为什么只需试除到 √n？从暴力到埃氏筛 | BV1TYKx6MEBZ | 03:18 | 2026-07-23 | 待处理 | |
-| 376 | MoE 设备受限路由怎么写？一招锁死跨卡通信（华为面试真题 / DeepSeek-V2） | BV1AkKx6wEXL | 03:09 | 2026-07-23 | 待处理 | |
-| 377 | 大模型训练所需显存怎么计算？三大件 + RLHF 讲透 | BV1R7gD6FEF5 | 02:42 | 2026-07-23 | 待处理 | |
-| 378 | self-attention 自注意力：一个公式讲透 Transformer 的心脏 | BV1d7gD6FEUe | 03:24 | 2026-07-22 | 待处理 | |
-| 379 | BatchNorm 与 LayerNorm 的区别：为什么 Transformer 只用 LayerNorm？ | BV1j7gD6cE75 | 03:00 | 2026-07-22 | 待处理 | |
+| 360 | Chunked Prefill：8000 token prompt 一进，Decode 集体卡 1 秒？ | BV1jWgR6rEK9 | 04:27 | 2026-07-27 | 已完成 | [G360-chunked-prefill.md](episodes/G360-chunked-prefill.md) |
+| 361 | 显卡摸鱼的元凶：GPipe 挤气泡 vs PipeDream 1F1B | BV15WgR6rEfr | 04:11 | 2026-07-27 | 已完成 | [G361-gpipe-vs-pipedream.md](episodes/G361-gpipe-vs-pipedream.md) |
+| 362 | 打破参数服务器瓶颈：PyTorch DDP 的底层核心 | BV1Qggd6uE9u | 04:14 | 2026-07-27 | 已完成 | [G362-ring-allreduce-ddp.md](episodes/G362-ring-allreduce-ddp.md) |
+| 363 | 一层都装不下？把权重矩阵劈开算 —— 4 次 AllReduce 讲透 | BV1GxgX6aELP | 03:54 | 2026-07-27 | 已完成 | [G363-megatron-tensor-parallel.md](episodes/G363-megatron-tensor-parallel.md) |
+| 364 | 序列并行 × 专家并行：百万 token 与上千专家的解法 | BV1VxgX6aEz8 | 03:44 | 2026-07-26 | 已完成 | [G364-sequence-expert-parallel.md](episodes/G364-sequence-expert-parallel.md) |
+| 365 | 70 亿参数训练要 110G？三刀砍掉 100G 冗余 | BV13tgX6cEYZ | 04:04 | 2026-07-26 | 已完成 | [G365-zero-memory.md](episodes/G365-zero-memory.md) |
+| 366 | 大模型的 badcase 如何解决？从便宜到贵的解决顺序 | BV1YsKx6CEJq | 02:44 | 2026-07-24 | 已完成 | [G366-badcase-fix-order.md](episodes/G366-badcase-fix-order.md) |
+| 367 | DeepSpeed 的 3 个 Stage 是什么？ZeRO 逐级切分省显存讲透 | BV1BuKx69EDn | 03:15 | 2026-07-24 | 已完成 | [G367-deepspeed-zero-stages.md](episodes/G367-deepspeed-zero-stages.md) |
+| 368 | 熵坍塌为什么发生？又如何解决？从协方差机制到 Clip-Higher | BV1rKKx6dEjc | 03:20 | 2026-07-24 | 已完成 | [G368-entropy-collapse-clip-higher.md](episodes/G368-entropy-collapse-clip-higher.md) |
+| 369 | Muon 优化器凭什么取代 AdamW？只存动量、显存减半，还收敛更快 | BV1LLKx6SEkQ | 03:44 | 2026-07-24 | 已完成 | [G369-muon.md](episodes/G369-muon.md) |
+| 370 | GRPO 里被 clip 的 token 反向有没有梯度？用 torch.clamp 一跑就懂 | BV1HmKx6ZEyX | 02:46 | 2026-07-23 | 已完成 | [G370-grpo-clip-gradient.md](episodes/G370-grpo-clip-gradient.md) |
+| 371 | 如何计算 sequence 粒度的负载均衡损失？MoE 专家忙闲不均怎么纠偏 | BV157gD6FE3J | 03:30 | 2026-07-23 | 已完成 | [G371-seq-load-balance-loss.md](episodes/G371-seq-load-balance-loss.md) |
+| 372 | Scatter/Gather/Reduce/AllReduce 分别是什么？5 个通信原语一张图讲透 | BV1wCKx6hEoy | 02:52 | 2026-07-23 | 已完成 | [G372-comm-primitives.md](episodes/G372-comm-primitives.md) |
+| 373 | 一层 Decoder 张量并行需要几次通信？答案 4 次 All-Reduce | BV1ZXKx6WEnK | 02:34 | 2026-07-23 | 已完成 | [G373-decoder-tp-comm-count.md](episodes/G373-decoder-tp-comm-count.md) |
+| 374 | MQA 和 GQA：把 KV 头砍到 8 组为什么效果不掉？｜注意力演化 MHA→MQA→GQA→MLA | BV1tiKx6KE8v | 03:22 | 2026-07-23 | 已完成 | [G374-mqa-gqa.md](episodes/G374-mqa-gqa.md) |
+| 375 | 寻找质数：为什么只需试除到 √n？从暴力到埃氏筛 | BV1TYKx6MEBZ | 03:18 | 2026-07-23 | 已完成 | [G375-prime-sieve.md](episodes/G375-prime-sieve.md) |
+| 376 | MoE 设备受限路由怎么写？一招锁死跨卡通信（华为面试真题 / DeepSeek-V2） | BV1AkKx6wEXL | 03:09 | 2026-07-23 | 已完成 | [G376-moe-device-limited-routing.md](episodes/G376-moe-device-limited-routing.md) |
+| 377 | 大模型训练所需显存怎么计算？三大件 + RLHF 讲透 | BV1R7gD6FEF5 | 02:42 | 2026-07-23 | 已完成 | [G377-training-memory-calc.md](episodes/G377-training-memory-calc.md) |
+| 378 | self-attention 自注意力：一个公式讲透 Transformer 的心脏 | BV1d7gD6FEUe | 03:24 | 2026-07-22 | 已完成 | [G378-self-attention-formula.md](episodes/G378-self-attention-formula.md) |
+| 379 | BatchNorm 与 LayerNorm 的区别：为什么 Transformer 只用 LayerNorm？ | BV1j7gD6cE75 | 03:00 | 2026-07-22 | 已完成 | [G379-bn-vs-ln.md](episodes/G379-bn-vs-ln.md) |
 | 380 | GSM8K 数据污染：benchmark 过拟合、n-gram 重叠检测、记忆探测 | BV1PzKx6PEo3 | 03:12 | 2026-07-21 | 待处理 | |
 | 381 | pass@k 怎么推导计算：无偏估计公式 1−C(n−c,k)/C(n,k)，有偏 vs 无偏 | BV1DMK46VEAW | 03:13 | 2026-07-21 | 待处理 | |
 | 382 | FineWeb：15T token 数据集怎么筛出来的，消融驱动、FineWeb-Edu | BV127K46TEyc | 03:32 | 2026-07-21 | 待处理 | |
