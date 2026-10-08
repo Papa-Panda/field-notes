@@ -485,26 +485,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 477 | Multi-Head Attention 多头注意力怎么写（接上期自注意力） | BV1imM36EETx | 03:46 | 2026-07-09 | 已完成 | [G477-mha-code.md](episodes/G477-mha-code.md) |
 | 478 | 什么是 Checkpoint？梯度/激活检查点：大模型省显存的救命技巧 | BV1dmM36EESX | 04:23 | 2026-07-08 | 已完成 | [G478-gradient-checkpointing.md](episodes/G478-gradient-checkpointing.md) |
 | 479 | GRPO 比 PPO 做了什么改进？一刀砍掉 Critic 省显存 | BV1iJMh6uERR | 02:46 | 2026-07-08 | 已完成 | [G479-grpo-vs-ppo.md](episodes/G479-grpo-vs-ppo.md) |
-| 480 | KL 散度计算的三种近似方法？K1/K2/K3 一次讲透 | BV11jMt6yED7 | 02:39 | 2026-07-08 | 待处理 | |
-| 481 | 熵、交叉熵、KL 散度什么关系？一枚硬币讲透 交叉熵 = 熵 + KL | BV1BJMh6uEGj | 03:17 | 2026-07-08 | 待处理 | |
-| 482 | Qwen 从 1 到 3 每个版本改了什么？一条线讲透六代改进点 | BV1KjMt6yE6h | 03:20 | 2026-07-08 | 待处理 | |
-| 483 | PPO 到底在裁剪什么？从策略梯度的坑到那条安全带｜强化学习零基础 | BV1qnMh6BEx1 | 03:28 | 2026-07-08 | 待处理 | |
-| 484 | BM25 相比 TF-IDF 做了什么改进？非线性饱和 + 长度归一化全解析 | BV1uGMt67Eig | 03:09 | 2026-07-08 | 待处理 | |
-| 485 | RLHF 优化算法进化史：PPO / DPO / GRPO / DAPO / GSPO 一次串清楚 | BV1qnMh6BEoZ | 03:15 | 2026-07-08 | 待处理 | |
-| 486 | 大模型深度思考的自主切换是怎么实现的？不确定性 / 决策器 / 多阶段 RL | BV1bGMt67E7J | 03:15 | 2026-07-08 | 待处理 | |
-| 487 | 什么是 On-Policy Distillation？取 SFT 与 RL 之长（reverse KL 详解） | BV1BnMh6BEMz | 03:58 | 2026-07-07 | 待处理 | |
-| 488 | 请介绍 BERT 的流程：五大部件 + 预训练全讲透 | BV1SGMt67EEq | 02:45 | 2026-07-07 | 待处理 | |
-| 489 | Agent 最缺的能力是收手？28000 任务实测｜Agentic Abstention | BV1cHMx6YEXj | 03:31 | 2026-07-07 | 待处理 | |
-| 490 | 蒸馏也会学出假实力？DOPD 揭穿特权错觉｜OPD 系列 | BV1AHMx6YEwW | 04:30 | 2026-07-07 | 待处理 | |
-| 491 | 温度·Top-K·Top-P 到底动了什么？解码采样一次讲透 | BV1cHMx6YE8i | 03:34 | 2026-07-07 | 待处理 | |
-| 492 | PagedAttention：显存浪费 60-80% 怎么救｜vLLM 核心技术 | BV1AHMx6YEAm | 04:16 | 2026-07-07 | 待处理 | |
-| 493 | 35B 打平万亿参数？该 Scale 的是轨迹不是参数 | BV1GrMx6SE63 | 04:26 | 2026-07-06 | 待处理 | |
-| 494 | 工具调用失败时，怎么保证 Agent 不死循环或乱回答？ | BV1oZT161Ez4 | 05:42 | 2026-07-06 | 待处理 | |
-| 495 | OPD 的 reward 设计合理吗？从 log 无界到 PowerOPD 幂变换 | BV1DtTC6tEy4 | 06:09 | 2026-07-06 | 待处理 | |
-| 496 | Agentic RL 中的行为崩塌到底是什么？从 Search-R1 复现看行为相变 | BV1vNMu6gEkG | 05:00 | 2026-07-05 | 待处理 | |
-| 497 | 交叉熵 vs KL散度到底是什么？从惊讶度讲到损失函数，一次说清它俩的关系 | BV13tMK6oEAA | 05:53 | 2026-07-05 | 待处理 | |
-| 498 | 大模型Agentic RL最新方向到底是什么？从GLM/Qwen看RL的下半场 | BV1HcMP6qEfQ | 05:57 | 2026-07-05 | 待处理 | |
-| 499 | 大模型Agent的Function Calling怎么设计更稳定？约束解码/工具检索/校验重试三层拆解 | BV14aMP6jEj3 | 04:23 | 2026-07-05 | 待处理 | |
+| 480 | KL 散度计算的三种近似方法？K1/K2/K3 一次讲透 | BV11jMt6yED7 | 02:39 | 2026-07-08 | 已完成 | [G480-kl-approximations.md](episodes/G480-kl-approximations.md) |
+| 481 | 熵、交叉熵、KL 散度什么关系？一枚硬币讲透 交叉熵 = 熵 + KL | BV1BJMh6uEGj | 03:17 | 2026-07-08 | 已完成 | [G481-entropy-ce-kl.md](episodes/G481-entropy-ce-kl.md) |
+| 482 | Qwen 从 1 到 3 每个版本改了什么？一条线讲透六代改进点 | BV1KjMt6yE6h | 03:20 | 2026-07-08 | 已完成 | [G482-qwen-evolution.md](episodes/G482-qwen-evolution.md) |
+| 483 | PPO 到底在裁剪什么？从策略梯度的坑到那条安全带｜强化学习零基础 | BV1qnMh6BEx1 | 03:28 | 2026-07-08 | 已完成 | [G483-ppo-clipping.md](episodes/G483-ppo-clipping.md) |
+| 484 | BM25 相比 TF-IDF 做了什么改进？非线性饱和 + 长度归一化全解析 | BV1uGMt67Eig | 03:09 | 2026-07-08 | 已完成 | [G484-bm25.md](episodes/G484-bm25.md) |
+| 485 | RLHF 优化算法进化史：PPO / DPO / GRPO / DAPO / GSPO 一次串清楚 | BV1qnMh6BEoZ | 03:15 | 2026-07-08 | 已完成 | [G485-rlhf-algorithm-history.md](episodes/G485-rlhf-algorithm-history.md) |
+| 486 | 大模型深度思考的自主切换是怎么实现的？不确定性 / 决策器 / 多阶段 RL | BV1bGMt67E7J | 03:15 | 2026-07-08 | 已完成 | [G486-thinking-switch.md](episodes/G486-thinking-switch.md) |
+| 487 | 什么是 On-Policy Distillation？取 SFT 与 RL 之长（reverse KL 详解） | BV1BnMh6BEMz | 03:58 | 2026-07-07 | 已完成 | [G487-on-policy-distillation.md](episodes/G487-on-policy-distillation.md) |
+| 488 | 请介绍 BERT 的流程：五大部件 + 预训练全讲透 | BV1SGMt67EEq | 02:45 | 2026-07-07 | 已完成 | [G488-bert-pipeline.md](episodes/G488-bert-pipeline.md) |
+| 489 | Agent 最缺的能力是收手？28000 任务实测｜Agentic Abstention | BV1cHMx6YEXj | 03:31 | 2026-07-07 | 已完成 | [G489-agentic-abstention.md](episodes/G489-agentic-abstention.md) |
+| 490 | 蒸馏也会学出假实力？DOPD 揭穿特权错觉｜OPD 系列 | BV1AHMx6YEwW | 04:30 | 2026-07-07 | 已完成 | [G490-dopd.md](episodes/G490-dopd.md) |
+| 491 | 温度·Top-K·Top-P 到底动了什么？解码采样一次讲透 | BV1cHMx6YE8i | 03:34 | 2026-07-07 | 已完成 | [G491-sampling-params.md](episodes/G491-sampling-params.md) |
+| 492 | PagedAttention：显存浪费 60-80% 怎么救｜vLLM 核心技术 | BV1AHMx6YEAm | 04:16 | 2026-07-07 | 已完成 | [G492-paged-attention.md](episodes/G492-paged-attention.md) |
+| 493 | 35B 打平万亿参数？该 Scale 的是轨迹不是参数 | BV1GrMx6SE63 | 04:26 | 2026-07-06 | 已完成 | [G493-scale-trajectories.md](episodes/G493-scale-trajectories.md) |
+| 494 | 工具调用失败时，怎么保证 Agent 不死循环或乱回答？ | BV1oZT161Ez4 | 05:42 | 2026-07-06 | 已完成 | [G494-tool-call-failure.md](episodes/G494-tool-call-failure.md) |
+| 495 | OPD 的 reward 设计合理吗？从 log 无界到 PowerOPD 幂变换 | BV1DtTC6tEy4 | 06:09 | 2026-07-06 | 已完成 | [G495-poweropd.md](episodes/G495-poweropd.md) |
+| 496 | Agentic RL 中的行为崩塌到底是什么？从 Search-R1 复现看行为相变 | BV1vNMu6gEkG | 05:00 | 2026-07-05 | 已完成 | [G496-behavior-collapse.md](episodes/G496-behavior-collapse.md) |
+| 497 | 交叉熵 vs KL散度到底是什么？从惊讶度讲到损失函数，一次说清它俩的关系 | BV13tMK6oEAA | 05:53 | 2026-07-05 | 已完成 | [G497-ce-vs-kl.md](episodes/G497-ce-vs-kl.md) |
+| 498 | 大模型Agentic RL最新方向到底是什么？从GLM/Qwen看RL的下半场 | BV1HcMP6qEfQ | 05:57 | 2026-07-05 | 已完成 | [G498-agentic-rl-directions.md](episodes/G498-agentic-rl-directions.md) |
+| 499 | 大模型Agent的Function Calling怎么设计更稳定？约束解码/工具检索/校验重试三层拆解 | BV14aMP6jEj3 | 04:23 | 2026-07-05 | 已完成 | [G499-function-calling-design.md](episodes/G499-function-calling-design.md) |
 | 500 | GRPO、DAPO、GSPO三代强化学习算法，到底改了什么？从PPO讲起 | BV1oRMP6hE7f | 05:04 | 2026-07-05 | 待处理 | |
 | 501 | 大模型为什么很少用Dropout？从过拟合讲到单epoch时代，config考古实锤 | BV1YhT46HEhM | 03:56 | 2026-07-04 | 待处理 | |
 | 502 | LayerNorm为什么被RMSNorm全面取代？从0讲透归一化+手撕LLaMA同款代码 | BV1owTx6pEqM | 04:29 | 2026-07-04 | 待处理 | |
