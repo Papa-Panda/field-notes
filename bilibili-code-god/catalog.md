@@ -425,26 +425,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 417 | 解码策略详解：贪心 / Beam Search / 采样怎么选？束宽、Top-K、Top-P 核采样全讲透 | BV1FdKT66EAS | 03:15 | 2026-07-19 | 已完成 | [G417-decoding-strategies.md](episodes/G417-decoding-strategies.md) |
 | 418 | LLaVA 视觉对齐：CLIP ViT、Projector 投影层、两阶段训练 | BV1SzKT6nEPj | 03:32 | 2026-07-18 | 已完成 | [G418-llava.md](episodes/G418-llava.md) |
 | 419 | weight tying 详解：输入输出 Embedding 为什么共享？转置关系 / 省参数 / GPT-2 与 LLaMA 的取舍 | BV1BZKT6MEmC | 03:44 | 2026-07-18 | 已完成 | [G419-weight-tying.md](episodes/G419-weight-tying.md) |
-| 420 | BLIP-2 的 Q-Former：可学习 query、cross-attention，桥接冻结视觉与 LLM | BV1Y3KM6bEjj | 03:24 | 2026-07-18 | 待处理 | |
-| 421 | 训练算力 6ND 公式详解：前向 2N / 反向 4N 怎么来的？MoE 激活参数与 Chinchilla 一并讲透 | BV1eTKM6wEx6 | 03:28 | 2026-07-18 | 待处理 | |
-| 422 | CLIP 原理：图文对比预训练、InfoNCE、zero-shot 分类 | BV1YGKM6ZEuh | 03:29 | 2026-07-18 | 待处理 | |
-| 423 | 7B 参数量怎么手算？12Ld²+Vd 公式详解，词嵌入 / 注意力 / FFN 逐块拆解 | BV1BwKM6vEGs | 03:17 | 2026-07-18 | 待处理 | |
-| 424 | Classifier-Free Guidance 原理：一个系数如何权衡真实感与多样性 | BV1qkNo6BEzF | 03:21 | 2026-07-18 | 待处理 | |
-| 425 | Score/SDE 统一视角：分数场、Langevin 采样，DDPM 与分数匹配的统一 | BV1ikNo6BE9h | 03:42 | 2026-07-17 | 待处理 | |
-| 426 | DDIM 采样原理：非马尔可夫、确定性采样，50 步媲美 1000 步不用重训 | BV1ikNo6BEkC | 01:07 | 2026-07-17 | 待处理 | |
-| 427 | DDPM 扩散模型原理：前向加噪、反向去噪，为什么 loss 化简成预测噪声 | BV1qyNo6TEN1 | 03:36 | 2026-07-17 | 待处理 | |
-| 428 | Embedding 到底是什么、为什么乘 √d_model：查找表、位置编码与数值量级 | BV1qyNo6TESa | 03:42 | 2026-07-17 | 待处理 | |
-| 429 | 什么是语言模型：从 N-gram、数据稀疏到神经语言模型与大模型 | BV1h9No6cE6x | 03:32 | 2026-07-17 | 待处理 | |
-| 430 | BLEU 与 ROUGE 讲透：精确率 vs 召回率、简短惩罚与最长公共子序列 | BV1X9No6cEVf | 03:25 | 2026-07-17 | 待处理 | |
-| 431 | PEFT 参数高效微调五种方法：Adapter/Prefix/P-Tuning/Prompt Tuning/LoRA 对比 | BV1VUNo6vE1H | 04:03 | 2026-07-17 | 待处理 | |
-| 432 | 指令微调 Instruction Tuning：多任务、统一格式、零样本泛化，和 RLHF 别搞混 | BV1qLKj6ZE8D | 03:45 | 2026-07-17 | 待处理 | |
-| 433 | RNN vs CNN vs Transformer：并行能力与长程依赖两把尺子讲透 | BV1q7Kj64EcD | 03:37 | 2026-07-16 | 待处理 | |
-| 434 | 注意力为什么是 O(n²)？n×n 矩阵、显存爆炸与上下文长度的真相 | BV16VKj6FEA8 | 03:25 | 2026-07-16 | 待处理 | |
-| 435 | Zero/One/Few-shot 与 In-Context Learning：GPT-3 为什么是 few-shot learner | BV1FVKj6cEz6 | 03:36 | 2026-07-16 | 待处理 | |
-| 436 | 涌现能力之争：是真的突现，还是度量假象？精确匹配 vs 平滑指标 | BV1B5Kj6bEGF | 04:05 | 2026-07-16 | 待处理 | |
-| 437 | In-Context Learning 机理：贝叶斯任务定位，为什么乱标签也能 work | BV1F5Kj68EPG | 03:24 | 2026-07-16 | 待处理 | |
-| 438 | 学习率 Warmup 为什么重要：损失面陡峭 + Adam 二阶矩不准，不加会怎样（与 #415 同题重发） | BV1F5Kj68Ecy | 03:19 | 2026-07-16 | 待处理 | |
-| 439 | 梯度裁剪原理：按范数裁剪 vs 按值裁剪，阈值怎么设，为什么必开 | BV14ZNa6HEru | 03:03 | 2026-07-16 | 待处理 | |
+| 420 | BLIP-2 的 Q-Former：可学习 query、cross-attention，桥接冻结视觉与 LLM | BV1Y3KM6bEjj | 03:24 | 2026-07-18 | 已完成 | [G420-blip2-qformer.md](episodes/G420-blip2-qformer.md) |
+| 421 | 训练算力 6ND 公式详解：前向 2N / 反向 4N 怎么来的？MoE 激活参数与 Chinchilla 一并讲透 | BV1eTKM6wEx6 | 03:28 | 2026-07-18 | 已完成 | [G421-compute-6nd.md](episodes/G421-compute-6nd.md) |
+| 422 | CLIP 原理：图文对比预训练、InfoNCE、zero-shot 分类 | BV1YGKM6ZEuh | 03:29 | 2026-07-18 | 已完成 | [G422-clip.md](episodes/G422-clip.md) |
+| 423 | 7B 参数量怎么手算？12Ld²+Vd 公式详解，词嵌入 / 注意力 / FFN 逐块拆解 | BV1BwKM6vEGs | 03:17 | 2026-07-18 | 已完成 | [G423-param-count-7b.md](episodes/G423-param-count-7b.md) |
+| 424 | Classifier-Free Guidance 原理：一个系数如何权衡真实感与多样性 | BV1qkNo6BEzF | 03:21 | 2026-07-18 | 已完成 | [G424-cfg.md](episodes/G424-cfg.md) |
+| 425 | Score/SDE 统一视角：分数场、Langevin 采样，DDPM 与分数匹配的统一 | BV1ikNo6BE9h | 03:42 | 2026-07-17 | 已完成 | [G425-score-sde.md](episodes/G425-score-sde.md) |
+| 426 | DDIM 采样原理：非马尔可夫、确定性采样，50 步媲美 1000 步不用重训 | BV1ikNo6BEkC | 01:07 | 2026-07-17 | 已完成 | [G426-ddim.md](episodes/G426-ddim.md) |
+| 427 | DDPM 扩散模型原理：前向加噪、反向去噪，为什么 loss 化简成预测噪声 | BV1qyNo6TEN1 | 03:36 | 2026-07-17 | 已完成 | [G427-ddpm.md](episodes/G427-ddpm.md) |
+| 428 | Embedding 到底是什么、为什么乘 √d_model：查找表、位置编码与数值量级 | BV1qyNo6TESa | 03:42 | 2026-07-17 | 已完成 | [G428-embedding-sqrt-d.md](episodes/G428-embedding-sqrt-d.md) |
+| 429 | 什么是语言模型：从 N-gram、数据稀疏到神经语言模型与大模型 | BV1h9No6cE6x | 03:32 | 2026-07-17 | 已完成 | [G429-language-model.md](episodes/G429-language-model.md) |
+| 430 | BLEU 与 ROUGE 讲透：精确率 vs 召回率、简短惩罚与最长公共子序列 | BV1X9No6cEVf | 03:25 | 2026-07-17 | 已完成 | [G430-bleu-rouge.md](episodes/G430-bleu-rouge.md) |
+| 431 | PEFT 参数高效微调五种方法：Adapter/Prefix/P-Tuning/Prompt Tuning/LoRA 对比 | BV1VUNo6vE1H | 04:03 | 2026-07-17 | 已完成 | [G431-peft-five.md](episodes/G431-peft-five.md) |
+| 432 | 指令微调 Instruction Tuning：多任务、统一格式、零样本泛化，和 RLHF 别搞混 | BV1qLKj6ZE8D | 03:45 | 2026-07-17 | 已完成 | [G432-instruction-tuning.md](episodes/G432-instruction-tuning.md) |
+| 433 | RNN vs CNN vs Transformer：并行能力与长程依赖两把尺子讲透 | BV1q7Kj64EcD | 03:37 | 2026-07-16 | 已完成 | [G433-rnn-cnn-transformer.md](episodes/G433-rnn-cnn-transformer.md) |
+| 434 | 注意力为什么是 O(n²)？n×n 矩阵、显存爆炸与上下文长度的真相 | BV16VKj6FEA8 | 03:25 | 2026-07-16 | 已完成 | [G434-attention-on2.md](episodes/G434-attention-on2.md) |
+| 435 | Zero/One/Few-shot 与 In-Context Learning：GPT-3 为什么是 few-shot learner | BV1FVKj6cEz6 | 03:36 | 2026-07-16 | 已完成 | [G435-few-shot-icl.md](episodes/G435-few-shot-icl.md) |
+| 436 | 涌现能力之争：是真的突现，还是度量假象？精确匹配 vs 平滑指标 | BV1B5Kj6bEGF | 04:05 | 2026-07-16 | 已完成 | [G436-emergence-debate.md](episodes/G436-emergence-debate.md) |
+| 437 | In-Context Learning 机理：贝叶斯任务定位，为什么乱标签也能 work | BV1F5Kj68EPG | 03:24 | 2026-07-16 | 已完成 | [G437-icl-mechanism.md](episodes/G437-icl-mechanism.md) |
+| 438 | 学习率 Warmup 为什么重要：损失面陡峭 + Adam 二阶矩不准，不加会怎样（与 #415 同题重发） | BV1F5Kj68Ecy | 03:19 | 2026-07-16 | 已完成 | [G438-lr-warmup-repost.md](episodes/G438-lr-warmup-repost.md) |
+| 439 | 梯度裁剪原理：按范数裁剪 vs 按值裁剪，阈值怎么设，为什么必开 | BV14ZNa6HEru | 03:03 | 2026-07-16 | 已完成 | [G439-gradient-clipping.md](episodes/G439-gradient-clipping.md) |
 | 440 | 残差连接为什么重要：退化问题、梯度高速路，与 Transformer 的残差流 | BV1SXNa6RE4J | 03:22 | 2026-07-15 | 待处理 | |
 | 441 | 权重初始化 0.02 的由来：Xavier/He、残差流与小初始化，为什么不是随便设的 | BV17BNa6NEDc | 03:57 | 2026-07-15 | 待处理 | |
 | 442 | 训练算力 6ND 公式详解（与 #421 同题重发） | BV1jzNa6eEom | 03:28 | 2026-07-15 | 待处理 | |
