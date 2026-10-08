@@ -265,27 +265,27 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 257 | 扩散语言模型为什么能一次并行吐出一整句？离散扩散原理详解 | BV1fF8m6kEiA | 02:20 | 2026-08-24 | 已完成 | [G257-diffusion-lm.md](episodes/G257-diffusion-lm.md) |
 | 258 | 温度、Top-P、Top-K 该按什么顺序调？为什么不能同时拉满 | BV1Ew8m6GEeG | 03:51 | 2026-08-24 | 已完成 | [G258-sampling-tuning-order.md](episodes/G258-sampling-tuning-order.md) |
 | 259 | 温度、Top-K、Top-P 的区别在哪里？兼谈贪心与束搜索 | BV1co8261ERi | 03:08 | 2026-08-24 | 已完成 | [G259-temperature-topk-topp.md](episodes/G259-temperature-topk-topp.md) |
-| 260 | DAPO：通过 token 级归一化改进 GRPO 长答案被稀释的问题 | BV1Ff8265E3j | 02:31 | 2026-08-24 | 待处理 | |
-| 261 | DAPO 动态采样：通过过滤全对全错组改进 GRPO 的零梯度浪费 | BV1rf8265Eg4 | 02:47 | 2026-08-24 | 待处理 | |
-| 262 | 余弦相似度的维度灾难：为什么检索结果全挤在 0.9 附近 | BV1Sr826dExM | 03:22 | 2026-08-24 | 待处理 | |
-| 263 | 约束解码怎么保证模型只吐合法 JSON？FSM/PDA 与 logit 屏蔽详解 | BV1bC826sEMX | 02:40 | 2026-08-23 | 待处理 | |
-| 264 | 一致性模型为什么能一步出图？从去噪轨迹讲到 LCM-LoRA | BV1mC826sEre | 02:34 | 2026-08-23 | 待处理 | |
-| 265 | 断点续训详解：为什么恢复权重远远不够 | BV1UB826dEuV | 00:53 | 2026-08-23 | 待处理 | |
-| 266 | chat template 不一致：不报错但效果暴降的 silent error | BV1t68264Eyx | 02:42 | 2026-08-23 | 待处理 | |
-| 267 | 自回归的三个根本局限：滚雪球错误、无法全局规划、曝光偏差 | BV1g68264E7h | 02:55 | 2026-08-23 | 待处理 | |
-| 268 | Attention Residuals：用深度方向 softmax 改进残差连接的等权相加问题 | BV1Nm826QELP | 03:51 | 2026-08-23 | 待处理 | |
-| 269 | ASPO：通过重要性比率翻转改进 GRPO 的熵崩塌问题 | BV1WS826nEh5 | 03:23 | 2026-08-22 | 待处理 | |
-| 270 | 约四成 Agent 项目失败：五道鸿沟与系统工程化四板斧 | BV1NS826nEDS | 02:51 | 2026-08-22 | 待处理 | |
+| 260 | DAPO：通过 token 级归一化改进 GRPO 长答案被稀释的问题 | BV1Ff8265E3j | 02:31 | 2026-08-24 | 已完成 | [G260-dapo-token-norm.md](episodes/G260-dapo-token-norm.md) |
+| 261 | DAPO 动态采样：通过过滤全对全错组改进 GRPO 的零梯度浪费 | BV1rf8265Eg4 | 02:47 | 2026-08-24 | 已完成 | [G261-dapo-dynamic-sampling.md](episodes/G261-dapo-dynamic-sampling.md) |
+| 262 | 余弦相似度的维度灾难：为什么检索结果全挤在 0.9 附近 | BV1Sr826dExM | 03:22 | 2026-08-24 | 已完成 | [G262-cosine-similarity-dimension.md](episodes/G262-cosine-similarity-dimension.md) |
+| 263 | 约束解码怎么保证模型只吐合法 JSON？FSM/PDA 与 logit 屏蔽详解 | BV1bC826sEMX | 02:40 | 2026-08-23 | 已完成 | [G263-constrained-decoding.md](episodes/G263-constrained-decoding.md) |
+| 264 | 一致性模型为什么能一步出图？从去噪轨迹讲到 LCM-LoRA | BV1mC826sEre | 02:34 | 2026-08-23 | 已完成 | [G264-consistency-models.md](episodes/G264-consistency-models.md) |
+| 265 | 断点续训详解：为什么恢复权重远远不够 | BV1UB826dEuV | 00:53 | 2026-08-23 | 已完成 | [G265-checkpoint-resume.md](episodes/G265-checkpoint-resume.md) |
+| 266 | chat template 不一致：不报错但效果暴降的 silent error | BV1t68264Eyx | 02:42 | 2026-08-23 | 已完成 | [G266-chat-template-mismatch.md](episodes/G266-chat-template-mismatch.md) |
+| 267 | 自回归的三个根本局限：滚雪球错误、无法全局规划、曝光偏差 | BV1g68264E7h | 02:55 | 2026-08-23 | 已完成 | [G267-autoregressive-limits.md](episodes/G267-autoregressive-limits.md) |
+| 268 | Attention Residuals：用深度方向 softmax 改进残差连接的等权相加问题 | BV1Nm826QELP | 03:51 | 2026-08-23 | 已完成 | [G268-attention-residuals.md](episodes/G268-attention-residuals.md) |
+| 269 | ASPO：通过重要性比率翻转改进 GRPO 的熵崩塌问题 | BV1WS826nEh5 | 03:23 | 2026-08-22 | 已完成 | [G269-aspo.md](episodes/G269-aspo.md) |
+| 270 | 约四成 Agent 项目失败：五道鸿沟与系统工程化四板斧 | BV1NS826nEDS | 02:51 | 2026-08-22 | 已完成 | [G270-agent-project-failures.md](episodes/G270-agent-project-failures.md) |
 | 271 | 激活导向详解：不改一个权重，用一个方向向量控制模型性格 | BV1ty8269ExR | 02:48 | 2026-08-22 | 待处理 | |
-| 272 | WSD 学习率调度凭什么能随时停？三段式拆解+省算力套路 | BV1P5ua6xErX | 03:41 | 2026-08-21 | 待处理 | |
-| 273 | 多模态大模型又慢又贵？视觉Token压缩 ToMe / FastV 两招讲透 | BV1Kuua6fEf3 | 03:37 | 2026-08-20 | 待处理 | |
-| 274 | 大模型新结构TTT层：处理一条序列=训练一个小模型，线性复杂度+恒定内存扛长文本 | BV1Muua6fEpa | 03:36 | 2026-08-20 | 待处理 | |
-| 275 | 思维链一条道走到黑？思维树ToT让大模型学会回溯，正确率从4%飙到74% | BV1T3ua6tEjt | 03:11 | 2026-08-20 | 待处理 | |
-| 276 | Titans：让大模型在推理时学会长期记忆，注意力+神经记忆到底怎么融合？ | BV1DCua6vEpr | 03:23 | 2026-08-20 | 待处理 | |
-| 277 | 测试时算力 Test-Time Compute：为什么 o1 多想一会儿就变强？四招讲透 | BV1QCua6vEv2 | 03:33 | 2026-08-19 | 待处理 | |
-| 278 | 滑动窗口注意力一次讲透：平方级降到线性，小窗口为何能看穿13万token | BV1D1ua6PErD | 03:36 | 2026-08-19 | 待处理 | |
-| 279 | SimPO vs DPO：扔掉参考模型，显存省一半还更强？ | BV196ua6qELh | 03:22 | 2026-08-19 | 待处理 | |
-| 280 | 自投机解码：不加显存，大模型推理怎么白捡两倍加速？ | BV1V6ua6BEnX | 03:18 | 2026-08-19 | 待处理 | |
+| 272 | WSD 学习率调度凭什么能随时停？三段式拆解+省算力套路 | BV1P5ua6xErX | 03:41 | 2026-08-21 | 已完成 | [G272-wsd-schedule.md](episodes/G272-wsd-schedule.md) |
+| 273 | 多模态大模型又慢又贵？视觉Token压缩 ToMe / FastV 两招讲透 | BV1Kuua6fEf3 | 03:37 | 2026-08-20 | 已完成 | [G273-vision-token-compression.md](episodes/G273-vision-token-compression.md) |
+| 274 | 大模型新结构TTT层：处理一条序列=训练一个小模型，线性复杂度+恒定内存扛长文本 | BV1Muua6fEpa | 03:36 | 2026-08-20 | 已完成 | [G274-ttt-layer.md](episodes/G274-ttt-layer.md) |
+| 275 | 思维链一条道走到黑？思维树ToT让大模型学会回溯，正确率从4%飙到74% | BV1T3ua6tEjt | 03:11 | 2026-08-20 | 已完成 | [G275-tree-of-thoughts.md](episodes/G275-tree-of-thoughts.md) |
+| 276 | Titans：让大模型在推理时学会长期记忆，注意力+神经记忆到底怎么融合？ | BV1DCua6vEpr | 03:23 | 2026-08-20 | 已完成 | [G276-titans-memory.md](episodes/G276-titans-memory.md) |
+| 277 | 测试时算力 Test-Time Compute：为什么 o1 多想一会儿就变强？四招讲透 | BV1QCua6vEv2 | 03:33 | 2026-08-19 | 已完成 | [G277-test-time-compute.md](episodes/G277-test-time-compute.md) |
+| 278 | 滑动窗口注意力一次讲透：平方级降到线性，小窗口为何能看穿13万token | BV1D1ua6PErD | 03:36 | 2026-08-19 | 已完成 | [G278-sliding-window-attention.md](episodes/G278-sliding-window-attention.md) |
+| 279 | SimPO vs DPO：扔掉参考模型，显存省一半还更强？ | BV196ua6qELh | 03:22 | 2026-08-19 | 已完成 | [G279-simpo-vs-dpo.md](episodes/G279-simpo-vs-dpo.md) |
+| 280 | 自投机解码：不加显存，大模型推理怎么白捡两倍加速？ | BV1V6ua6BEnX | 03:18 | 2026-08-19 | 已完成 | [G280-self-speculative-decoding.md](episodes/G280-self-speculative-decoding.md) |
 | 281 | 大模型自我精炼Self-Refine：同一个模型自己批评自己，零训练提升输出质量 | BV1Gkua6TEHE | 03:39 | 2026-08-18 | 待处理 | |
 | 282 | Self-RAG 四种反思 token 全拆解：按需检索 + 批判资料 + 拦截幻觉 | BV1MSua6aEi6 | 03:18 | 2026-08-18 | 待处理 | |
 | 283 | 7B小模型自进化超o1？rStar-Math三件套（代码CoT+MCTS+过程偏好模型）一次讲透 | BV1tSua6aEHu | 03:31 | 2026-08-18 | 待处理 | |
