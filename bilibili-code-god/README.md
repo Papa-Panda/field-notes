@@ -17,7 +17,8 @@
 - 批 6（#101–#120）：20/20 完成。
 - 批 7（#121–#140）：20/20 完成。
 - 批 8（#141–#160）：20/20 完成。
-- 批 9（#161–#180）：20/20 完成（其中 4 条首轮 harvest 串台，re-harvest 补齐）。累计 180/515。
+- 批 9（#161–#180）：20/20 完成（其中 4 条首轮 harvest 串台，re-harvest 补齐）。
+- 批 10（#181–#200）：19/20 完成；#193（冷启动 SFT）字幕接口两轮均未返回，待换时间窗口重试。累计 199/515。
 
 ## 已完成纪要
 
@@ -203,3 +204,22 @@
 | G178 | Label Smoothing 为何不用 |
 | G179 | Self-Instruct 与 Evol-Instruct |
 | G180 | RLVR 数据准备全流程 |
+| G181 | 梯度噪声尺度与最优 batch |
+| G182 | GPU 利用率归零：IO 瓶颈 |
+| G183 | FP8 训练实操 |
+| G184 | embedding 微调与难负样本 |
+| G185 | 预训练为什么不用 Dropout |
+| G186 | reference model 与 KL 约束 |
+| G187 | 数据回放防遗忘 |
+| G188 | 文本数据增强三法 |
+| G189 | 课程学习与 pacing |
+| G190 | critic / GAE / GRPO 砍 critic |
+| G191 | 学习率衰减：cosine / linear / WSD |
+| G192 | 继续预训练配比与 D-CPT Law |
+| G194 | BF16 / FP16 / FP8 选型决策树 |
+| G195 | Critical Batch Size |
+| G196 | attention sink 与 StreamingLLM |
+| G197 | 激活检查点选层 |
+| G198 | RIRM + RAPO：答后反思负奖励 |
+| G199 | 预训练为什么只跑 1 epoch |
+| G200 | ViT 视觉 Transformer |

@@ -186,26 +186,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 178 | Label Smoothing 在大模型上为什么基本不用？ | BV1cVbL6DEHz | 01:52 | 2026-09-07 | 已完成 | [G178-label-smoothing.md](episodes/G178-label-smoothing.md) |
 | 179 | Self-Instruct 与 Evol-Instruct：指令微调数据的构造与三层过滤 | BV1fVbL6SECM | 02:02 | 2026-09-07 | 已完成 | [G179-self-instruct-evol-instruct.md](episodes/G179-self-instruct-evol-instruct.md) |
 | 180 | RLVR 数据准备全流程：格式、冷启动、反思 token 与课程学习 | BV1uob56aEMT | 03:02 | 2026-09-07 | 已完成 | [G180-rlvr-data-prep.md](episodes/G180-rlvr-data-prep.md) |
-| 181 | 梯度噪声尺度：用一百步小实验算出最优 batch size | BV1bfb56cENP | 02:03 | 2026-09-06 | 待处理 | |
-| 182 | GPU 利用率周期性归零：IO 瓶颈的定位与优化 | BV1xfb56cEdo | 03:14 | 2026-09-06 | 待处理 | |
-| 183 | FP8 训练实操：E4M3/E5M2 选型、分层策略与 Transformer Engine 配置 | BV1D9b56eEv4 | 02:02 | 2026-09-06 | 待处理 | |
-| 184 | embedding 模型微调：对比学习、InfoNCE 与难负样本挖掘 | BV1WY8468EbL | 02:05 | 2026-09-06 | 待处理 | |
-| 185 | 大模型预训练为什么不用 Dropout？三个副作用与替代的正则化机制 | BV1xY8468Evd | 02:48 | 2026-09-06 | 待处理 | |
-| 186 | reference model 为什么不能丢？KL 约束的数学体现 | BV1uN8t6zEwx | 02:48 | 2026-09-06 | 待处理 | |
-| 187 | 数据回放详解：配比、选样与遗忘监控 | BV1MT8t6TEaB | 02:09 | 2026-09-05 | 待处理 | |
-| 188 | 文本数据增强三法：回译、改写与 GPT-4 生成的适用场景 | BV1MT8t6TEwW | 01:55 | 2026-09-05 | 待处理 | |
-| 189 | 课程学习工程实现：难度评估、课程设计与 pacing 控制 | BV1uw8t66Eo2 | 02:08 | 2026-09-05 | 待处理 | |
-| 190 | critic value function 详解：为什么难训准、GAE 怎么补、GRPO 怎么砍 | BV1uP8t6uE9J | 03:08 | 2026-09-05 | 待处理 | |
-| 191 | 学习率衰减策略对比：cosine、linear 与 WSD 的适用场景 | BV1uP8t6uEud | 02:09 | 2026-09-05 | 待处理 | |
-| 192 | 继续预训练的数据配比与遗忘防御：D-CPT Law 与三招工程手段 | BV1T38t6eEtb | 03:16 | 2026-09-05 | 待处理 | |
+| 181 | 梯度噪声尺度：用一百步小实验算出最优 batch size | BV1bfb56cENP | 02:03 | 2026-09-06 | 已完成 | [G181-gradient-noise-scale.md](episodes/G181-gradient-noise-scale.md) |
+| 182 | GPU 利用率周期性归零：IO 瓶颈的定位与优化 | BV1xfb56cEdo | 03:14 | 2026-09-06 | 已完成 | [G182-gpu-io-bottleneck.md](episodes/G182-gpu-io-bottleneck.md) |
+| 183 | FP8 训练实操：E4M3/E5M2 选型、分层策略与 Transformer Engine 配置 | BV1D9b56eEv4 | 02:02 | 2026-09-06 | 已完成 | [G183-fp8-training.md](episodes/G183-fp8-training.md) |
+| 184 | embedding 模型微调：对比学习、InfoNCE 与难负样本挖掘 | BV1WY8468EbL | 02:05 | 2026-09-06 | 已完成 | [G184-embedding-finetune-infonce.md](episodes/G184-embedding-finetune-infonce.md) |
+| 185 | 大模型预训练为什么不用 Dropout？三个副作用与替代的正则化机制 | BV1xY8468Evd | 02:48 | 2026-09-06 | 已完成 | [G185-no-dropout-pretraining.md](episodes/G185-no-dropout-pretraining.md) |
+| 186 | reference model 为什么不能丢？KL 约束的数学体现 | BV1uN8t6zEwx | 02:48 | 2026-09-06 | 已完成 | [G186-reference-model-kl.md](episodes/G186-reference-model-kl.md) |
+| 187 | 数据回放详解：配比、选样与遗忘监控 | BV1MT8t6TEaB | 02:09 | 2026-09-05 | 已完成 | [G187-data-replay.md](episodes/G187-data-replay.md) |
+| 188 | 文本数据增强三法：回译、改写与 GPT-4 生成的适用场景 | BV1MT8t6TEwW | 01:55 | 2026-09-05 | 已完成 | [G188-text-augmentation.md](episodes/G188-text-augmentation.md) |
+| 189 | 课程学习工程实现：难度评估、课程设计与 pacing 控制 | BV1uw8t66Eo2 | 02:08 | 2026-09-05 | 已完成 | [G189-curriculum-learning.md](episodes/G189-curriculum-learning.md) |
+| 190 | critic value function 详解：为什么难训准、GAE 怎么补、GRPO 怎么砍 | BV1uP8t6uE9J | 03:08 | 2026-09-05 | 已完成 | [G190-critic-value-gae.md](episodes/G190-critic-value-gae.md) |
+| 191 | 学习率衰减策略对比：cosine、linear 与 WSD 的适用场景 | BV1uP8t6uEud | 02:09 | 2026-09-05 | 已完成 | [G191-lr-decay-schedules.md](episodes/G191-lr-decay-schedules.md) |
+| 192 | 继续预训练的数据配比与遗忘防御：D-CPT Law 与三招工程手段 | BV1T38t6eEtb | 03:16 | 2026-09-05 | 已完成 | [G192-continued-pretraining-dcpt.md](episodes/G192-continued-pretraining-dcpt.md) |
 | 193 | 冷启动 SFT 详解：千条数据为什么能解决 R1-Zero 的可读性问题 | BV14V8t6AELz | 03:04 | 2026-09-04 | 待处理 | |
-| 194 | BF16 / FP16 / FP8 选型决策树：尾数指数位数决定一切 | BV1NV8t6AEpU | 02:19 | 2026-09-04 | 待处理 | |
-| 195 | Batch size 怎么选？Critical Batch Size 与线性缩放规则详解 | BV1TM8t6iEFL | 03:07 | 2026-09-04 | 待处理 | |
-| 196 | attention sink 详解：成因、后果与 StreamingLLM 的解法 | BV1Tg8t6NE6U | 02:19 | 2026-09-04 | 待处理 | |
-| 197 | 激活检查点选层策略：Uniform、Selective 与根号 n 法则 | BV1xg8t6NEQW | 01:51 | 2026-09-04 | 待处理 | |
-| 198 | RIRM + RAPO：用负奖励改进推理模型答对后仍继续反思的浪费 | BV1LX8462E9d | 02:47 | 2026-09-04 | 待处理 | |
-| 199 | 大模型预训练为什么只跑 1 个 epoch？三个原因与什么时候可以多跑 | BV1vR846LEHM | 02:44 | 2026-09-03 | 待处理 | |
-| 200 | ViT 视觉 Transformer：把图像切成 patch，Transformer 也能做视觉 | BV1VR846LEY6 | 04:48 | 2026-09-03 | 待处理 | |
+| 194 | BF16 / FP16 / FP8 选型决策树：尾数指数位数决定一切 | BV1NV8t6AEpU | 02:19 | 2026-09-04 | 已完成 | [G194-precision-decision-tree.md](episodes/G194-precision-decision-tree.md) |
+| 195 | Batch size 怎么选？Critical Batch Size 与线性缩放规则详解 | BV1TM8t6iEFL | 03:07 | 2026-09-04 | 已完成 | [G195-critical-batch-size.md](episodes/G195-critical-batch-size.md) |
+| 196 | attention sink 详解：成因、后果与 StreamingLLM 的解法 | BV1Tg8t6NE6U | 02:19 | 2026-09-04 | 已完成 | [G196-attention-sink.md](episodes/G196-attention-sink.md) |
+| 197 | 激活检查点选层策略：Uniform、Selective 与根号 n 法则 | BV1xg8t6NEQW | 01:51 | 2026-09-04 | 已完成 | [G197-activation-checkpointing.md](episodes/G197-activation-checkpointing.md) |
+| 198 | RIRM + RAPO：用负奖励改进推理模型答对后仍继续反思的浪费 | BV1LX8462E9d | 02:47 | 2026-09-04 | 已完成 | [G198-rirm-rapo.md](episodes/G198-rirm-rapo.md) |
+| 199 | 大模型预训练为什么只跑 1 个 epoch？三个原因与什么时候可以多跑 | BV1vR846LEHM | 02:44 | 2026-09-03 | 已完成 | [G199-one-epoch-pretraining.md](episodes/G199-one-epoch-pretraining.md) |
+| 200 | ViT 视觉 Transformer：把图像切成 patch，Transformer 也能做视觉 | BV1VR846LEY6 | 04:48 | 2026-09-03 | 已完成 | [G200-vit.md](episodes/G200-vit.md) |
 | 201 | Transformer 会被取代吗？三个致命伤，取代派/改良派/共存派三种解法 | BV1jS846SETu | 03:54 | 2026-09-03 | 待处理 | |
 | 202 | 训练显存花在哪？缩 batch、梯度检查点、ZeRO、LoRA 四级省显存阶梯 | BV15Q8467EdP | 03:13 | 2026-09-03 | 待处理 | |
 | 203 | 训练不收敛的系统排查清单：学习率、数据、初始化、精度四步走 | BV1LQ8467E4e | 02:54 | 2026-09-03 | 待处理 | |
