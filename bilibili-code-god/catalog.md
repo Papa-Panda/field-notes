@@ -198,7 +198,7 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 190 | critic value function 详解：为什么难训准、GAE 怎么补、GRPO 怎么砍 | BV1uP8t6uE9J | 03:08 | 2026-09-05 | 已完成 | [G190-critic-value-gae.md](episodes/G190-critic-value-gae.md) |
 | 191 | 学习率衰减策略对比：cosine、linear 与 WSD 的适用场景 | BV1uP8t6uEud | 02:09 | 2026-09-05 | 已完成 | [G191-lr-decay-schedules.md](episodes/G191-lr-decay-schedules.md) |
 | 192 | 继续预训练的数据配比与遗忘防御：D-CPT Law 与三招工程手段 | BV1T38t6eEtb | 03:16 | 2026-09-05 | 已完成 | [G192-continued-pretraining-dcpt.md](episodes/G192-continued-pretraining-dcpt.md) |
-| 193 | 冷启动 SFT 详解：千条数据为什么能解决 R1-Zero 的可读性问题 | BV14V8t6AELz | 03:04 | 2026-09-04 | 待处理 | |
+| 193 | 冷启动 SFT 详解：千条数据为什么能解决 R1-Zero 的可读性问题 | BV14V8t6AELz | 03:04 | 2026-09-04 | 已完成 | [G193-cold-start-sft.md](episodes/G193-cold-start-sft.md) |
 | 194 | BF16 / FP16 / FP8 选型决策树：尾数指数位数决定一切 | BV1NV8t6AEpU | 02:19 | 2026-09-04 | 已完成 | [G194-precision-decision-tree.md](episodes/G194-precision-decision-tree.md) |
 | 195 | Batch size 怎么选？Critical Batch Size 与线性缩放规则详解 | BV1TM8t6iEFL | 03:07 | 2026-09-04 | 已完成 | [G195-critical-batch-size.md](episodes/G195-critical-batch-size.md) |
 | 196 | attention sink 详解：成因、后果与 StreamingLLM 的解法 | BV1Tg8t6NE6U | 02:19 | 2026-09-04 | 已完成 | [G196-attention-sink.md](episodes/G196-attention-sink.md) |
@@ -227,7 +227,7 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 219 | 奖励稀疏问题详解：奖励塑形、课程学习、好奇心驱动与 PRM | BV1Lg8S6yE84 | 02:53 | 2026-08-31 | 已完成 | [G219-sparse-reward.md](episodes/G219-sparse-reward.md) |
 | 220 | RLEP 经验回放：把高质量 rollout 存进 buffer 反复利用 | BV1fK8S6jE8G | 01:03 | 2026-08-31 | 已完成 | [G220-rlep-replay.md](episodes/G220-rlep-replay.md) |
 | 221 | 奖励模型是怎么训练出来的？用排序代替打分的成对比较损失 | BV17T8S62EnA | 02:36 | 2026-08-31 | 已完成 | [G221-rm-training.md](episodes/G221-rm-training.md) |
-| 222 | 检索器与生成器的微调 pipeline：对比学习、上下文利用与联合训练 | BV1ZT8S61E3b | 01:45 | 2026-08-31 | 待处理 | |
+| 222 | 检索器与生成器的微调 pipeline：对比学习、上下文利用与联合训练 | BV1ZT8S61E3b | 01:45 | 2026-08-31 | 已完成 | [G222-rag-finetune-pipeline.md](episodes/G222-rag-finetune-pipeline.md) |
 | 223 | R1 是怎么训练出来的？四阶段配方：RL 涌现、冷启动、拒绝采样、蒸馏 | BV1RL8S6gECS | 03:25 | 2026-08-30 | 已完成 | [G223-r1-recipe.md](episodes/G223-r1-recipe.md) |
 | 224 | 预训练为什么只做「预测下一个词」就能学到知识？兼谈曝光偏差 | BV1RL8S6gEDV | 03:33 | 2026-08-30 | 已完成 | [G224-next-token-pretraining.md](episodes/G224-next-token-pretraining.md) |
 | 225 | Prefill 与 Decode 为什么差 140 倍？PD 分离架构的由来 | BV1Xj8S6zEe1 | 03:37 | 2026-08-30 | 已完成 | [G225-pd-separation.md](episodes/G225-pd-separation.md) |
@@ -236,11 +236,11 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 228 | PPO 训练显存爆炸怎么办？四模型驻留、offload 与稳定性调参 | BV15V8S6kEkq | 01:58 | 2026-08-30 | 已完成 | [G228-ppo-memory.md](episodes/G228-ppo-memory.md) |
 | 229 | 存在惩罚和频率惩罚的区别在哪里？两个治复读旋钮讲透 | BV1e8826PEYT | 03:37 | 2026-08-29 | 已完成 | [G229-presence-frequency-penalty.md](episodes/G229-presence-frequency-penalty.md) |
 | 230 | MMLU 分数有水分？57 个学科的评估细节、三大坑与改进版 | BV1e8826PEiP | 04:13 | 2026-08-29 | 已完成 | [G230-mmlu-pitfalls.md](episodes/G230-mmlu-pitfalls.md) |
-| 231 | MFU 和 GPU 利用率的区别在哪里？兼谈 MFU 与 HFU | BV1Vh826YExp | 03:13 | 2026-08-29 | 待处理 | |
+| 231 | MFU 和 GPU 利用率的区别在哪里？兼谈 MFU 与 HFU | BV1Vh826YExp | 03:13 | 2026-08-29 | 已完成 | [G231-mfu-hfu.md](episodes/G231-mfu-hfu.md) |
 | 232 | Medusa 多解码头讲透：一次预测 k 个 token，无需草稿模型的内嵌方案 | BV1j4826KEUb | 04:03 | 2026-08-29 | 已完成 | [G232-medusa.md](episodes/G232-medusa.md) |
 | 233 | 离群激活详解：为什么清零 99% 的激活模型还活着，动几个大的就崩 | BV1vt826vEKv | 01:59 | 2026-08-29 | 已完成 | [G233-outlier-activations.md](episodes/G233-outlier-activations.md) |
 | 234 | 机器遗忘详解：梯度上升、RMU、NPO 三种让大模型选择性失忆的方法 | BV15t826vEUA | 02:05 | 2026-08-29 | 已完成 | [G234-machine-unlearning.md](episodes/G234-machine-unlearning.md) |
-| 235 | 大模型学习率怎么选？LR Range Test、warmup 与 cosine decay 实操 | BV13i826FEjB | 02:25 | 2026-08-28 | 待处理 | |
+| 235 | 大模型学习率怎么选？LR Range Test、warmup 与 cosine decay 实操 | BV13i826FEjB | 02:25 | 2026-08-28 | 已完成 | [G235-lr-selection.md](episodes/G235-lr-selection.md) |
 | 236 | Lost in the Middle 详解：答案放中间为什么就找不到了？兼谈 RAG 重排 | BV1hi826FEwT | 03:28 | 2026-08-28 | 已完成 | [G236-lost-in-the-middle.md](episodes/G236-lost-in-the-middle.md) |
 | 237 | LoRA 显存悖论：只训 1% 参数，为什么显存没等比例下降 | BV1aq826bExU | 02:51 | 2026-08-28 | 已完成 | [G237-lora-memory-paradox.md](episodes/G237-lora-memory-paradox.md) |
 | 238 | LoRA 超参调优：rank、alpha、target modules 与学习率怎么设 | BV1VY826wEd2 | 02:30 | 2026-08-28 | 已完成 | [G238-lora-hyperparams.md](episodes/G238-lora-hyperparams.md) |
@@ -276,7 +276,7 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 268 | Attention Residuals：用深度方向 softmax 改进残差连接的等权相加问题 | BV1Nm826QELP | 03:51 | 2026-08-23 | 已完成 | [G268-attention-residuals.md](episodes/G268-attention-residuals.md) |
 | 269 | ASPO：通过重要性比率翻转改进 GRPO 的熵崩塌问题 | BV1WS826nEh5 | 03:23 | 2026-08-22 | 已完成 | [G269-aspo.md](episodes/G269-aspo.md) |
 | 270 | 约四成 Agent 项目失败：五道鸿沟与系统工程化四板斧 | BV1NS826nEDS | 02:51 | 2026-08-22 | 已完成 | [G270-agent-project-failures.md](episodes/G270-agent-project-failures.md) |
-| 271 | 激活导向详解：不改一个权重，用一个方向向量控制模型性格 | BV1ty8269ExR | 02:48 | 2026-08-22 | 待处理 | |
+| 271 | 激活导向详解：不改一个权重，用一个方向向量控制模型性格 | BV1ty8269ExR | 02:48 | 2026-08-22 | 已完成 | [G271-activation-steering.md](episodes/G271-activation-steering.md) |
 | 272 | WSD 学习率调度凭什么能随时停？三段式拆解+省算力套路 | BV1P5ua6xErX | 03:41 | 2026-08-21 | 已完成 | [G272-wsd-schedule.md](episodes/G272-wsd-schedule.md) |
 | 273 | 多模态大模型又慢又贵？视觉Token压缩 ToMe / FastV 两招讲透 | BV1Kuua6fEf3 | 03:37 | 2026-08-20 | 已完成 | [G273-vision-token-compression.md](episodes/G273-vision-token-compression.md) |
 | 274 | 大模型新结构TTT层：处理一条序列=训练一个小模型，线性复杂度+恒定内存扛长文本 | BV1Muua6fEpa | 03:36 | 2026-08-20 | 已完成 | [G274-ttt-layer.md](episodes/G274-ttt-layer.md) |
@@ -295,7 +295,7 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 287 | 大模型训练为何突然 NaN？QK-Norm 两行代码治好注意力 logit 爆炸 | BV1UUua6wEVU | 03:11 | 2026-08-17 | 已完成 | [G287-qk-norm-nan.md](episodes/G287-qk-norm-nan.md) |
 | 288 | PRM vs ORM：过程奖励为什么碾压结果奖励？一次讲透 | BV1UUua6wE44 | 03:24 | 2026-08-17 | 已完成 | [G288-prm-vs-orm.md](episodes/G288-prm-vs-orm.md) |
 | 289 | 推理模型越想越歪？ParaThinker并行思考，打破长思维链的隧道视野 | BV1dhua6CEmV | 03:41 | 2026-08-16 | 已完成 | [G289-parathinker.md](episodes/G289-parathinker.md) |
-| 290 | 推理模型的显式思考真的必要吗？NoThinking 跳过思考反而更省更快 | BV1dYua6GEBn | 03:20 | 2026-08-16 | 待处理 | |
+| 290 | 推理模型的显式思考真的必要吗？NoThinking 跳过思考反而更省更快 | BV1dYua6GEBn | 03:20 | 2026-08-16 | 已完成 | [G290-nothinking.md](episodes/G290-nothinking.md) |
 | 291 | NaViT 原生任意分辨率 + Patch n' Pack：视觉大模型为什么不再把图片压成方块？ | BV1oYua6GERd | 03:14 | 2026-08-16 | 已完成 | [G291-navit.md](episodes/G291-navit.md) |
 | 292 | μTransfer原理详解：小模型调超参如何零样本迁移到大模型 | BV1ftua61Ezc | 03:49 | 2026-08-16 | 已完成 | [G292-mu-transfer.md](episodes/G292-mu-transfer.md) |
 | 293 | DeepSeek V3 招牌 MTP 多 token 预测全解：训练当辅助任务、推理当投机解码加速器 | BV1o8ua65EdB | 03:38 | 2026-08-15 | 已完成 | [G293-mtp.md](episodes/G293-mtp.md) |
@@ -387,19 +387,19 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 379 | BatchNorm 与 LayerNorm 的区别：为什么 Transformer 只用 LayerNorm？ | BV1j7gD6cE75 | 03:00 | 2026-07-22 | 已完成 | [G379-bn-vs-ln.md](episodes/G379-bn-vs-ln.md) |
 | 380 | GSM8K 数据污染：benchmark 过拟合、n-gram 重叠检测、记忆探测 | BV1PzKx6PEo3 | 03:12 | 2026-07-21 | 已完成 | [G380-gsm8k-contamination.md](episodes/G380-gsm8k-contamination.md) |
 | 381 | pass@k 怎么推导计算：无偏估计公式 1−C(n−c,k)/C(n,k)，有偏 vs 无偏 | BV1DMK46VEAW | 03:13 | 2026-07-21 | 已完成 | [G381-pass-at-k.md](episodes/G381-pass-at-k.md) |
-| 382 | FineWeb：15T token 数据集怎么筛出来的，消融驱动、FineWeb-Edu | BV127K46TEyc | 03:32 | 2026-07-21 | 待处理 | |
-| 383 | 扩散的数学=分层 VAE：x₀/噪声/分数 三种预测目标为什么等价 | BV1nPKW6JEJy | 03:42 | 2026-07-21 | 待处理 | |
+| 382 | FineWeb：15T token 数据集怎么筛出来的，消融驱动、FineWeb-Edu | BV127K46TEyc | 03:32 | 2026-07-21 | 已完成 | [G382-fineweb.md](episodes/G382-fineweb.md) |
+| 383 | 扩散的数学=分层 VAE：x₀/噪声/分数 三种预测目标为什么等价 | BV1nPKW6JEJy | 03:42 | 2026-07-21 | 已完成 | [G383-diffusion-hierarchical-vae.md](episodes/G383-diffusion-hierarchical-vae.md) |
 | 384 | VAE 变分自编码器：ELBO 推导、重参数化、KL 正则的作用 | BV1U5K46uEJN | 03:58 | 2026-07-21 | 已完成 | [G384-vae.md](episodes/G384-vae.md) |
 | 385 | Actor-Critic / A2C / A3C：优势函数 A=Q−V、多 worker 并行为什么更稳 | BV15fKx6nEDN | 03:15 | 2026-07-21 | 已完成 | [G385-actor-critic.md](episodes/G385-actor-critic.md) |
 | 386 | 数据去重 MinHash / SimHash：Jaccard、LSH 分桶、汉明距离 | BV1EdKx6pEuH | 03:47 | 2026-07-21 | 已完成 | [G386-minhash-dedup.md](episodes/G386-minhash-dedup.md) |
 | 387 | 预训练数据清洗全流程：抽正文、质量过滤、去重、数据配比 | BV1QNK46LEea | 04:04 | 2026-07-21 | 已完成 | [G387-pretrain-data-cleaning.md](episodes/G387-pretrain-data-cleaning.md) |
 | 388 | Longformer & BigBird：滑动窗口、全局、随机注意力，O(n²) 降到 O(n) | BV19wK467EJE | 03:31 | 2026-07-21 | 已完成 | [G388-longformer-bigbird.md](episodes/G388-longformer-bigbird.md) |
-| 389 | Linformer & Performer：低秩投影、核化+结合律，O(n²) 降到 O(n) | BV1GJKW6uEEH | 03:21 | 2026-07-21 | 待处理 | |
+| 389 | Linformer & Performer：低秩投影、核化+结合律，O(n²) 降到 O(n) | BV1GJKW6uEEH | 03:21 | 2026-07-21 | 已完成 | [G389-linformer-performer.md](episodes/G389-linformer-performer.md) |
 | 390 | 高效 Transformer 四大流派：稀疏、低秩、核化、可逆，一张图看懂 | BV15jKW63E8e | 03:26 | 2026-07-20 | 已完成 | [G390-efficient-transformer-schools.md](episodes/G390-efficient-transformer-schools.md) |
 | 391 | 位置插值 PI → NTK-aware → YaRN：怎么把 32K 免训练扩到 128K | BV1uxKW6NE7B | 03:47 | 2026-07-20 | 已完成 | [G391-pi-ntk-yarn.md](episodes/G391-pi-ntk-yarn.md) |
-| 392 | Actor-Critic / A2C / A3C：优势函数 A=Q−V、多 worker 并行为什么更稳（重发） | BV13bKt6UELM | 03:15 | 2026-07-20 | 待处理 | |
+| 392 | Actor-Critic / A2C / A3C：优势函数 A=Q−V、多 worker 并行为什么更稳（重发） | BV13bKt6UELM | 03:15 | 2026-07-20 | 已完成 | [G392-actor-critic-repost.md](episodes/G392-actor-critic-repost.md) |
 | 393 | 长度外推：训短推长为什么崩，ALiBi/PI/NTK/YaRN 方法全景 | BV13pKW6TECw | 03:13 | 2026-07-20 | 已完成 | [G393-length-extrapolation.md](episodes/G393-length-extrapolation.md) |
-| 394 | softmax / safe softmax / online softmax：从会溢出到一遍算完（FlashAttention 核心） | BV1ETKW67EXG | 03:40 | 2026-07-20 | 待处理 | |
+| 394 | softmax / safe softmax / online softmax：从会溢出到一遍算完（FlashAttention 核心） | BV1ETKW67EXG | 03:40 | 2026-07-20 | 已完成 | [G394-online-softmax.md](episodes/G394-online-softmax.md) |
 | 395 | Whisper 原理：弱监督 68 万小时、encoder-decoder、特殊 token 多任务 | BV1qYKs6EEBj | 03:00 | 2026-07-20 | 已完成 | [G395-whisper.md](episodes/G395-whisper.md) |
 | 396 | 多臂老虎机：探索利用、ε-greedy、UCB、汤普森采样 | BV1ZYKs6EEGQ | 04:03 | 2026-07-20 | 已完成 | [G396-bandit.md](episodes/G396-bandit.md) |
 | 397 | 策略梯度定理：log-derivative 技巧、REINFORCE，怎么对随机采样求梯度 | BV1LVKW6VEEy | 03:47 | 2026-07-20 | 已完成 | [G397-policy-gradient-theorem.md](episodes/G397-policy-gradient-theorem.md) |
@@ -468,7 +468,7 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 460 | 什么是重要性采样？为什么 token 级的损失难以收敛？「猫喜欢鱼」讲透 | BV1HENA6xEpB | 03:30 | 2026-07-12 | 已完成 | [G460-importance-sampling.md](episodes/G460-importance-sampling.md) |
 | 461 | GRPO 用旧策略数据，为什么还叫 on-policy？一个打篮球的例子讲透 | BV1fJNA69EFy | 03:09 | 2026-07-12 | 已完成 | [G461-grpo-on-policy.md](episodes/G461-grpo-on-policy.md) |
 | 462 | Softmax 前为什么要除以根号 d？含完整数学推导 | BV1cJNA6REKc | 02:39 | 2026-07-12 | 已完成 | [G462-softmax-sqrt-d.md](episodes/G462-softmax-sqrt-d.md) |
-| 463 | Encoder-Only 和 Decoder-Only 建模有何区别？BERT 与 GPT 的分水岭 | BV1HLNA6tEX9 | 02:41 | 2026-07-11 | 待处理 | |
+| 463 | Encoder-Only 和 Decoder-Only 建模有何区别？BERT 与 GPT 的分水岭 | BV1HLNA6tEX9 | 02:41 | 2026-07-11 | 已完成 | [G463-encoder-vs-decoder-only.md](episodes/G463-encoder-vs-decoder-only.md) |
 | 464 | 现在大模型为什么都用 left padding？一句话讲透 | BV1CyNH6nEXF | 02:33 | 2026-07-11 | 已完成 | [G464-left-padding.md](episodes/G464-left-padding.md) |
 | 465 | SFT 为什么要 Mask 掉 User 的部分？只学 Assistant，label 设 -100 | BV1KyNH6nEPk | 03:43 | 2026-07-11 | 已完成 | [G465-sft-mask-user.md](episodes/G465-sft-mask-user.md) |
 | 466 | MCP 与 Skills 有什么区别？连接协议 vs 行为规范，附协同关系与省 token 原理 | BV14zNH69EYY | 03:16 | 2026-07-11 | 已完成 | [G466-mcp-vs-skills.md](episodes/G466-mcp-vs-skills.md) |
