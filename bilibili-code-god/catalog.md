@@ -325,23 +325,23 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 317 | SFT 和 RLHF 竟是同一枚硬币的两面：正向 KL vs 反向 KL | BV1er3Z6SEcf | 04:26 | 2026-08-09 | 已完成 | [G317-sft-rlhf-kl.md](episodes/G317-sft-rlhf-kl.md) |
 | 318 | Self-Rewarding LM：不要 Reward Model，让 LLM 自己当裁判 | BV1XZ3R63EYU | 04:19 | 2026-08-09 | 已完成 | [G318-self-rewarding-lm.md](episodes/G318-self-rewarding-lm.md) |
 | 319 | Reward Model Calibration：RM 分数到底能不能信？0.2 差距的真实含义 | BV1GZ3R6GEmJ | 04:54 | 2026-08-09 | 已完成 | [G319-rm-calibration.md](episodes/G319-rm-calibration.md) |
-| 320 | RLHF 三阶段：SFT → RM → PPO 是怎么串起来的？ | 待核 | 04:33 | 2026-08-09 | 待处理 | |
-| 321 | Reward Model Ensemble：一个 RM 易被骗，K 个 RM 投票才公正 | BV1Qf3R66E8c | 04:15 | 2026-08-08 | 待处理 | |
-| 322 | RetNet 讲透：微软的 Transformer 杀手，训练并行 + 推理 O(1) | BV15R3R65E2J | 03:54 | 2026-08-08 | 待处理 | |
-| 323 | Reference Model 是干嘛的？为什么 PPO 离不开这个"躺平"的模型 | BV1RR3R6VEn7 | 04:28 | 2026-08-08 | 待处理 | |
-| 324 | importance sampling ratio + clip：同一 batch 训 4 epoch 的秘密 | BV1Xd3R6kEdU | 04:36 | 2026-08-08 | 待处理 | |
-| 325 | Phi-2：Textbooks Are All You Need——2.7B 打赢 70B，质量胜过规模 | BV1DP3d6TED7 | 03:35 | 2026-08-07 | 待处理 | |
-| 326 | RM 损失函数为什么用 sigmoid 差值？Pairwise Ranking 讲透 | BV1SP3d6TE81 | 04:35 | 2026-08-07 | 待处理 | |
-| 327 | Online RLHF vs Offline RLHF：在线交互与静态数据的取舍 | BV1UN3d6iErs | 04:56 | 2026-08-07 | 待处理 | |
-| 328 | π_θ/π_θ_old 是怎么算的？token-level log prob 的 3 个工程坑 | BV1Gc3d6gEDo | 04:40 | 2026-08-06 | 待处理 | |
-| 329 | LLM-as-Judge 的四大偏差：位置/冗长/自我偏好/风格 | BV1Dw3d6BEYP | 04:10 | 2026-08-06 | 待处理 | |
-| 330 | Adam 统治 10 年，三个新挑战者正在分庭抗礼——Lion/Sophia/Adafactor 讲透 | BV1f13R6JEfP | 03:54 | 2026-08-06 | 待处理 | |
-| 331 | 为什么 ChatGPT 越训话越多？Length Bias 的来龙去脉 | BV1F13R6nEAV | 04:36 | 2026-08-06 | 待处理 | |
-| 332 | LATS：把蒙特卡洛树搜索搬进 Agent，比 ReAct 强 20-30% | BV1J23R6SE52 | 04:41 | 2026-08-05 | 待处理 | |
-| 333 | KL 惩罚系数 β 怎么调？太小 Reward Hacking，太大学不动 | BV1wk3R6pEKs | 04:07 | 2026-08-05 | 待处理 | |
-| 334 | Iterative DPO：让模型自我改进，PPO 效果的 1/10 成本 | BV1ck3R6pE2G | 03:48 | 2026-08-05 | 待处理 | |
-| 335 | HyDE 讲透：先让 LLM"瞎编"答案，再用它去检索真实文档 | BV1JC3R6QE5N | 03:43 | 2026-08-05 | 待处理 | |
-| 336 | Anthropic HH 数据集：Helpful 和 Harmless 是怎么标注的？ | BV1vQ3R6jEds | 04:00 | 2026-08-04 | 待处理 | |
+| 320 | RLHF 三阶段：SFT → RM → PPO 是怎么串起来的？ | BV1Qf3R66E8c | 04:33 | 2026-08-09 | 待处理 | |
+| 321 | Reward Model Ensemble：一个 RM 易被骗，K 个 RM 投票才公正 | BV15R3R65E2J | 04:15 | 2026-08-08 | 待处理 | |
+| 322 | RetNet 讲透：微软的 Transformer 杀手，训练并行 + 推理 O(1) | BV1RR3R6VEn7 | 03:54 | 2026-08-08 | 待处理 | |
+| 323 | Reference Model 是干嘛的？为什么 PPO 离不开这个"躺平"的模型 | BV1Xd3R6kEdU | 04:28 | 2026-08-08 | 待处理 | |
+| 324 | importance sampling ratio + clip：同一 batch 训 4 epoch 的秘密 | BV1DP3d6TED7 | 04:36 | 2026-08-08 | 待处理 | |
+| 325 | Phi-2：Textbooks Are All You Need——2.7B 打赢 70B，质量胜过规模 | BV1SP3d6TE81 | 03:35 | 2026-08-07 | 待处理 | |
+| 326 | RM 损失函数为什么用 sigmoid 差值？Pairwise Ranking 讲透 | BV1UN3d6iErs | 04:35 | 2026-08-07 | 待处理 | |
+| 327 | Online RLHF vs Offline RLHF：在线交互与静态数据的取舍 | BV1Gc3d6gEDo | 04:56 | 2026-08-07 | 待处理 | |
+| 328 | π_θ/π_θ_old 是怎么算的？token-level log prob 的 3 个工程坑 | BV1Dw3d6BEYP | 04:40 | 2026-08-06 | 待处理 | |
+| 329 | LLM-as-Judge 的四大偏差：位置/冗长/自我偏好/风格 | BV1f13R6JEfP | 04:10 | 2026-08-06 | 待处理 | |
+| 330 | Adam 统治 10 年，三个新挑战者正在分庭抗礼——Lion/Sophia/Adafactor 讲透 | BV1F13R6nEAV | 03:54 | 2026-08-06 | 待处理 | |
+| 331 | 为什么 ChatGPT 越训话越多？Length Bias 的来龙去脉 | BV1J23R6SE52 | 04:36 | 2026-08-06 | 待处理 | |
+| 332 | LATS：把蒙特卡洛树搜索搬进 Agent，比 ReAct 强 20-30% | BV1wk3R6pEKs | 04:41 | 2026-08-05 | 待处理 | |
+| 333 | KL 惩罚系数 β 怎么调？太小 Reward Hacking，太大学不动 | BV1ck3R6pE2G | 04:07 | 2026-08-05 | 待处理 | |
+| 334 | Iterative DPO：让模型自我改进，PPO 效果的 1/10 成本 | BV1JC3R6QE5N | 03:48 | 2026-08-05 | 待处理 | |
+| 335 | HyDE 讲透：先让 LLM"瞎编"答案，再用它去检索真实文档 | BV1vQ3R6jEds | 03:43 | 2026-08-05 | 待处理 | |
+| 336 | Anthropic HH 数据集：Helpful 和 Harmless 是怎么标注的？ | BV1oQ3R6LEgz | 04:00 | 2026-08-04 | 待处理 | |
 | 337 | RM 分数涨人类却摇头？Goodhart 定律与 Reward Overoptimization 讲透 | BV1RX3R6yEh3 | 03:56 | 2026-08-04 | 待处理 | |
 | 338 | Elo 评分与 Bradley-Terry：Chatbot Arena 排名系统讲透 | BV17U3R6EENL | 04:22 | 2026-08-03 | 待处理 | |
 | 339 | DeepseekMoE 细粒度 + 共享专家：凭什么比标准 MoE 强 10-15%？ | BV1oS3R62ESL | 04:14 | 2026-08-03 | 待处理 | |
