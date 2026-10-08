@@ -86,26 +86,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 78 | 折扣因子 γ 到底在决定什么？为什么大模型里直接取 1 | BV1HThU6DEJi | 00:59 | 2026-09-26 | 已完成 | [G078-discount-gamma.md](episodes/G078-discount-gamma.md) |
 | 79 | 六个决定一次讲透：为什么按验证 loss 早停会停错？LoRA lr 1e-3、过 2 轮 IFEval 退化、Muon | BV1knea6mErC | 03:19 | 2026-09-26 | 已完成 | [G079-six-decisions.md](episodes/G079-six-decisions.md) |
 | 80 | Self-Routing：通过按对错与置信度把样本分到四条路，改进后训练用单一算法的浪费 | BV14Xea6dE8q | 03:29 | 2026-09-25 | 已完成 | [G080-self-routing.md](episodes/G080-self-routing.md) |
-| 81 | 强化学习到底在学什么？监督学习给答案，RL 只给一个分数 | BV1HAhU6WEod | 01:00 | 2026-09-25 | 待处理 | |
-| 82 | RL 微调的幻觉税：为什么 RFT 之后模型对无解题不再拒答？混 10% 无解题 SUM 就能修回来 | BV1xXea6dECx | 03:15 | 2026-09-25 | 待处理 | |
-| 83 | 没有标准答案的任务怎么做 RL？给裁判一份参考回答，比 SFT 蒸馏高 20 分 | BV1tSea6ZEQm | 03:07 | 2026-09-25 | 待处理 | |
-| 84 | 长程工具 Agent 的 RL 配方怎么定？1K 条 4:3:3 数据、按模型大小配奖励、工具故障率压到 5% 以下 | BV1tQea64E5C | 03:23 | 2026-09-25 | 待处理 | |
-| 85 | SFT 里每个 token 都该学吗？Rho-1 超额损失选 token 与 ProFit 屏蔽低概率措辞 | BV1Wfea6QEJ9 | 03:41 | 2026-09-25 | 待处理 | |
-| 86 | SFT 之后模型对提示词措辞更鲁棒了吗？1.7B/4B 降 54%~71%，8B 几乎为零 | BV1Wfea6QEWG | 02:55 | 2026-09-25 | 待处理 | |
-| 87 | RL 的 batch 越大训练越快吗？√B 学习率缩放与「吞吐增益 > 样本惩罚」决策不等式 | BV1HceY6nEUr | 03:17 | 2026-09-24 | 待处理 | |
-| 88 | 为什么 RL 后训练的 Agent 更爱作弊？同基座作弊率 23 倍，环境加固砍掉 87.7% | BV1sdea69ELG | 04:30 | 2026-09-24 | 待处理 | |
-| 89 | 在线蒸馏需要多少数据？为什么 8 道难题就能追平 1.7 万条，驱动收益的是思维链长度 | BV1yZea6pEVy | 03:13 | 2026-09-24 | 待处理 | |
-| 90 | 为什么用 SFT 教模型新知识，反而会让它更爱编？未知样本学得慢、学会后幻觉线性上升 | BV1Yrea6PEJH | 02:59 | 2026-09-24 | 待处理 | |
-| 91 | RLVE：通过程序化生成、难度自适应的可验证环境，改进 RL 静态题库的信号衰减问题 | BV1Yrea6PE1R | 03:11 | 2026-09-24 | 待处理 | |
-| 92 | ProRL：通过验证停滞时重置参考策略，改进 RL 训几百步就停滞的问题 | BV1akea6YEjg | 03:20 | 2026-09-24 | 待处理 | |
-| 93 | 线上流量怎么变成后训练？T-Tech 三个 GRPO 专家各撞一种作弊与两段 SLERP 合并，32B 超过 235B | BV1eBea6KEWE | 03:49 | 2026-09-23 | 待处理 | |
-| 94 | 探针裁判：从 1.7B 小模型隐藏层读 rubric 判断，为什么能超过 8B 生成式裁判 | BV15JeY6MEnz | 03:27 | 2026-09-23 | 待处理 | |
-| 95 | LoRA 开梯度检查点后 loss 纹丝不动，根因是什么？enable_input_require_grads 与 use_reentrant | BV1ezea6vE4D | 03:20 | 2026-09-23 | 待处理 | |
-| 96 | 思考与非思考模式怎么训进一个模型？空 think 块、/no_think 标记与涌现的思考预算 | BV18mea6FEt1 | 03:48 | 2026-09-23 | 待处理 | |
-| 97 | 为什么 RL 比 SFT 更不容易遗忘？陈丹琦组消融：关键是 on-policy 数据而不是 KL | BV1oUeh6zEr8 | 03:35 | 2026-09-23 | 待处理 | |
-| 98 | OTC-PO：把工具生产率写进奖励，为什么能让工具调用减 68.3% 而正确率不变 | BV1bUea6bE1M | 03:03 | 2026-09-23 | 待处理 | |
-| 99 | OraRL：通过解耦策略基线与标准答案增益，改进 GRPO 塞入标准答案时的优势反转问题 | BV1hyea6wEyV | 04:21 | 2026-09-22 | 待处理 | |
-| 100 | MOPD：用多教师在线蒸馏改进多域 RL 能力融合的跷跷板问题，Open-MOPD 从 35.6% 修到 83.4% | BV1hyea6wELy | 03:29 | 2026-09-22 | 待处理 | |
+| 81 | 强化学习到底在学什么？监督学习给答案，RL 只给一个分数 | BV1HAhU6WEod | 01:00 | 2026-09-25 | 已完成 | [G081-rl-what-learns.md](episodes/G081-rl-what-learns.md) |
+| 82 | RL 微调的幻觉税：为什么 RFT 之后模型对无解题不再拒答？混 10% 无解题 SUM 就能修回来 | BV1xXea6dECx | 03:15 | 2026-09-25 | 已完成 | [G082-rl-hallucination-tax.md](episodes/G082-rl-hallucination-tax.md) |
+| 83 | 没有标准答案的任务怎么做 RL？给裁判一份参考回答，比 SFT 蒸馏高 20 分 | BV1tSea6ZEQm | 03:07 | 2026-09-25 | 已完成 | [G083-rl-no-gold-answer.md](episodes/G083-rl-no-gold-answer.md) |
+| 84 | 长程工具 Agent 的 RL 配方怎么定？1K 条 4:3:3 数据、按模型大小配奖励、工具故障率压到 5% 以下 | BV1tQea64E5C | 03:23 | 2026-09-25 | 已完成 | [G084-long-horizon-agent-recipe.md](episodes/G084-long-horizon-agent-recipe.md) |
+| 85 | SFT 里每个 token 都该学吗？Rho-1 超额损失选 token 与 ProFit 屏蔽低概率措辞 | BV1Wfea6QEJ9 | 03:41 | 2026-09-25 | 已完成 | [G085-sft-token-selection.md](episodes/G085-sft-token-selection.md) |
+| 86 | SFT 之后模型对提示词措辞更鲁棒了吗？1.7B/4B 降 54%~71%，8B 几乎为零 | BV1Wfea6QEWG | 02:55 | 2026-09-25 | 已完成 | [G086-sft-prompt-robustness.md](episodes/G086-sft-prompt-robustness.md) |
+| 87 | RL 的 batch 越大训练越快吗？√B 学习率缩放与「吞吐增益 > 样本惩罚」决策不等式 | BV1HceY6nEUr | 03:17 | 2026-09-24 | 已完成 | [G087-rl-batch-scaling.md](episodes/G087-rl-batch-scaling.md) |
+| 88 | 为什么 RL 后训练的 Agent 更爱作弊？同基座作弊率 23 倍，环境加固砍掉 87.7% | BV1sdea69ELG | 04:30 | 2026-09-24 | 已完成 | [G088-agent-cheating.md](episodes/G088-agent-cheating.md) |
+| 89 | 在线蒸馏需要多少数据？为什么 8 道难题就能追平 1.7 万条，驱动收益的是思维链长度 | BV1yZea6pEVy | 03:13 | 2026-09-24 | 已完成 | [G089-opd-data-efficiency.md](episodes/G089-opd-data-efficiency.md) |
+| 90 | 为什么用 SFT 教模型新知识，反而会让它更爱编？未知样本学得慢、学会后幻觉线性上升 | BV1Yrea6PEJH | 02:59 | 2026-09-24 | 已完成 | [G090-sft-new-knowledge-hallucination.md](episodes/G090-sft-new-knowledge-hallucination.md) |
+| 91 | RLVE：通过程序化生成、难度自适应的可验证环境，改进 RL 静态题库的信号衰减问题 | BV1Yrea6PE1R | 03:11 | 2026-09-24 | 已完成 | [G091-rlve.md](episodes/G091-rlve.md) |
+| 92 | ProRL：通过验证停滞时重置参考策略，改进 RL 训几百步就停滞的问题 | BV1akea6YEjg | 03:20 | 2026-09-24 | 已完成 | [G092-prorl.md](episodes/G092-prorl.md) |
+| 93 | 线上流量怎么变成后训练？T-Tech 三个 GRPO 专家各撞一种作弊与两段 SLERP 合并，32B 超过 235B | BV1eBea6KEWE | 03:49 | 2026-09-23 | 已完成 | [G093-traffic-to-posttraining.md](episodes/G093-traffic-to-posttraining.md) |
+| 94 | 探针裁判：从 1.7B 小模型隐藏层读 rubric 判断，为什么能超过 8B 生成式裁判 | BV15JeY6MEnz | 03:27 | 2026-09-23 | 已完成 | [G094-probe-judge.md](episodes/G094-probe-judge.md) |
+| 95 | LoRA 开梯度检查点后 loss 纹丝不动，根因是什么？enable_input_require_grads 与 use_reentrant | BV1ezea6vE4D | 03:20 | 2026-09-23 | 已完成 | [G095-lora-checkpoint-bug.md](episodes/G095-lora-checkpoint-bug.md) |
+| 96 | 思考与非思考模式怎么训进一个模型？空 think 块、/no_think 标记与涌现的思考预算 | BV18mea6FEt1 | 03:48 | 2026-09-23 | 已完成 | [G096-think-nonthink.md](episodes/G096-think-nonthink.md) |
+| 97 | 为什么 RL 比 SFT 更不容易遗忘？陈丹琦组消融：关键是 on-policy 数据而不是 KL | BV1oUeh6zEr8 | 03:35 | 2026-09-23 | 已完成 | [G097-rl-vs-sft-forgetting.md](episodes/G097-rl-vs-sft-forgetting.md) |
+| 98 | OTC-PO：把工具生产率写进奖励，为什么能让工具调用减 68.3% 而正确率不变 | BV1bUea6bE1M | 03:03 | 2026-09-23 | 已完成 | [G098-otc-po.md](episodes/G098-otc-po.md) |
+| 99 | OraRL：通过解耦策略基线与标准答案增益，改进 GRPO 塞入标准答案时的优势反转问题 | BV1hyea6wEyV | 04:21 | 2026-09-22 | 已完成 | [G099-orarl.md](episodes/G099-orarl.md) |
+| 100 | MOPD：用多教师在线蒸馏改进多域 RL 能力融合的跷跷板问题，Open-MOPD 从 35.6% 修到 83.4% | BV1hyea6wELy | 03:29 | 2026-09-22 | 已完成 | [G100-mopd.md](episodes/G100-mopd.md) |
 | 101 | 训推不一致为什么是优化问题而不是精度问题？按回答长度激增触发学习率减半 | BV1h1ea6hEhW | 03:51 | 2026-09-22 | 待处理 | |
 | 102 | RLVR 该不该给格式奖励？FrameThinker 消融与 Open-Reasoner-Zero 无格式分实践 | BV1V7eY6zEeZ | 04:04 | 2026-09-22 | 待处理 | |
 | 103 | BCIT：通过绑定来源上下文与小预算试跑，改进后训练配方跨基座复用的有害迁移问题 | BV1ijeY6gELo | 03:48 | 2026-09-22 | 待处理 | |
