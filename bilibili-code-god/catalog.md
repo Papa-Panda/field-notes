@@ -345,26 +345,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 337 | RM 分数涨人类却摇头？Goodhart 定律与 Reward Overoptimization 讲透 | BV1RX3R6yEh3 | 03:56 | 2026-08-04 | 已完成 | [G337-goodhart-reward-overopt.md](episodes/G337-goodhart-reward-overopt.md) |
 | 338 | Elo 评分与 Bradley-Terry：Chatbot Arena 排名系统讲透 | BV17U3R6EENL | 04:22 | 2026-08-03 | 已完成 | [G338-elo-bradley-terry.md](episodes/G338-elo-bradley-terry.md) |
 | 339 | DeepseekMoE 细粒度 + 共享专家：凭什么比标准 MoE 强 10-15%？ | BV1oS3R62ESL | 04:14 | 2026-08-03 | 已完成 | [G339-deepseek-moe.md](episodes/G339-deepseek-moe.md) |
-| 340 | 1952 年的公式撑起 ChatGPT：Bradley-Terry 模型讲透 | BV1iS3R6mEdV | 03:45 | 2026-08-03 | 待处理 | |
-| 341 | RLHF 让模型变乖，也让它变笨 — PPO-ptx 解法详解 | BV1cH3d6dETE | 03:52 | 2026-08-03 | 待处理 | |
-| 342 | ALiBi 注意力线性偏置：不存位置向量，反而比 RoPE 外推更好？ | BV1zW3d6WE9z | 04:05 | 2026-08-02 | 待处理 | |
-| 343 | TTFT vs ITL：推理体验的两个 SLO，优化路径完全不同 | BV1VxgR6gEmj | 04:55 | 2026-07-31 | 待处理 | |
-| 344 | 7B 在 H100 上理论极限 TPS 是多少？从 HBM 带宽推公式 | BV1e4gR6zEfR | 04:47 | 2026-07-31 | 待处理 | |
-| 345 | TD 时序差分：MC 采样 + DP bootstrap，SARSA / Q-learning / Actor-Critic 全是它的实例 | BV1uvgR6PEin | 03:35 | 2026-07-31 | 待处理 | |
-| 346 | SARSA vs Q-learning：一个绕悬崖一个贴悬崖，On/Off-Policy 本质 | BV18vgR6PEbf | 03:37 | 2026-07-31 | 待处理 | |
-| 347 | Safe Softmax：一行 exp(100) 让模型崩溃，FlashAttention 的数学基石 | BV1bigR6YEpq | 04:14 | 2026-07-30 | 待处理 | |
-| 348 | RoPE 旋转位置编码：为什么点积只看相对距离？一个视频讲透 | BV1gigR6YEiz | 03:22 | 2026-07-30 | 待处理 | |
-| 349 | REINFORCE Leave-One-Out：不要 Critic、不要 greedy 假想敌，同组 response 互卷就够了 | BV13agR6KEDw | 04:04 | 2026-07-30 | 待处理 | |
-| 350 | ReMax：PPO 的轻量替代，砍 Critic 用 greedy 解码当 baseline | BV1gYgR6vEt4 | 03:26 | 2026-07-30 | 待处理 | |
-| 351 | RadixAttention：SGLang 的招牌技术，一棵 Radix Tree 让吞吐提升 2-5× | BV1gYgR6vEas | 04:40 | 2026-07-30 | 待处理 | |
-| 352 | Prefill vs Decode：一个拼算力一个拼带宽，推理框架的灵魂 | BV1JjgR6jEgH | 04:03 | 2026-07-29 | 待处理 | |
-| 353 | PD 分离部署：Mooncake / DistServe / Splitwise 三家方案讲透 | BV1J7gR61EgA | 03:27 | 2026-07-29 | 待处理 | |
-| 354 | 逻辑回归：名字叫回归 本质是分类——Sigmoid / 决策边界 / 交叉熵 一次讲透 | BV177gR61EJX | 04:23 | 2026-07-29 | 待处理 | |
-| 355 | L1 vs L2 正则化：为什么 L1 产生稀疏解？几何/梯度/贝叶斯三视角 | BV1nVgR6EExs | 04:01 | 2026-07-28 | 待处理 | |
-| 356 | K-means 聚类讲透：两步迭代 + 肘部法则 + EM 视角 | BV1E5gR6mEdn | 03:39 | 2026-07-28 | 待处理 | |
-| 357 | 决策树三兄弟 ID3 / C4.5 / CART：划分标准、结构差异、工程选用 | BV1J5gR6mEuu | 04:39 | 2026-07-28 | 待处理 | |
-| 358 | Continuous Batching：同样 8 张卡，凭啥 vLLM 比 HF 快 24 倍？ | BV1ipgR6GE1K | 04:22 | 2026-07-28 | 待处理 | |
-| 359 | Continuous Batching：同样 8 张卡，凭啥 vLLM 比 HF 快 24 倍？（重发） | BV1jpgR6GEM1 | 04:22 | 2026-07-28 | 待处理 | |
+| 340 | 1952 年的公式撑起 ChatGPT：Bradley-Terry 模型讲透 | BV1iS3R6mEdV | 03:45 | 2026-08-03 | 已完成 | [G340-bradley-terry.md](episodes/G340-bradley-terry.md) |
+| 341 | RLHF 让模型变乖，也让它变笨 — PPO-ptx 解法详解 | BV1cH3d6dETE | 03:52 | 2026-08-03 | 已完成 | [G341-alignment-tax-ppo-ptx.md](episodes/G341-alignment-tax-ppo-ptx.md) |
+| 342 | ALiBi 注意力线性偏置：不存位置向量，反而比 RoPE 外推更好？ | BV1zW3d6WE9z | 04:05 | 2026-08-02 | 已完成 | [G342-alibi.md](episodes/G342-alibi.md) |
+| 343 | TTFT vs ITL：推理体验的两个 SLO，优化路径完全不同 | BV1VxgR6gEmj | 04:55 | 2026-07-31 | 已完成 | [G343-ttft-itl.md](episodes/G343-ttft-itl.md) |
+| 344 | 7B 在 H100 上理论极限 TPS 是多少？从 HBM 带宽推公式 | BV1e4gR6zEfR | 04:47 | 2026-07-31 | 已完成 | [G344-h100-tps-limit.md](episodes/G344-h100-tps-limit.md) |
+| 345 | TD 时序差分：MC 采样 + DP bootstrap，SARSA / Q-learning / Actor-Critic 全是它的实例 | BV1uvgR6PEin | 03:35 | 2026-07-31 | 已完成 | [G345-td-learning.md](episodes/G345-td-learning.md) |
+| 346 | SARSA vs Q-learning：一个绕悬崖一个贴悬崖，On/Off-Policy 本质 | BV18vgR6PEbf | 03:37 | 2026-07-31 | 已完成 | [G346-sarsa-vs-qlearning.md](episodes/G346-sarsa-vs-qlearning.md) |
+| 347 | Safe Softmax：一行 exp(100) 让模型崩溃，FlashAttention 的数学基石 | BV1bigR6YEpq | 04:14 | 2026-07-30 | 已完成 | [G347-safe-softmax.md](episodes/G347-safe-softmax.md) |
+| 348 | RoPE 旋转位置编码：为什么点积只看相对距离？一个视频讲透 | BV1gigR6YEiz | 03:22 | 2026-07-30 | 已完成 | [G348-rope.md](episodes/G348-rope.md) |
+| 349 | REINFORCE Leave-One-Out：不要 Critic、不要 greedy 假想敌，同组 response 互卷就够了 | BV13agR6KEDw | 04:04 | 2026-07-30 | 已完成 | [G349-rloo.md](episodes/G349-rloo.md) |
+| 350 | ReMax：PPO 的轻量替代，砍 Critic 用 greedy 解码当 baseline | BV1gYgR6vEt4 | 03:26 | 2026-07-30 | 已完成 | [G350-remax.md](episodes/G350-remax.md) |
+| 351 | RadixAttention：SGLang 的招牌技术，一棵 Radix Tree 让吞吐提升 2-5× | BV1gYgR6vEas | 04:40 | 2026-07-30 | 已完成 | [G351-radix-attention.md](episodes/G351-radix-attention.md) |
+| 352 | Prefill vs Decode：一个拼算力一个拼带宽，推理框架的灵魂 | BV1JjgR6jEgH | 04:03 | 2026-07-29 | 已完成 | [G352-prefill-vs-decode.md](episodes/G352-prefill-vs-decode.md) |
+| 353 | PD 分离部署：Mooncake / DistServe / Splitwise 三家方案讲透 | BV1J7gR61EgA | 03:27 | 2026-07-29 | 已完成 | [G353-pd-disaggregation.md](episodes/G353-pd-disaggregation.md) |
+| 354 | 逻辑回归：名字叫回归 本质是分类——Sigmoid / 决策边界 / 交叉熵 一次讲透 | BV177gR61EJX | 04:23 | 2026-07-29 | 已完成 | [G354-logistic-regression.md](episodes/G354-logistic-regression.md) |
+| 355 | L1 vs L2 正则化：为什么 L1 产生稀疏解？几何/梯度/贝叶斯三视角 | BV1nVgR6EExs | 04:01 | 2026-07-28 | 已完成 | [G355-l1-l2-regularization.md](episodes/G355-l1-l2-regularization.md) |
+| 356 | K-means 聚类讲透：两步迭代 + 肘部法则 + EM 视角 | BV1E5gR6mEdn | 03:39 | 2026-07-28 | 已完成 | [G356-kmeans.md](episodes/G356-kmeans.md) |
+| 357 | 决策树三兄弟 ID3 / C4.5 / CART：划分标准、结构差异、工程选用 | BV1J5gR6mEuu | 04:39 | 2026-07-28 | 已完成 | [G357-decision-trees.md](episodes/G357-decision-trees.md) |
+| 358 | Continuous Batching：同样 8 张卡，凭啥 vLLM 比 HF 快 24 倍？ | BV1ipgR6GE1K | 04:22 | 2026-07-28 | 已完成 | [G358-continuous-batching.md](episodes/G358-continuous-batching.md) |
+| 359 | Continuous Batching：同样 8 张卡，凭啥 vLLM 比 HF 快 24 倍？（重发） | BV1jpgR6GEM1 | 04:22 | 2026-07-28 | 已完成 | [G359-continuous-batching-2.md](episodes/G359-continuous-batching-2.md) |
 | 360 | Chunked Prefill：8000 token prompt 一进，Decode 集体卡 1 秒？ | BV1jWgR6rEK9 | 04:27 | 2026-07-27 | 待处理 | |
 | 361 | 显卡摸鱼的元凶：GPipe 挤气泡 vs PipeDream 1F1B | BV15WgR6rEfr | 04:11 | 2026-07-27 | 待处理 | |
 | 362 | 打破参数服务器瓶颈：PyTorch DDP 的底层核心 | BV1Qggd6uE9u | 04:14 | 2026-07-27 | 待处理 | |
