@@ -166,26 +166,26 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 158 | reward 归一化详解：running mean-std、batch 归一化与三个常见坑 | BV1CDb76AEk8 | 02:14 | 2026-09-10 | 已完成 | [G158-reward-normalization.md](episodes/G158-reward-normalization.md) |
 | 159 | rollout 是 RL 训练的瓶颈：vLLM 加速与异步训练详解 | BV1N1b76qEif | 03:14 | 2026-09-10 | 已完成 | [G159-rollout-bottleneck-vllm.md](episodes/G159-rollout-bottleneck-vllm.md) |
 | 160 | entropy bonus 详解：系数怎么设、衰减调度怎么做、熵坍缩怎么救 | BV1Tmb76KEFh | 03:16 | 2026-09-10 | 已完成 | [G160-entropy-bonus.md](episodes/G160-entropy-bonus.md) |
-| 161 | batch 组织策略：难度分布、类型平衡与 rollout 数量 | BV1Kmb76KEqu | 01:50 | 2026-09-10 | 待处理 | |
-| 162 | reward hacking 详解：Goodhart 定律与五种实用防御手段 | BV16Rb768EZo | 03:15 | 2026-09-10 | 待处理 | |
-| 163 | RFT 拒绝采样微调详解：性价比最高的推理能力提升方法 | BV1kdb76fEAX | 02:57 | 2026-09-10 | 待处理 | |
-| 164 | 推理能力蒸馏三法：CoT 数据、on-policy 与 SFT + RLVR | BV1cob76FERQ | 01:59 | 2026-09-09 | 待处理 | |
-| 165 | QAT vs PTQ：fake quantization、直通估计器与选型标准 | BV1pQb76YE6q | 02:35 | 2026-09-09 | 待处理 | |
-| 166 | PPO 三大超参详解：clip range、KL coefficient、GAE lambda | BV1w9b76wE6Z | 03:13 | 2026-09-09 | 待处理 | |
-| 167 | 并行策略选型决策树：DDP、ZeRO、张量并行、流水线并行 | BV1w9b76wE1c | 03:05 | 2026-09-09 | 待处理 | |
-| 168 | 训练 right padding、推理 left padding：搞混就是 silent bug | BV1cubL6WEQi | 01:51 | 2026-09-09 | 待处理 | |
-| 169 | 多轮对话训练详解：上下文拼接、loss mask 与长对话截断 | BV1wgbL6XE3k | 02:59 | 2026-09-08 | 待处理 | |
-| 170 | loss 权重平衡三法：手动调权、不确定性加权与 GradNorm | BV1cgbL6XEYc | 01:49 | 2026-09-08 | 待处理 | |
-| 171 | 专家忙闲不均怎么治？aux loss 调参与 DeepSeek-V3 动态偏置 | BV1kKbL6xEm1 | 03:14 | 2026-09-08 | 待处理 | |
-| 172 | ZeRO Stage 怎么选、offload 怎么开：config.json 手把手 | BV1WTbL6REnE | 02:15 | 2026-09-08 | 待处理 | |
-| 173 | Mixture of Depths 详解：深度方向的稀疏，与 MoE 有何不同 | BV1WTbL6REiT | 02:17 | 2026-09-08 | 待处理 | |
-| 174 | LR Finder 详解：怎么画、怎么读、怎么和 warmup 配合 | BV1fLbL6EEFL | 02:58 | 2026-09-08 | 待处理 | |
-| 175 | Loss Scaling 与 GradScaler 详解：FP16 下溢怎么救，BF16 为何不用 | BV1JjbL6UEEe | 02:58 | 2026-09-07 | 待处理 | |
-| 176 | 4K 扩到 128K：PI、NTK-aware、YaRN 三种外推方法与分阶段训练 | BV1JjbL6UEPF | 03:04 | 2026-09-07 | 待处理 | |
-| 177 | 用 Logit Lens 看训练到底改善了什么：中间层表示 vs 输出映射 | BV1cGbL6HEzH | 02:26 | 2026-09-07 | 待处理 | |
-| 178 | Label Smoothing 在大模型上为什么基本不用？ | BV1cVbL6DEHz | 01:52 | 2026-09-07 | 待处理 | |
-| 179 | Self-Instruct 与 Evol-Instruct：指令微调数据的构造与三层过滤 | BV1fVbL6SECM | 02:02 | 2026-09-07 | 待处理 | |
-| 180 | RLVR 数据准备全流程：格式、冷启动、反思 token 与课程学习 | BV1uob56aEMT | 03:02 | 2026-09-07 | 待处理 | |
+| 161 | batch 组织策略：难度分布、类型平衡与 rollout 数量 | BV1Kmb76KEqu | 01:50 | 2026-09-10 | 已完成 | [G161-batch-organization.md](episodes/G161-batch-organization.md) |
+| 162 | reward hacking 详解：Goodhart 定律与五种实用防御手段 | BV16Rb768EZo | 03:15 | 2026-09-10 | 已完成 | [G162-reward-hacking.md](episodes/G162-reward-hacking.md) |
+| 163 | RFT 拒绝采样微调详解：性价比最高的推理能力提升方法 | BV1kdb76fEAX | 02:57 | 2026-09-10 | 已完成 | [G163-rft-rejection-sampling.md](episodes/G163-rft-rejection-sampling.md) |
+| 164 | 推理能力蒸馏三法：CoT 数据、on-policy 与 SFT + RLVR | BV1cob76FERQ | 01:59 | 2026-09-09 | 已完成 | [G164-reasoning-distillation.md](episodes/G164-reasoning-distillation.md) |
+| 165 | QAT vs PTQ：fake quantization、直通估计器与选型标准 | BV1pQb76YE6q | 02:35 | 2026-09-09 | 已完成 | [G165-qat-vs-ptq.md](episodes/G165-qat-vs-ptq.md) |
+| 166 | PPO 三大超参详解：clip range、KL coefficient、GAE lambda | BV1w9b76wE6Z | 03:13 | 2026-09-09 | 已完成 | [G166-ppo-hyperparams.md](episodes/G166-ppo-hyperparams.md) |
+| 167 | 并行策略选型决策树：DDP、ZeRO、张量并行、流水线并行 | BV1w9b76wE1c | 03:05 | 2026-09-09 | 已完成 | [G167-parallelism-decision-tree.md](episodes/G167-parallelism-decision-tree.md) |
+| 168 | 训练 right padding、推理 left padding：搞混就是 silent bug | BV1cubL6WEQi | 01:51 | 2026-09-09 | 已完成 | [G168-padding-left-right.md](episodes/G168-padding-left-right.md) |
+| 169 | 多轮对话训练详解：上下文拼接、loss mask 与长对话截断 | BV1wgbL6XE3k | 02:59 | 2026-09-08 | 已完成 | [G169-multiturn-training.md](episodes/G169-multiturn-training.md) |
+| 170 | loss 权重平衡三法：手动调权、不确定性加权与 GradNorm | BV1cgbL6XEYc | 01:49 | 2026-09-08 | 已完成 | [G170-loss-weight-balancing.md](episodes/G170-loss-weight-balancing.md) |
+| 171 | 专家忙闲不均怎么治？aux loss 调参与 DeepSeek-V3 动态偏置 | BV1kKbL6xEm1 | 03:14 | 2026-09-08 | 已完成 | [G171-moe-load-balancing.md](episodes/G171-moe-load-balancing.md) |
+| 172 | ZeRO Stage 怎么选、offload 怎么开：config.json 手把手 | BV1WTbL6REnE | 02:15 | 2026-09-08 | 已完成 | [G172-zero-offload-config.md](episodes/G172-zero-offload-config.md) |
+| 173 | Mixture of Depths 详解：深度方向的稀疏，与 MoE 有何不同 | BV1WTbL6REiT | 02:17 | 2026-09-08 | 已完成 | [G173-mixture-of-depths.md](episodes/G173-mixture-of-depths.md) |
+| 174 | LR Finder 详解：怎么画、怎么读、怎么和 warmup 配合 | BV1fLbL6EEFL | 02:58 | 2026-09-08 | 已完成 | [G174-lr-finder.md](episodes/G174-lr-finder.md) |
+| 175 | Loss Scaling 与 GradScaler 详解：FP16 下溢怎么救，BF16 为何不用 | BV1JjbL6UEEe | 02:58 | 2026-09-07 | 已完成 | [G175-loss-scaling-gradscaler.md](episodes/G175-loss-scaling-gradscaler.md) |
+| 176 | 4K 扩到 128K：PI、NTK-aware、YaRN 三种外推方法与分阶段训练 | BV1JjbL6UEPF | 03:04 | 2026-09-07 | 已完成 | [G176-context-extension-pi-ntk-yarn.md](episodes/G176-context-extension-pi-ntk-yarn.md) |
+| 177 | 用 Logit Lens 看训练到底改善了什么：中间层表示 vs 输出映射 | BV1cGbL6HEzH | 02:26 | 2026-09-07 | 已完成 | [G177-logit-lens.md](episodes/G177-logit-lens.md) |
+| 178 | Label Smoothing 在大模型上为什么基本不用？ | BV1cVbL6DEHz | 01:52 | 2026-09-07 | 已完成 | [G178-label-smoothing.md](episodes/G178-label-smoothing.md) |
+| 179 | Self-Instruct 与 Evol-Instruct：指令微调数据的构造与三层过滤 | BV1fVbL6SECM | 02:02 | 2026-09-07 | 已完成 | [G179-self-instruct-evol-instruct.md](episodes/G179-self-instruct-evol-instruct.md) |
+| 180 | RLVR 数据准备全流程：格式、冷启动、反思 token 与课程学习 | BV1uob56aEMT | 03:02 | 2026-09-07 | 已完成 | [G180-rlvr-data-prep.md](episodes/G180-rlvr-data-prep.md) |
 | 181 | 梯度噪声尺度：用一百步小实验算出最优 batch size | BV1bfb56cENP | 02:03 | 2026-09-06 | 待处理 | |
 | 182 | GPU 利用率周期性归零：IO 瓶颈的定位与优化 | BV1xfb56cEdo | 03:14 | 2026-09-06 | 待处理 | |
 | 183 | FP8 训练实操：E4M3/E5M2 选型、分层策略与 Transformer Engine 配置 | BV1D9b56eEv4 | 02:02 | 2026-09-06 | 待处理 | |

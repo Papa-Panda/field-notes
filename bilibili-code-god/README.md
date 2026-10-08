@@ -16,7 +16,8 @@
 - 批 5（#81–#100）：20/20 完成。
 - 批 6（#101–#120）：20/20 完成。
 - 批 7（#121–#140）：20/20 完成。
-- 批 8（#141–#160）：20/20 完成。累计 160/515。
+- 批 8（#141–#160）：20/20 完成。
+- 批 9（#161–#180）：20/20 完成（其中 4 条首轮 harvest 串台，re-harvest 补齐）。累计 180/515。
 
 ## 已完成纪要
 
@@ -182,3 +183,23 @@
 | G158 | reward 归一化 |
 | G159 | rollout 瓶颈：vLLM + 异步 |
 | G160 | entropy bonus 与熵坍缩 |
+| G161 | RL batch 组织策略 |
+| G162 | reward hacking 与 Goodhart 定律 |
+| G163 | RFT 拒绝采样微调 |
+| G164 | 推理能力蒸馏三法 |
+| G165 | QAT vs PTQ |
+| G166 | PPO 三大超参 |
+| G167 | 并行策略选型决策树 |
+| G168 | padding 方向：训练 right / 推理 left |
+| G169 | 多轮对话训练与 loss mask |
+| G170 | loss 权重平衡三法 |
+| G171 | MoE 忙闲不均：aux loss 与动态偏置 |
+| G172 | ZeRO Stage 与 offload 配置 |
+| G173 | Mixture of Depths |
+| G174 | LR Finder |
+| G175 | Loss Scaling 与 GradScaler |
+| G176 | 上下文扩展：PI / NTK / YaRN |
+| G177 | Logit Lens 训练诊断 |
+| G178 | Label Smoothing 为何不用 |
+| G179 | Self-Instruct 与 Evol-Instruct |
+| G180 | RLVR 数据准备全流程 |
