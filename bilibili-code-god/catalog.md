@@ -1,7 +1,7 @@
 # 投稿目录 — 古希腊掌管代码的神
 
 UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili.com/3632305977428186 ）
-共 515 个投稿视频，2026-10-08 浏览器实测枚举（按发布时间倒序）。状态：待处理 / 要点已提炼 / 无字幕。
+共 517 个投稿视频，2026-10-08 浏览器实测枚举 515 个（按发布时间倒序）；#516、#517 为快照后新发布、2026-10-08 追加（实际发布时间最新，编号顺延、行追加在表尾）。状态：待处理 / 要点已提炼 / 无字幕。
 注：#313 的 BV 与 #104 重复（枚举时疑似串号），待核。
 
 | No | 标题 | BV | 时长 | 日期 | 状态 | 纪要 |
@@ -521,3 +521,5 @@ UP：古希腊掌管代码的神（mid 3632305977428186，https://space.bilibili
 | 513 | QwenVL到Qwen3.5技术改进 | BV1GpXaBGEoE | 03:36 | 2026-03-29 | 已完成 | [G513-qwenvl-qwen35.md](episodes/G513-qwenvl-qwen35.md) |
 | 514 | 大模型面试：为什么现在的大模型都是Decoder-Only架构？ | BV1uiXmBUEfp | 03:41 | 2026-03-28 | 已完成 | [G514-decoder-only.md](episodes/G514-decoder-only.md) |
 | 515 | 大模型KV Cache原理详解 | BV12fXyBKEor | 01:51 | 2026-03-28 | 已完成 | [G515-kv-cache-basics.md](episodes/G515-kv-cache-basics.md) |
+| 516 | 【Agentic RL】TITO：通过 token 进 token 出改进多轮 Agent RL 的重新分词漂移，为什么重要性采样修不了 | BV1utHn6cEJF | 04:07 | 2026-10-08 | 已完成 | [G516-tito-token-in-token-out.md](episodes/G516-tito-token-in-token-out.md) |
+| 517 | 【RLVR 奖励设计】GAR：通过梯度与参考解的余弦相似度，改进 0/1 奖励分不出好坏的平坦奖励问题 | BV1VJHn6iEiz | 03:53 | 2026-10-09 | 已完成 | [G517-gar-rlvr-reward.md](episodes/G517-gar-rlvr-reward.md) |

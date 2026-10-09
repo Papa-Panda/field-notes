@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G516 — TITO：通过 token 进 token 出改进多轮 Agent RL 的重新分词漂移，为什么重要性采样修不了</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#ffffff; --ink:#23272f; --muted:#6b7280;
+  --accent:#1e40af; --accent-ink:#1e3a8a; --accent-bg:#eff6ff;
+  --border:#e8e4dc; --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;padding:40px 36px}
+.kicker{display:inline-block;font-size:13px;letter-spacing:.1em;background:rgba(255,255,255,.18);padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.hero h1{margin:0 0 10px;font-size:29px;line-height:1.45;font-weight:700}
+.hero .sub{opacity:.88;font-size:14.5px;margin:0}
+.toc{position:sticky;top:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:12px 18px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,.05);z-index:10}
+.toc summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toc a{font-size:13.5px;color:var(--accent-ink);background:var(--accent-bg);padding:4px 12px;border-radius:999px;text-decoration:none}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px 34px;margin:0 0 18px;box-shadow:0 1px 6px rgba(0,0,0,.03);scroll-margin-top:80px}
+.sec h2{margin:0 0 18px;font-size:21px;display:flex;align-items:center;gap:12px;line-height:1.5}
+.sec h2 .n{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--accent-bg);
+  color:var(--accent-ink);font-size:15px;align-items:center;justify-content:center;flex:none;font-weight:700}
+.sec h3{font-size:17.5px;margin:26px 0 10px}
+.sec h4{font-size:16px;margin:20px 0 8px}
+.sec p{margin:0 0 14px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:24px}
+.sec li{margin-bottom:10px}
+.sec li::marker{color:var(--accent);font-weight:600}
+.sec-lede{background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);border-color:#bfdbfe}
+.sec-lede p{font-size:18px}
+.sec-qa ol{list-style:none;padding:0;counter-reset:q}
+.sec-qa ol>li{counter-increment:q;background:var(--bg);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px 18px 66px;position:relative;margin-bottom:14px}
+.sec-qa ol>li::before{content:counter(q);position:absolute;left:20px;top:20px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;
+  justify-content:center;font-size:15px}
+.sec blockquote{border-left:4px solid var(--accent);background:var(--accent-bg);border-radius:0 12px 12px 0;
+  padding:14px 22px;margin:0 0 16px;color:var(--accent-ink);font-size:17px}
+.sec blockquote p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px;line-height:1.6}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f4f6;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fafafa}
+a{color:var(--accent)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:.88em}
+pre{background:#1f2937;color:#e5e7eb;border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;color:inherit}
+.katex{font-size:1.05em}
+.katex-display{margin:18px 0;overflow-x:auto;overflow-y:hidden}
+.mermaid{display:flex;justify-content:center;margin:10px 0 20px;overflow-x:auto;
+  background:#fbfcfe;border:1px solid var(--border);border-radius:12px;padding:18px 12px}
+.mermaid svg{max-width:100%;height:auto}
+.tag{display:inline-block;font-size:12.5px;background:#f3f4f6;border:1px solid var(--border);
+  border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:2px;margin:4px 0 10px}
+.meta-grid{display:grid;grid-template-columns:132px 1fr;gap:10px 14px;font-size:15px;margin:2px 0 8px;align-items:start}
+.meta-grid dt{color:var(--muted);font-weight:600}
+.meta-grid dd{margin:0;line-height:1.7;overflow-wrap:anywhere}
+.viz{margin:8px 0 22px}
+.stat-strip{display:flex;flex-wrap:wrap;gap:12px}
+.stat{flex:1 1 150px;min-width:128px;background:linear-gradient(180deg,#eff6ff 0%,#ffffff 100%);
+  border:1px solid #bfdbfe;border-radius:12px;padding:14px 14px;text-align:center}
+.stat .v{font-size:25px;font-weight:800;color:var(--accent-ink);line-height:1.35}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.fnode{flex:1 1 0;min-width:104px;background:var(--accent-bg);border:1.5px solid #bfdbfe;border-radius:12px;
+  padding:10px 10px;font-size:13.5px;font-weight:600;color:var(--accent-ink);text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.farrow{align-self:center;flex:0 0 auto;color:var(--accent);font-weight:800;font-size:19px;padding:2px 5px}
+.viz-bars{display:flex;flex-direction:column;gap:10px}
+.barrow{display:grid;grid-template-columns:minmax(80px,150px) 1fr 72px;gap:10px;align-items:center;font-size:14px}
+.barlabel{text-align:right;font-weight:600;line-height:1.4;overflow:hidden}
+.bartrack{background:#e8eefc;border-radius:999px;height:22px;overflow:hidden}
+.barfill{background:linear-gradient(90deg,#60a5fa,#1e40af);height:100%;border-radius:999px}
+.barval{font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vscol{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.vscol h4{margin:0 0 10px;font-size:15px}
+.vscol.vs-a h4{color:var(--accent-ink)}
+.vscol.vs-b h4{color:#7c3aed}
+.vscol ul{margin:0;padding-left:20px}
+.vscol li{margin-bottom:8px;font-size:14.5px}
+.foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:36px;line-height:2}
+.foot a{color:var(--accent)}
+@media(max-width:640px){.sec{padding:22px 20px}.hero{padding:30px 24px}.hero h1{font-size:23px}body{font-size:16px}
+.vs{grid-template-columns:1fr}.barrow{grid-template-columns:86px 1fr 62px}.meta-grid{grid-template-columns:104px 1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">B站 · 古希腊掌管代码的神</span>
+    <h1>G516 — TITO：通过 token 进 token 出改进多轮 Agent RL 的重新分词漂移，为什么重要性采样修不了</h1>
+    <p class="sub">多轮 Agent RL 里每轮把文本重新分词，会让梯度打在模型从没采样过的 token 序列上——这是 token 级的 off-policy，重要性采样修不了，只能用 TIT… · 完整阅读版 · 由 GitHub NOTES.md 生成</p>
+  </header>
+  <details class="toc" open>
+    <summary>目录（点击跳转）</summary>
+    <nav><a href="#sec-1">元信息</a><a href="#sec-2">一句话总结</a><a href="#sec-3">核心</a><a href="#sec-4">关键数字</a><a href="#sec-5">可迁移</a><a href="#sec-6">疑问 / 下一步</a></nav>
+  </details>
+  <section class="sec" id="sec-0">
+<blockquote class="pq">
+<p>📖 阅读版：https://papa-panda.github.io/field-notes/bilibili-code-god/episodes/G516-tito-token-in-token-out.html</p>
+</blockquote>
+</section>
+<section class="sec" id="sec-1"><h2><span class="n">1</span>元信息</h2>
+<dl class="meta-grid"><dt>编号</dt><dd>G516</dd><dt>标题</dt><dd>TITO：通过 token 进 token 出改进多轮 Agent RL 的重新分词漂移，为什么重要性采样修不了</dd><dt>BV</dt><dd>BV1utHn6cEJF</dd><dt>时长</dt><dd>04:07</dd><dt>发布日期</dt><dd>2026-10-08</dd><dt>来源</dt><dd>Bilibili UP「古希腊掌管代码的神」</dd><dt>相关论文/工作</dt><dd>vLLM、Hugging Face、LMSYS 在 2025–2026 年关于多轮 Agent RL 训推一致性的系列博客；TITO（Token-In Token-Out）；vLLM 0.10.2 的 <code>return_token_ids</code> 接口</dd></dl>
+</section>
+<section class="sec sec-lede" id="sec-2"><h2><span class="n">2</span>一句话总结</h2>
+<p>多轮 Agent RL 里每轮把文本重新分词，会让梯度打在模型从没采样过的 token 序列上——这是 token 级的 off-policy，重要性采样修不了，只能用 TITO 从源头保证「训练看到的 token 就是采样出的 token」。</p>
+</section>
+<section class="sec" id="sec-3"><h2><span class="n">3</span>核心</h2><div class="viz viz-flow flow"><div class="fnode">模型生成 token</div><div class="farrow">→</div><div class="fnode">解码成文本</div><div class="farrow">→</div><div class="fnode">解析出工具调用</div><div class="farrow">→</div><div class="fnode">工具结果拼进消息列表</div><div class="farrow">→</div><div class="fnode">聊天模板把整段对话重新渲染</div><div class="farrow">→</div><div class="fnode">重新分词</div></div>
+<h3>1. 问题/背景</h3>
+<p>模型只认 token 编号：一句话先被 tokenizer 切成 token 序列，模型输出的也是 token，最后再拼回文字。关键的不对称是：编码是确定的（总选最长匹配那一种切法），但解码是多对一的——同一个字符串可以由多种 token 序列拼出来，拼回去文字完全一样。单轮 RL 没有这个问题：推理引擎采样出一串 token，训练引擎就在同一串 token 上算概率、算梯度，两边看到的是同一个东西。</p>
+<h3>2. 机制/方法</h3>
+<p>多轮 Agent 的循环多了一道「文本往返」：模型生成 token → 解码成文本 → 解析出工具调用 → 工具结果拼进消息列表 → 聊天模板把整段对话重新渲染 → 重新分词 → 送进下一轮，也送进训练。只要中间任何一步的切分和原来不同，训练看到的序列就不再是模型采样的那一串。具体有四种漂移：</p>
+<ul>
+<li><strong>解码再编码</strong>：模型采样时的切分（例如把一个词切成两段）与重新编码时的规范切分不同，文字一样、token 完全不同。</li>
+<li><strong>模板重渲染有损</strong>：模型输出的紧凑 JSON 工具调用被解析成结构体再渲染回去，多了空格，token 就变了。</li>
+<li><strong>思考内容被删</strong>：某些推理模型的模板会在最后一条用户消息之前删掉此前的思考内容，Agent 注入工具结果或用户消息后，模型刚采样出的推理 token 被抹掉。</li>
+<li><strong>特殊 token 复用</strong>：同一个特殊 token 既当结束符又当下一条消息的起始符，角色一换，边界 token 就错位。</li>
+</ul>
+<p>为什么重要性采样修不了：它修的是「同一串 token，训练引擎与推理引擎算出的概率略有差别」，用概率比去校正。而这里是 token 本身对不上——训练引擎在给一串模型从没采样过的序列算概率，这个概率比没有任何意义。这是 token 级的 off-policy，无法事后修正，只能从源头避免。</p>
+<p>解法 TITO（Token-In Token-Out）三条纪律：</p>
+<ol>
+<li>维护一个 token 缓冲区作为唯一真源，消息列表只用来做路由，永远不重新编码已经解码过的 token。</li>
+<li>工具结果用增量拼接：先渲染不含工具结果的前缀，再渲染含结果的完整版，两者的差值就是新增 token，直接追加。</li>
+<li>聊天模板必须满足前缀保留性：加一条消息之后，前面的 token 不能变。</li>
+</ol>
+<p>基础设施已跟上：vLLM 0.10.2 起，OpenAI 兼容接口加 <code>return_token_ids</code> 参数即可拿到原始 token；请求推理引擎时打开该开关，响应的 <code>prompt_token_ids</code> 与 <code>token_ids</code> 直接供训练使用；拼接工具结果时不用 <code>apply_chat_template</code> 整段重来，而是前缀与完整版各渲染一次、取差值追加。已有训练框架把这套做成默认并带校验器（特殊 token 逐个对齐、普通文本段落解码后再比较）。</p>
+<h3>3. 关键证据或数字</h3>
+<p>后果直接体现在曲线上：用重新编码的文本训练，奖励曲线上下抖动、loss 偶尔尖峰，且代码一行不报错；直接用推理引擎返回的 token 训练，曲线稳稳上升（vLLM 博客的对比图）。前缀保留性方面，Hugging Face 实测 19 个开源模型，18 个直接通过，只有 Qwen3 需要改一行模板。</p>
+<h3>4. 结论/判断</h3>
+<p>重新分词漂移是多轮 Agent RL 的隐形炸弹：症状（曲线抖动）离根因（token 对不上）很远，又不抛任何错误。排查训推一致性时，顺序应该是先确认 token 对不对得上，再谈概率比修不修得正。</p>
+</section>
+<section class="sec" id="sec-4"><h2><span class="n">4</span>关键数字</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>重新分词训练</th>
+<th>TITO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>奖励曲线</td>
+<td>上下抖动、loss 偶尔尖峰</td>
+<td>稳定上升</td>
+</tr>
+<tr>
+<td>聊天模板前缀保留性（19 个开源模型实测）</td>
+<td>18 个通过</td>
+<td>Qwen3 改一行模板后通过</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="sec" id="sec-5"><h2><span class="n">5</span>可迁移</h2>
+<ul>
+<li>做多轮 Agent RL 框架时，把「采样 token 序列」当作贯穿 rollout 与训练的唯一真源：工具结果走差值拼接、模板先验前缀保留性，别让任何一轮出现「文本 → 重新分词」的往返。</li>
+<li>面试被问 Agent RL 的训推一致性：先答 token 级对齐（TITO 三条纪律），再答概率级修正（重要性采样只处理同序列的概率差）——两者不在一个层面。</li>
+</ul>
+</section>
+<section class="sec" id="sec-6"><h2><span class="n">6</span>疑问 / 下一步</h2>
+<ul>
+<li>前缀保留性目前靠逐模型验模板，Qwen3 那「一行」具体改的是什么、其他带思考内容删除逻辑的推理模型模板是否也有同类隐藏漂移，值得对着模板源码逐项核一遍。</li>
+</ul></section>
+  <div class="foot">由 <a href="">GitHub NOTES.md</a> 生成 · 公式由 KaTeX、流程图由 Mermaid 渲染（需联网加载）</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+  if (window.mermaid) {
+    mermaid.initialize({startOnLoad: true, theme: "default", securityLevel: "loose"});
+  }
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function() {
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = p + "%";
+  }, {passive: true});
+});
+</script>
+</body>
+</html>
