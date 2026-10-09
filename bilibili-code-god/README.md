@@ -4,7 +4,7 @@
 
 - UP：古希腊掌管代码的神（UID 3632305977428186）
 - 空间：https://space.bilibili.com/3632305977428186
-- 总量：515 条（2026-03-28 – 2026-10-08），台账见 [catalog.md](catalog.md)
+- 总量：517 条（2026-03-28 – 2026-10-09），台账见 [catalog.md](catalog.md)
 - 目录前缀：episodes/G<三位编号>-<slug>.md；编号顺序与 catalog 一致（新→旧）
 
 ## 进度
